@@ -86,8 +86,7 @@ body {
   }
 }
 /* End style based off of Orbit template by Xiaoying Riley */
-
-/* Overrides for Material Design theme for Bootstrap */
+/* Footer style */
 .footer  {
   position: absolute;
   float: left;
@@ -96,6 +95,8 @@ body {
   height: 60px;
   text-align: center;
 }
+/* End footer style */
+/* Overrides for Material Design theme for Bootstrap */
 .navbar-default {
   background-color: #ff5722 !important;
 }
@@ -135,6 +136,16 @@ body {
 .input-group-btn .btn:not(.btn-raised).btn-primary {
   color: #ff5722 !important;
 }
+
+.btn-group-raised .btn.btn-primary, 
+.btn-group-raised .input-group-btn 
+.btn.btn-primary, .btn.btn-fab.btn-primary, 
+.btn.btn-raised.btn-primary, 
+.input-group-btn .btn.btn-fab.btn-primary, 
+.input-group-btn .btn.btn-raised.btn-primary {
+  background-color: #ff5722 !important;
+}
+
 .link, .link:focus, .link:hover {
   color: #ff5722 !important;
 }

@@ -507,7 +507,7 @@
                   <!-- End message form group -->
                   <!-- Send form group -->
                   <div class="form-group">
-                    <button id="send-email" class="btn btn-primary">Send</button>
+                    <button id="send-email" class="btn btn-raised btn-primary">Send</button>
                     <div id="ajax-message" hidden>
                     </div>
                   </div>
