@@ -1,0 +1,170 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+/* Style based off of Orbit template by Xiaoying Riley */
+.contact-wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+.contact-sidebar-wrapper {
+  background: #8f8f8f;
+  position: absolute;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  min-height: 300px;
+  color: #fff;
+}
+.contact-sidebar-wrapper a {
+  color: #fff;
+}
+.contact-sidebar-wrapper .container-block {
+  padding: 15px 30px;
+}
+.contact-sidebar-wrapper .container-block-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.contact-main-wrapper {
+  background: #fff;
+  padding: 60px;
+  padding-right: 460px;
+}
+.contact-main-wrapper .section-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  color: #BF360C;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.contact-main-wrapper .section-title .fa {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  display: inline-block;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #BF360C;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 16px;
+  position: relative;
+  top: -2px;
+}
+.contact-main-wrapper .section {
+  margin-bottom: 60px;
+}
+.contact-jumbotron {
+  padding: 0 !important;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .contact-sidebar-wrapper {
+    position: static;
+    width: inherit;
+  }
+  .contact-main-wrapper {
+    padding: 30px;
+  }
+}
+/* End style based off of Orbit template by Xiaoying Riley */
+
+/* Overrides for Material Design theme for Bootstrap */
+.footer  {
+  position: absolute;
+  float: left;
+  bottom: 0;  
+  width: 100%;
+  height: 60px;
+  text-align: center;
+}
+.navbar-default {
+  background-color: #ff5722 !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #ff5722 !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  background-color: #ff7043 !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #ff7043 !important;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  background-color: #ff7043 !important;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: #ff7043 !important;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: #ff7043 !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ff7043 !important;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ff7043 !important;
+}
+.btn:not(.btn-raised).btn-primary, 
+.input-group-btn .btn:not(.btn-raised).btn-primary {
+  color: #ff5722 !important;
+}
+.link, .link:focus, .link:hover {
+  color: #ff5722 !important;
+}
+.form-group label {
+  color: #666666 !important;
+}
+.form-group.has-error .help-block, .form-group.has-error label.control-label {
+  color: #f44336 !important;
+}
+.form-group.has-error.is-focused .form-control {
+  background-image: linear-gradient(#f44336,#f44336),linear-gradient(#D2D2D2,#D2D2D2) !important;
+}
+.form-control, .form-group .form-control {
+  background-image: linear-gradient(#ff5722,#ff5722),linear-gradient(#D2D2D2,#D2D2D2) !important;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    background-color: #ff7043 !important;
+  }
+}
+/* End overrides for Material Design theme for Bootstrap */
+/* Overrides for Social Buttons for Bootstrap */
+.btn-facebook, .btn-google, .btn-instagram, 
+.btn-twitter, .btn-tumblr, .btn-github, .btn-linkedin {
+  color: #ffffff !important;
+}
+.btn-social {
+  text-transform: none !important;
+}
+/* End overrides for Social Buttons for Bootstrap */
+
