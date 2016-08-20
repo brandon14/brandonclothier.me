@@ -13,8 +13,27 @@
 
   <!-- Theme meta for Google Chrome on Android -->
   <meta name="theme-color"           content="#ff5722">
+<?php
+$gStatus = $_SERVER['REDIRECT_STATUS']; 
+$gCodes = array( 
+        403 => array('403 Forbidden', 'Yo! I says you can\'t go here!.'), 
+        404 => array('404 Not Found', 'Sorry man I couldn\'t find your file.'), 
+        405 => array('405 Method Not Allowed', 'You POST\'ed when you should\'ve GET\'ed or something.'), 
+        408 => array('408 Request Timeout', 'Your browser wasn\'t fast enough to send a request in the time allowed by the server.'), 
+        500 => array('500 Internal Server Error', 'I think I may have broke something.'), 
+        502 => array('502 Bad Gateway', 'My server is all messed up man I\'m sorry.'), 
+        504 => array('504 Gateway Timeout', 'The upstream server is taking all day, my server is impatient.')); 
+         
+$gTitle = $gCodes[$gStatus][0]; 
+$gMessage = $gCodes[$gStatus][1]; 
+$gApology = 'I apologize for the inconvience. I\'m working to hard unbreak stuffs';
 
-  <title>Error!</title>
+if ($gTitle === false || strlen($gStatus) !== 3) { 
+  $gMessage = 'Erm... Me no understand that status code.'; 
+} 
+?>
+
+  <title>Error! - <?php echo $gTitle ?></title>
 
   <!-- Material Design fonts -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -69,33 +88,17 @@
 <div class="tab-content">
   <div class="tab-pane active">
 <?php 
-$status = $_SERVER['REDIRECT_STATUS']; 
-$codes = array( 
-        403 => array('403 Forbidden', 'The server has refused to fulfill your request.'), 
-        404 => array('404 Not Found', 'The document/file requested was not found.'), 
-        405 => array('405 Method Not Allowed', 'The method specified in the Request-Line is not allowed for the specified resource.'), 
-        408 => array('408 Request Timeout', 'Your browser failed to sent a request in the time allowed by the server.'), 
-        500 => array('500 Internal Server Error', 'The request was unsuccessful due to an unexpected condition encountered by the server.'), 
-        502 => array('502 Bad Gateway', 'The server received an invalid response from the upstream server while trying to fulfill the request.'), 
-        504 => array('504 Gateway Timeout', 'The upstream server failed to send a request in the time allowed by the server.')); 
-         
-$title = $codes[$status][0]; 
-$message = $codes[$status][1]; 
-
-if ($title == false || strlen($status) != 3) { 
-  $message = 'Please supply a valid status code.'; 
-} 
-
 echo '<div class="container">
         <div class="jumbotron">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
             </div>
-            <div class="col-sm-4">
-              <p><h1>' . $title . '</h1>
-              </p>' .  '<p>' . $message . '</p>
+            <div class="col-sm-6">
+              <p><h2>'.$gTitle.'</h2></p>
+              <p>'.$gMessage.'</p>
+              <p class="small">'.$gApology.'</p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
             </div>
           </div>
         </div>
