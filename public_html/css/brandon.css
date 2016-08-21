@@ -1,3 +1,8 @@
+/* Hidden hack for IE 9 */
+[hidden] {
+  display: none;;
+}
+/* End hidden hack for IE 9 */
 html {
   position: relative;
   min-height: 100%;
@@ -96,6 +101,18 @@ body {
   text-align: center;
 }
 /* End footer style */
+/* Dark overlay style */
+.dark-overlay {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.75;
+    z-index: 10;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+/* End dark overlay style */
 /* Overrides for Material Design theme for Bootstrap */
 .navbar-default {
   background-color: #ff5722 !important;

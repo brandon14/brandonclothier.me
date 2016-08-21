@@ -117,6 +117,11 @@ echo '<div class="container">
 </footer>
 <!-- End footer -->
 
+<!-- Dark overlay -->
+<div class="dark-overlay" hidden>
+</div>
+<!-- Dark overlay -->
+
 <!-- Scripts -->
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -125,14 +130,8 @@ echo '<div class="container">
 </script>
 <!-- Bootstrap javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- JavaScript to store the last tab the user visited -->
-<script src="/js/store-last-tab.js"></script>
-<!-- JavaScript to close navbar on item select -->
-<script src="/js/navbar-collapse-on-select.js"></script>
-<!-- JavaScript to close navbar on click outside of navbar -->
-<script src="/js/navbar-collapse-on-click.js"></script>
-<!-- Off canvas JavaScript -->
-<script src="/js/offcanvas.js"></script>
+<!-- JavaScript for page functions -->
+<script src="/js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 </body>

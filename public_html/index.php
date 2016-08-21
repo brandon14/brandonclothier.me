@@ -539,6 +539,11 @@
 </footer>
 <!-- End footer -->
 
+<!-- Dark overlay -->
+<div class="dark-overlay" hidden>
+</div>
+<!-- Dark overlay -->
+
 <!-- Scripts -->
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -550,20 +555,10 @@
 <!-- Material design theme for Bootstrap javascript -->
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-<!-- JavaScript to store the last tab the user visited -->
-<script src="/js/store-last-tab.js"></script>
-<!-- JavaScript to close navbar on item select -->
-<script src="/js/navbar-collapse-on-select.js"></script>
-<!-- JavaScript to close navbar on click outside of navbar -->
-<script src="/js/navbar-collapse-on-click.js"></script>
 <!-- Ajax JavaScript functions -->
 <script src="/js/brandon-ajax.js"></script>
-<!-- Resume level bar animation -->
-<script src="/js/resume-levelbars.js"></script>
-<!-- Script to change the navbar-brand on tab click -->
-<script src="/js/navbar-title-change.js"></script>
-<!-- Off canvas JavaScript -->
-<script src="/js/offcanvas.js"></script>
+<!-- JavaSCript functions for the page operation -->
+<script src="/js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 <!-- Init material design bootstrap -->
