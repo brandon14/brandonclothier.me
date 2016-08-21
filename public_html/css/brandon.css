@@ -113,6 +113,21 @@ body {
     top: 0px;
 }
 /* End dark overlay style */
+/* Animate the jumbotrons */
+.jumbotron {
+  -webkit-animation: fadeEffect 0.7s;
+  animation: fadeEffect 0.7s;
+}
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* End jumbotron animation */
 /* Overrides for Material Design theme for Bootstrap */
 .navbar-default {
   background-color: #ff5722 !important;
