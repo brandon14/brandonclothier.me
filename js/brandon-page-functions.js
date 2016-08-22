@@ -55,6 +55,13 @@ var PageFunctions = (function() {
   $navbarToggle.on('click', _toggleOverlay);
   // End event binding
   
+  // Function declarations
+  /**
+   * Function to  hide the dark-overlay and reenable scrolling on the page
+   * whenever a navbar item is selected.
+   * 
+   * @param  {object} e The event.
+   */
   function _hideOverlayOnSelect(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') !== 'navbar-toggle') {
       $(this).collapse('hide');
@@ -65,35 +72,56 @@ var PageFunctions = (function() {
     }
   }
 
+  /**
+   * Function to animate each progress bar in the DOM.
+   */
   function _animateProgressBars() {
     $levelBar.each(_animateProgressBar);
   }
 
+  /**
+   * Function that will animate a single progress bar.
+   */
   function _animateProgressBar() {
     var itemWidth = $(this).data('level');
 
     $(this).animate({width: itemWidth}, 800);
   }
   
+  /**
+   * Function to toggle the dark-overlay and toggle scrolling.
+   */
   function _toggleOverlay() {
     $darkOverlay.toggle();
     $html.toggleClass('no-scroll');
   }
 
+  /**
+   * Function to toggle the offcanvas navmenu.
+   */
   function _offCanvasToggle() {
     $offCanvasRow.toggleClass('active');
   }
 
+  /**
+   * Function to set the navbar brand text.
+   */
   function _setNavbarBrandText() {
     $navbarBrand.text($(this).text());
   }
 
+  /**
+   * [_showLastTab description]
+   */
   function _showLastTab() {
     localStorage.setItem('lastTab', $(this).attr('href'));
   }
 
+  /**
+   * [_scrollToTop description]
+   */
   function _scrollToTop() {
-    console.log('Scrolling to top');
     scrollTo(0, 0);
   }
+  // End function declarations
 })();
