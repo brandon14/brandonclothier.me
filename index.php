@@ -555,6 +555,7 @@
 <!-- Material design theme for Bootstrap javascript -->
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
+<script src="/js/snackbar.min.js"></script>
 <!-- Ajax JavaScript functions -->
 <script src="/js/brandon-ajax.js"></script>
 <!-- JavaSCript functions for the page operation -->

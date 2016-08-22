@@ -1,13 +1,24 @@
 var PageFunctions = (function() {
   // Cache the DOM
   var $darkOverlay = $('.dark-overlay');
+
+  var $navbarToggle = $('.navbar-toggle');
   var $navbarItems = $('#navbar-items > li > a');
   var $navbarBrand = $('.navbar-brand');
+
   var $offCanvasToggle = $('[data-toggle="offcanvas"]');
   var $offCanvasRow = $('.row-offcanvas');
+
   var $tabDataToggle = $('a[data-toggle="tab"]');
+
   var $levelBar = $('.level-bar-inner');
-  var $navbarToggle = $('.navbar-toggle');
+
+  var $name = $('#name');
+  var $email = $('#email');
+  var $message = $('#message');
+  var $sendEmail = $("#send-email");
+
+  var $html = $('html');
   // End DOM caching
 
   // Basic initialization
@@ -24,43 +35,65 @@ var PageFunctions = (function() {
 
   // Bind events
   // Collapse navbar on select
-  $(document).on('click', '.navbar-collapse.in', function(e) {
+  $(document).on('click', '.navbar-collapse.in', _hideOverlayOnSelect);
+
+  // Save the last selected tab to the local storage
+  $tabDataToggle.on('shown.bs.tab', _showLastTab);
+
+  // Change the brand name on navbar item select
+  $navbarItems.on('click', _setNavbarBrandText);
+
+  // Scroll to the top on navbar item select
+  $navbarItems.on('click', _scrollToTop);
+
+  // Off canvas toggle
+  $offCanvasToggle.on('click', _offCanvasToggle);
+
+  $(window).on('load', _animateProgressBars);
+
+  // Function to show the dark overlay whenever the navmenu is expanded
+  $navbarToggle.on('click', _toggleOverlay);
+  // End event binding
+  
+  function _hideOverlayOnSelect(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') !== 'navbar-toggle') {
       $(this).collapse('hide');
       if ($darkOverlay.is(':visible')) {
         $darkOverlay.hide();
+        $html.removeClass('no-scroll');
       }
     }
-  });
+  }
 
-  // Save the last selected tab to the local storage
-  $tabDataToggle.on('shown.bs.tab', function (e) {
-    localStorage.setItem('lastTab', $(this).attr('href'));
-  });
+  function _animateProgressBars() {
+    $levelBar.each(_animateProgressBar);
+  }
 
-  // Change the brand name on navbar item select
-  $navbarItems.on('click', function() {
-    $navbarBrand.text($(this).text());
-  });
+  function _animateProgressBar() {
+    var itemWidth = $(this).data('level');
 
-  // Off canvas toggle
-  $offCanvasToggle.on('click', function () {
-    $offCanvasRow.toggleClass('active')
-  });
-
-  $(window).on('load', function() {
-    $levelBar.each(function() {
-      var itemWidth = $(this).data('level');
-
-      $(this).animate({
-        width: itemWidth
-      }, 800);
-    });
-  });
-
-  // Function to show the dark overlay whenever the navmenu is expanded
-  $navbarToggle.on('click', function() {
+    $(this).animate({width: itemWidth}, 800);
+  }
+  
+  function _toggleOverlay() {
     $darkOverlay.toggle();
-  });
-  // End event binding
+    $html.toggleClass('no-scroll');
+  }
+
+  function _offCanvasToggle() {
+    $offCanvasRow.toggleClass('active');
+  }
+
+  function _setNavbarBrandText() {
+    $navbarBrand.text($(this).text());
+  }
+
+  function _showLastTab() {
+    localStorage.setItem('lastTab', $(this).attr('href'));
+  }
+
+  function _scrollToTop() {
+    console.log('Scrolling to top');
+    scrollTo(0, 0);
+  }
 })();
