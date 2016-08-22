@@ -111,14 +111,14 @@ var PageFunctions = (function() {
   }
 
   /**
-   * [_showLastTab description]
+   * [Function to show the last tab that was saved in the local storage.
    */
   function _showLastTab() {
     localStorage.setItem('lastTab', $(this).attr('href'));
   }
 
   /**
-   * [_scrollToTop description]
+   * Function to scroll to the top of the page.
    */
   function _scrollToTop() {
     scrollTo(0, 0);
