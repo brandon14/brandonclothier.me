@@ -42,9 +42,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/offcanvas.css">
-  <link rel="stylesheet" href="/css/brandon.css">
-  <link rel="stylesheet" href="/css/resume.css">
+  <link rel="stylesheet" href="css/offcanvas.css">
+  <link rel="stylesheet" href="css/brandon.css">
+  <link rel="stylesheet" href="css/resume.css">
 
   <!-- HTML5 Shim and Respond.js and rem.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -171,7 +171,7 @@
               <div class="sidebar-wrapper">
                 <!-- Profile container -->
                 <div class="profile-container">
-                  <img class="profile" src="/images/profile.png" alt="Profile Image" />
+                  <img class="profile" src="images/profile.png" alt="Profile Image" />
                   <h1 class="name">Brandon Clothier</h1>
                   <h3 class="tagline">Web Developer</h3>
                 </div>
@@ -555,11 +555,11 @@
 <!-- Material design theme for Bootstrap javascript -->
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
-<script src="/js/snackbar.min.js"></script>
+<script src="js/snackbar.min.js"></script>
 <!-- Ajax JavaScript functions -->
-<script src="/js/brandon-ajax.js"></script>
+<script src="js/brandon-ajax.js"></script>
 <!-- JavaSCript functions for the page operation -->
-<script src="/js/brandon-page-functions.js"></script>
+<script src="js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 <!-- Init material design bootstrap -->

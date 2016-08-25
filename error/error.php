@@ -47,8 +47,8 @@ if ($gTitle === false || strlen($gStatus) !== 3) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/brandon.css">
-  <link rel="stylesheet" href="/css/offcanvas.css">
+  <link rel="stylesheet" href="css/brandon.css">
+  <link rel="stylesheet" href="css/offcanvas.css">
 
   <!-- HTML5 Shim and Respond.js and rem.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -131,7 +131,7 @@ echo '<div class="container">
 <!-- Bootstrap javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!-- JavaScript for page functions -->
-<script src="/js/brandon-page-functions.js"></script>
+<script src="js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 </body>
