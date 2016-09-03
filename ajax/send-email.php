@@ -1,7 +1,7 @@
 <?php
 define('EMAIL_ADDRESS', 'brandon14125@gmail.com');
 
-$gResult = array('responseType' => 'ERROR', 
+$gResult = array('responseType' => 'ERROR',
                  'response'     => 'Man something broke bad!');
 
 $gResultMessage = "";

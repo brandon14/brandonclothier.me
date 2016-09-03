@@ -36,7 +36,7 @@
   <!-- Bootstrap Material Design -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
-  
+
   <!-- Bootstrap Social Buttons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -229,7 +229,7 @@
                     <li>Video Games</li>
                   </ul>
                 </div>
-                <!-- End interest container--> 
+                <!-- End interest container-->
               </div>
               <!-- End resume sidebar -->
               <!-- Main content wrapper -->
@@ -238,9 +238,9 @@
                 <section class="section summary-section">
                   <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
                   <div class="summary">
-                    <p>Highly motivated and hardworking individual. Experienced in Computer Science and software development. Workplace experience with 
-                    PHP, Javascript, HTML5 and CSS. Experienced in using AJAX techniques to create dynamic webpages. Experienced with Java, PostgreSQL, 
-                    MySQL, HTML, C#, Linux operating systems, classroom software engineering experience, and Android SDK experience. Also experienced in 
+                    <p>Highly motivated and hardworking individual. Experienced in Computer Science and software development. Workplace experience with
+                    PHP, Javascript, HTML5 and CSS. Experienced in using AJAX techniques to create dynamic webpages. Experienced with Java, PostgreSQL,
+                    MySQL, HTML, C#, Linux operating systems, classroom software engineering experience, and Android SDK experience. Also experienced in
                     customer service, and work environments involving working together as a team.</p>
                   </div>
                 </section>
@@ -249,7 +249,7 @@
                 <!-- Experience section -->
                 <section class="section experiences-section">
                   <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-                  
+
                   <!-- Experience  item -->
                   <div class="item">
                     <div class="meta">
@@ -260,8 +260,8 @@
                       <div class="company">Webbed Sphere, Inc., Corbin, KY</div>
                     </div><!-- End meta -->
                     <div class="details">
-                      <p>Maintain and develop an online store for the Troll and Toad company. The website serves hundreds of users daily. Maintain webpages 
-                      written in PHP and JavaScript. Work with a PostgreSQL database with over 700 tables to manage customer information and order information. 
+                      <p>Maintain and develop an online store for the Troll and Toad company. The website serves hundreds of users daily. Maintain webpages
+                      written in PHP and JavaScript. Work with a PostgreSQL database with over 700 tables to manage customer information and order information.
                       Use AJAX techniques to create dynamic webpages. Create pages to perform admin functions for the online store system.</p>
                     </div>
                   </div>
@@ -277,8 +277,8 @@
                       <div class="company">Eastern Kentucky University, Richmond, KY</div>
                     </div><!-- End meta -->
                     <div class="details">
-                      <p>Worked in a small team of three to design and implement an online store website with a functional MySQL database. Used ASP.net and C# along with 
-                      a MySQL database in order to implement the website. Used UML to design the software system initially, complete with design and requirement specification 
+                      <p>Worked in a small team of three to design and implement an online store website with a functional MySQL database. Used ASP.net and C# along with
+                      a MySQL database in order to implement the website. Used UML to design the software system initially, complete with design and requirement specification
                       documents.</p>
                     </div>
                   </div>
@@ -294,7 +294,7 @@
                       <div class="company">Eastern Kentucky University, Richmond, KY</div>
                     </div><!-- End meta -->
                     <div class="details">
-                      <p>Worked in a small team of three to design, schedule and implement a meeting planner application with a functional MySQL database. Used C#, Windows Forms 
+                      <p>Worked in a small team of three to design, schedule and implement a meeting planner application with a functional MySQL database. Used C#, Windows Forms
                       and a MySQL database to implement a desktop meeting planner application for the Windows operating system. Used UML to design the software initially, complete
                       with requirement and design specification documents. Used Microsoft Project to implement a schedule and Gantt Chart to schedule the design and implementation
                       of the software system. Used Microsoft Team Foundation Server using the git version control system to coordinate the coding of the software with the team.</p>
@@ -309,31 +309,31 @@
                 <section class="section projects-section">
                   <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
                   <div class="intro">
-                    <p>I enjoy working on software projects in my free time. Most of my work can be found at my Github: 
+                    <p>I enjoy working on software projects in my free time. Most of my work can be found at my Github:
                     <a class="link" href="https://www.github.com/brandon14">github.com/brandon14</a></p>
                   </div><!-- End intro-->
 
                   <!-- Project item -->
                   <div class="item">
-                    <span class="project-title"><a class="link" href="https://www.github.com/brandon14/checkbook">Checkbook</a></span> - 
+                    <span class="project-title"><a class="link" href="https://www.github.com/brandon14/checkbook">Checkbook</a></span> -
                     <span class="project-tagline">An Andorid checkbook register application built using the Material Design library from Google. It is a work
-                    in progress and will be fully functional eventually.</span>  
+                    in progress and will be fully functional eventually.</span>
                   </div>
                   <!-- End project item -->
 
                   <!-- Project item -->
                   <div class="item">
-                    <span class="project-title"><a class="link" href="https://github.com/brandon14/simple-calc">SimpleCalc</a></span> - 
+                    <span class="project-title"><a class="link" href="https://github.com/brandon14/simple-calc">SimpleCalc</a></span> -
                     <span class="project-tagline">A Java Swing calculator application I worte as a Sophmore at EKU. It uses the BigDecimal class for the number
-                    crunching, and is designed to funcion like the WIndows 7 Calculator program.</span>  
+                    crunching, and is designed to funcion like the WIndows 7 Calculator program.</span>
                   </div>
                   <!-- End project item -->
 
                   <!-- Project item -->
                   <div class="item">
-                    <span class="project-title"><a class="link" href="https://github.com/brandon14/meeting-coordinator-team">Meeting Coordinator</a></span> - 
+                    <span class="project-title"><a class="link" href="https://github.com/brandon14/meeting-coordinator-team">Meeting Coordinator</a></span> -
                     <span class="project-tagline">This was the team project for CSC 440 Software Engineering at EKU. It is a Windows Forms .NET desktop application
-                    that allows users to schedule and plan meetings with other users.</span>  
+                    that allows users to schedule and plan meetings with other users.</span>
                   </div>
                   <!-- End project item -->
 
@@ -350,8 +350,8 @@
                       <h3 class="level-title">PHP</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="90%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End PHP skill item -->
 
@@ -360,8 +360,8 @@
                       <h3 class="level-title">JavaScript &amp; jQuery</h3>
                       <div class="level-bar">
                           <div class="level-bar-inner" data-level="90%">
-                          </div>                                      
-                      </div><!-- End level-bar-->                                 
+                          </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End JavaScript skill items -->
 
@@ -370,8 +370,8 @@
                       <h3 class="level-title">HTML5 &amp; CSS</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="95%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End HTML5 skill item -->
 
@@ -380,8 +380,8 @@
                       <h3 class="level-title">Java</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="95%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End Java skill item -->
 
@@ -390,8 +390,8 @@
                       <h3 class="level-title">Android SDK</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="95%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End Android SDK skill item -->
 
@@ -400,8 +400,8 @@
                       <h3 class="level-title">C# and .NET Framework</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="85%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End C# skill item -->
 
@@ -410,11 +410,11 @@
                       <h3 class="level-title">Photoshop</h3>
                       <div class="level-bar">
                         <div class="level-bar-inner" data-level="90%">
-                        </div>                                      
-                      </div><!-- End level-bar-->                                 
+                        </div>
+                      </div><!-- End level-bar-->
                     </div>
                     <!-- End Photoshop skill item -->
-                  </div>  
+                  </div>
                   <!-- End skillset -->
                 </section>
                 <!-- End skills section-->
@@ -428,7 +428,7 @@
                 <!-- End downloads sections -->
               </div>
               <!-- End main content wrapper-->
-            </div>  
+            </div>
             <!-- End resume wrapper -->
           </div>
           <!-- End resume column -->

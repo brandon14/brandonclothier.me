@@ -5,8 +5,8 @@ var AjaxFunctions = (function() {
     var request = $.ajax({
       type: 'POST',
       url: ajaxUrl,
-      data: {'name' : name, 
-             'email' : email, 
+      data: {'name' : name,
+             'email' : email,
              'message' : message},
       dataType: 'HTML'
     });

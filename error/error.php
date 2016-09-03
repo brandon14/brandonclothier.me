@@ -14,23 +14,23 @@
   <!-- Theme meta for Google Chrome on Android -->
   <meta name="theme-color"           content="#ff5722">
 <?php
-$gStatus = $_SERVER['REDIRECT_STATUS']; 
-$gCodes = array( 
-        403 => array('403 Forbidden', 'Yo! I says you can\'t go here!.'), 
-        404 => array('404 Not Found', 'Sorry man I couldn\'t find your file.'), 
-        405 => array('405 Method Not Allowed', 'You POST\'ed when you should\'ve GET\'ed or something.'), 
-        408 => array('408 Request Timeout', 'Your browser wasn\'t fast enough to send a request in the time allowed by the server.'), 
-        500 => array('500 Internal Server Error', 'I think I may have broke something.'), 
-        502 => array('502 Bad Gateway', 'My server is all messed up man I\'m sorry.'), 
-        504 => array('504 Gateway Timeout', 'The upstream server is taking all day, my server is impatient.')); 
-         
-$gTitle = $gCodes[$gStatus][0]; 
-$gMessage = $gCodes[$gStatus][1]; 
+$gStatus = $_SERVER['REDIRECT_STATUS'];
+$gCodes = array(
+        403 => array('403 Forbidden', 'Yo! I says you can\'t go here!.'),
+        404 => array('404 Not Found', 'Sorry man I couldn\'t find your file.'),
+        405 => array('405 Method Not Allowed', 'You POST\'ed when you should\'ve GET\'ed or something.'),
+        408 => array('408 Request Timeout', 'Your browser wasn\'t fast enough to send a request in the time allowed by the server.'),
+        500 => array('500 Internal Server Error', 'I think I may have broke something.'),
+        502 => array('502 Bad Gateway', 'My server is all messed up man I\'m sorry.'),
+        504 => array('504 Gateway Timeout', 'The upstream server is taking all day, my server is impatient.'));
+
+$gTitle = $gCodes[$gStatus][0];
+$gMessage = $gCodes[$gStatus][1];
 $gApology = 'I apologize for the inconvience. I\'m working to hard unbreak stuffs';
 
-if ($gTitle === false || strlen($gStatus) !== 3) { 
-  $gMessage = 'Erm... Me no understand that status code.'; 
-} 
+if ($gTitle === false || strlen($gStatus) !== 3) {
+  $gMessage = 'Erm... Me no understand that status code.';
+}
 ?>
 
   <title>Error! - <?php echo $gTitle ?></title>
@@ -87,7 +87,7 @@ if ($gTitle === false || strlen($gStatus) !== 3) {
 
 <div class="tab-content">
   <div class="tab-pane active">
-<?php 
+<?php
 echo '<div class="container">
         <div class="jumbotron">
           <div class="row">
@@ -102,7 +102,7 @@ echo '<div class="container">
             </div>
           </div>
         </div>
-      </div';  
+      </div';
 ?>
   </div>
 </div>

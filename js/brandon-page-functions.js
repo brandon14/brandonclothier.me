@@ -54,12 +54,12 @@ var PageFunctions = (function() {
   // Function to show the dark overlay whenever the navmenu is expanded
   $navbarToggle.on('click', _toggleOverlay);
   // End event binding
-  
+
   // Function declarations
   /**
    * Function to  hide the dark-overlay and reenable scrolling on the page
    * whenever a navbar item is selected.
-   * 
+   *
    * @param  {object} e The event.
    */
   function _hideOverlayOnSelect(e) {
@@ -87,7 +87,7 @@ var PageFunctions = (function() {
 
     $(this).animate({width: itemWidth}, 800);
   }
-  
+
   /**
    * Function to toggle the dark-overlay and toggle scrolling.
    */
