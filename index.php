@@ -77,6 +77,7 @@
         <li class="active"><a href="#about" data-toggle="tab">About</a></li>
         <li><a href="#resume" data-toggle="tab">Resume</a></li>
         <li><a href="#contact" data-toggle="tab">Contact</a></li>
+        <li><a href="/html5-pong">HTML5 Pong</a></li>
       </ul>
     </div>
     <!-- End navbar items -->
