@@ -130,9 +130,17 @@ echo '<div class="container">
 </script>
 <!-- Bootstrap javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Material design theme for Bootstrap javascript -->
+<script src="js/material.min.js"></script>
+<script src="js/ripples.min.js"></script>
 <!-- JavaScript for page functions -->
 <script src="js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Init material design bootstrap -->
+<script type="text/javascript">
+  $.material.init();
+</script>
+<!-- End scripts -->
 </body>
 </html>
