@@ -43,8 +43,8 @@ if ($gTitle === false || strlen($gStatus) !== 3) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Bootstrap Material Design -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
+  <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="css/ripples.min.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/brandon.css">
