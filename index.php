@@ -34,17 +34,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Bootstrap Material Design -->
-  <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
-  <link rel="stylesheet" href="css/ripples.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="/css/ripples.min.css">
 
   <!-- Bootstrap Social Buttons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/offcanvas.css">
-  <link rel="stylesheet" href="css/brandon.css">
-  <link rel="stylesheet" href="css/resume.css">
+  <link rel="stylesheet" href="/css/offcanvas.css">
+  <link rel="stylesheet" href="/css/brandon.css">
+  <link rel="stylesheet" href="/css/resume.css">
 
   <!-- HTML5 Shim and Respond.js and rem.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -553,13 +553,13 @@
 <!-- Bootstrap javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!-- Material design theme for Bootstrap javascript -->
-<script src="js/material.min.js"></script>
-<script src="js/ripples.min.js"></script>
-<script src="js/snackbar.min.js"></script>
+<script src="/js/material.min.js"></script>
+<script src="/js/ripples.min.js"></script>
+<script src="/js/snackbar.min.js"></script>
 <!-- Ajax JavaScript functions -->
-<script src="js/brandon-ajax.js"></script>
+<script src="/js/brandon-ajax.js"></script>
 <!-- JavaSCript functions for the page operation -->
-<script src="js/brandon-page-functions.js"></script>
+<script src="/js/brandon-page-functions.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 <!-- Init material design bootstrap -->
