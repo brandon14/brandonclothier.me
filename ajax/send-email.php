@@ -4,8 +4,6 @@ define('EMAIL_ADDRESS', 'brandon14125@gmail.com');
 $gResult = array('responseType' => 'ERROR',
                  'response'     => 'Man something broke bad!');
 
-$gResultMessage = "";
-
 if($_SERVER['REQUEST_METHOD'] === "POST") {
   $gName = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : 'No Name';
   $gEmail = isset($_POST['email']) ? filter_var(trim($_POST['emai']), FILTER_SANITIZE_EMAIL) : null;
