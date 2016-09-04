@@ -486,36 +486,42 @@
               <!-- Contact main div -->
               <div class="contact-main-wrapper">
                 <!-- Contact me section -->
-                <sction class="section">
+                <section class="section">
                   <h2 class="section-title"><i class="fa fa-envelope"></i>Contact Me</h2>
-                  <!-- Name form group -->
-                  <div class="form-group label-floating is-empty">
-                    <label for="name" class="control-label">Name</label>
-                    <input id="name" type="text" class="form-control" name="name">
-                    <span class="help-block">First &amp; last name.</span>
-                  </div>
-                  <!-- End name form group -->
-                  <!-- Email form group -->
-                  <div class="form-group label-floating is-empty">
-                    <label for="name" class="control-label">Email</label>
-                    <input id="email" type="email" class="form-control" name="email">
-                    <span class="help-block">Please enter a valid email address.</span>
-                  </div>
-                  <!-- End email form group -->
-                  <!-- Message form group -->
-                  <div class="form-group label-floating is-empty">
-                    <label for="name" class="control-label">Message</label>
-                    <textarea id="email-message" class="form-control" rows="5" name="message"></textarea>
-                  </div>
-                  <!-- End message form group -->
-                  <!-- Send form group -->
-                  <div class="form-group">
-                    <button id="send-email" class="btn btn-raised btn-primary">Send</button>
-                    <div id="ajax-message" hidden>
+                  <!-- Contact form -->
+                  <form id="contact-form" role="form">
+                    <!-- Name form group -->
+                    <div class="form-group label-floating is-empty">
+                      <label for="name" class="control-label">Name</label>
+                      <input id="name" type="text" class="form-control" name="name" required>
+                      <span class="help-block">First &amp; last name.</span>
                     </div>
-                  </div>
-                  <!-- End send form group -->
-                </sction>
+                    <!-- End name form group -->
+                    <!-- Email form group -->
+                    <div class="form-group label-floating is-empty">
+                      <label for="name" class="control-label">Email</label>
+                      <input id="email" type="email" class="form-control" name="email" required>
+                      <span class="help-block">Please enter a valid email address.</span>
+                    </div>
+                    <!-- End email form group -->
+                    <!-- Message form group -->
+                    <div class="form-group label-floating is-empty">
+                      <label for="name" class="control-label">Message</label>
+                      <textarea id="email-message" class="form-control" rows="5" name="message" required></textarea>
+                      <span class="help-block">Please enter your message.</span>
+                    </div>
+                    <!-- End message form group -->
+                    <!-- Send form group -->
+                    <div class="form-group">
+                      <button id="send-email" type="submit" class="btn btn-raised btn-primary" aria-label="send">Send</button>
+                      <!-- End placeholder for form validation alert -->
+                      <div id="contact-form-ajax-message" hidden>
+                      </div>
+                    </div>
+                    <!-- End send form group -->
+                  </form>
+                  <!-- End contact form -->
+                </section>
                 <!-- End contact med section -->
               </div>
               <!-- End contact main div -->
@@ -545,7 +551,7 @@
 <!-- Dark overlay -->
 <div class="dark-overlay" hidden>
 </div>
-<!-- Dark overlay -->
+<!-- End dark overlay -->
 
 <!-- Scripts -->
 <!-- jQuery -->
