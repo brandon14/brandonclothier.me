@@ -6,13 +6,21 @@ $gResult = array('responseType' => 'ERROR',
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
   $gName = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : 'No Name';
-  $gEmail = isset($_POST['email']) ? filter_var(trim($_POST['emai']), FILTER_SANITIZE_EMAIL) : null;
-  $gMessage = isset($_POST['email']) ? trim($_POST['message']) : 'No message';
+  $gEmail = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : null;
+  $gMessage = isset($_POST['message']) ? trim($_POST['message']) : 'No message';
 
-  if ($gEmail && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $gEmailContent = "Name: $gName\nEmail: $gEmail\nMessage: $gMessage";
+  //TODO: Spruce up the automated email
+  if ($gEmail && filter_var($gEmail, FILTER_VALIDATE_EMAIL)) {
+    $gEmailContent = "<strong>Name:</strong> $gName<br/>
+                      <strong>Email:</strong> $gEmail<br/>
+                      <strong>Date:</strong> ".date('F, D jS, Y, g:i:s A')."<br/>
+                      <br/>
+                      <strong>Message:</strong><br/>
+                      $gMessage";
+
     $gSubject = "Contact message from $gName.";
-    $gEmailHeaders = "From: $gName <$gEmail>";
+    $gEmailHeaders = "From: $gName <$gEmail>\r\n";
+    $gEmailHeaders .= "Content-type: text/html\r\n";
 
     if (mail(EMAIL_ADDRESS, $gSubject, $gEmailContent, $gEmailHeaders)) {
       $gResult['responseType'] = 'SUCCESS';
