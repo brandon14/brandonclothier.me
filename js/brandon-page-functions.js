@@ -1,5 +1,5 @@
 var PageFunctions = (function() {
-  // Cache the DOM
+  // ********** DOM Caching ********** //
   var $darkOverlay = $('.dark-overlay');
 
   var $navbarToggle = $('.navbar-toggle');
@@ -13,15 +13,16 @@ var PageFunctions = (function() {
 
   var $levelBar = $('.level-bar-inner');
 
+  var $contactForm = $('#contact-form');
   var $name = $('#name');
   var $email = $('#email');
-  var $message = $('#message');
-  var $sendEmail = $("#send-email");
+  var $message = $('#email-message');
+  var $formAjaxMessage = $('#contact-form-ajax-message');
 
   var $html = $('html');
-  // End DOM caching
+  // ********** DOM Caching ********** //
 
-  // Basic initialization
+  // ********** Basic initialization ********** //
   // Go to the latest tab, if it exists:
   var lastTab = localStorage.getItem('lastTab');
   if (lastTab) {
@@ -31,9 +32,9 @@ var PageFunctions = (function() {
 
   // Set the progressbar widths to 0
   $levelBar.css('width', '0');
-  // End init
+  // ********** Basic initialization ********** //
 
-  // Bind events
+  // ********** Bind events ********** //
   // Collapse navbar on select
   $(document).on('click', '.navbar-collapse.in', _hideOverlayOnSelect);
 
@@ -53,9 +54,11 @@ var PageFunctions = (function() {
 
   // Function to show the dark overlay whenever the navmenu is expanded
   $navbarToggle.on('click', _toggleOverlay);
-  // End event binding
 
-  // Function declarations
+  $contactForm.on('submit', _sendEmail);
+  // ********** Bind events ********** //
+
+  // ********** Function declarations ********** //
   /**
    * Function to  hide the dark-overlay and reenable scrolling on the page
    * whenever a navbar item is selected.
@@ -111,7 +114,7 @@ var PageFunctions = (function() {
   }
 
   /**
-   * [Function to show the last tab that was saved in the local storage.
+   * Function to show the last tab that was saved in the local storage.
    */
   function _showLastTab() {
     localStorage.setItem('lastTab', $(this).attr('href'));
@@ -123,5 +126,37 @@ var PageFunctions = (function() {
   function _scrollToTop() {
     scrollTo(0, 0);
   }
-  // End function declarations
+
+  /**
+   * Function to fire an AJAX request to send a contact email to my contact email from
+   * a user on the page.
+   *
+   * @param  {object} e The event from the form submit.
+   */
+  function _sendEmail(e) {
+    e.preventDefault();
+
+    var name = $name.val();
+    var email = $email.val();
+    var message = $message.val();
+
+    AjaxFunctions.sendEmail(name, email, message, _processEmailResponse);
+  }
+
+  /**
+   * Function to process the AJAX response and show a snackbar to inform the user the
+   * status of his contact email.
+   *
+   * @param  {object} response The JSON response from the AJAX call.
+   */
+  function _processEmailResponse(response) {
+    if (response.responseType === 'SUCCESS') {
+      $.snackbar({content: response.response,
+                  timeout: 1500});
+    } else {
+      $.snackbar({content: 'Error Code: ' + response.responseType + '\nServer Response: ' + response.response,
+                  timeout: 1500});
+    }
+  }
+  // ********** Function declarations ********** //
 })();
