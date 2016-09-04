@@ -30,5 +30,5 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
   $gResult['response'] = 'Yo! You didn\'t use the POST method!';
 }
 
-echo json_encode($gResult, JSON_HEX_QUOT | JSON_HEX_TAG);
+echo json_encode($gResult);
 ?>
