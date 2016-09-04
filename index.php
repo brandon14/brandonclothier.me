@@ -36,6 +36,8 @@
   <!-- Bootstrap Material Design -->
   <link rel="stylesheet" href="/css/bootstrap-material-design.min.css">
   <link rel="stylesheet" href="/css/ripples.min.css">
+  <link rel="stylesheet" href="/css/snackbar.min.css">
+  <link rel="stylesheet" href="/css/snackbar-theme.css">
 
   <!-- Bootstrap Social Buttons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.min.css">
