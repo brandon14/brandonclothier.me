@@ -1,3 +1,6 @@
+<?php
+require_once('../includes/last-modified.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -543,6 +546,7 @@
   <div class="container">
     <div id="copyright">
       Copyright &copy; <?php echo date('Y') ?> - Brandon Clothier
+      <br/>Website last updated <?php echo getLastModifiedTime(); ?>
     </div>
   </div>
 </footer>
