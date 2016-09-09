@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
   if ($gEmail && filter_var($gEmail, FILTER_VALIDATE_EMAIL)) {
     $gEmailContent = "<strong>Name:</strong> $gName<br/>
                       <strong>Email:</strong> $gEmail<br/>
-                      <strong>Date:</strong> ".date('F, D jS, Y, g:i:s A')."<br/>
+                      <strong>Date:</strong> ".date('F jS, Y').' at '.date('h:i:s A T')."<br/>
                       <br/>
                       <strong>Message:</strong><br/>
                       $gMessage";
