@@ -153,6 +153,10 @@ var PageFunctions = (function() {
     if (response.responseType === 'SUCCESS') {
       $.snackbar({content: response.response,
                   timeout: 1500});
+                  
+      $name.val('');
+      $email.val('');
+      $message.val('');
     } else {
       $.snackbar({content: 'Error Code: ' + response.responseType + '\nServer Response: ' + response.response,
                   timeout: 1500});
