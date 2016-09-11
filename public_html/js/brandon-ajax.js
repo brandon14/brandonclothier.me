@@ -11,7 +11,7 @@ var AjaxFunctions = (function() {
    *
    * @type  {string}
    */
-  var ajaxUrl = '../ajax/send-email.php';
+  var ajaxUrl = '/ajax/send-email.php';
 
   /**
    * Function to send an AJAX request to the send-email AJAX script to send a cotnact email
