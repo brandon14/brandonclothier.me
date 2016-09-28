@@ -2,17 +2,18 @@
 function getLastModifiedTime() {
   date_default_timezone_set('EDT');
 
-  $timeStamp = null;
+  $tTimeStamp = null;
 
-  $path = realpath('../');
+  $tRootPath = realpath('../');
 
-  $objects = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
-  foreach ($objects as $name => $object) {
-    if (basename($name)!== '.ftpquota' && basename($name) !== 'DO_NOT_UPLOAD_HERE') {
-      $timeStamp = filemtime($name) > $timeStamp ? filemtime($name) : $timeStamp;
+  $tDirectories = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tRootPath));
+  
+  foreach ($tDirectories as $tPath => $tObject) {
+    if (basename($tPath)!== '.ftpquota' && basename($tPath) !== 'DO_NOT_UPLOAD_HERE') {
+      $tTimeStamp = filemtime($tPath) > $tTimeStamp ? filemtime($tPath) : $tTimeStamp;
     }
   }
 
-  return date("F jS, Y", $timeStamp)." at ".date("h:i:s A T", $timeStamp);
+  return date("F jS, Y", $tTimeStamp)." at ".date("h:i:s A T", $tTimeStamp);
 }
 ?>
