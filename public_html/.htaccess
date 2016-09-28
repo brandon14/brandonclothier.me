@@ -3,3 +3,7 @@ Options -Indexes
 ErrorDocument 403 /error/error.php
 ErrorDocument 404 /error/error.php
 ErrorDocument 500 /error/error.php
+
+<FilesMatch "\.(php)$">
+php_value auto_append_file none
+</FilesMatch>
