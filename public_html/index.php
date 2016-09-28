@@ -546,7 +546,7 @@ require_once('../phpincludes/last-modified.php');
   <div class="container">
     <div id="copyright">
       Copyright &copy; <?php echo date('Y') ?> - Brandon Clothier
-      <br/>Website last updated <?php echo getLastModifiedTime(); ?>
+      <br/>Website last updated <?php echo getLastModifiedTime(); ?>.
     </div>
   </div>
 </footer>

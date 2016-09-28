@@ -115,7 +115,7 @@ echo '<div class="container">
   <div class="container">
     <div id="copyright">
       Copyright &copy; <?php echo date('Y') ?> - Brandon Clothier
-      <br/>Website last updated <?php echo getLastModifiedTime(); ?>
+      <br/>Website last updated <?php echo getLastModifiedTime(); ?>.
     </div>
   </div>
 </footer>
