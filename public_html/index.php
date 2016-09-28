@@ -518,8 +518,6 @@ require_once('../phpincludes/last-modified.php');
                     <div class="form-group">
                       <button id="send-email" type="submit" class="btn btn-raised btn-primary" aria-label="send">Send</button>
                       <!-- End placeholder for form validation alert -->
-                      <div id="contact-form-ajax-message" hidden>
-                      </div>
                     </div>
                     <!-- End send form group -->
                   </form>
