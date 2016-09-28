@@ -1,22 +1,6 @@
 <?php
 require_once('../../phpincludes/last-modified.php');
-?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <!-- General metadata -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport"              content="width=device-width, initial-scale=1">
-  <meta name="description"           content="Custom error page.">
-  <meta name="author"                content="Brandon Clothier">
-  <link rel="copyright"              href="#copyright">
-  <!-- TODO: Create a page favicon for the website -->
-
-  <!-- Theme meta for Google Chrome on Android -->
-  <meta name="theme-color"           content="#ff5722">
-<?php
 $gStatus = $_SERVER['REDIRECT_STATUS'];
 $gCodes = array(
         403 => array('403 Forbidden', 'Yo! I says you can\'t go here!.'),
@@ -35,6 +19,22 @@ if ($gTitle === false || strlen($gStatus) !== 3) {
   $gMessage = 'Erm... Me no understand that status code.';
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- General metadata -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"              content="width=device-width, initial-scale=1">
+  <meta name="description"           content="Custom error page.">
+  <meta name="author"                content="Brandon Clothier">
+  <link rel="copyright"              href="#copyright">
+  <!-- TODO: Create a page favicon for the website -->
+
+  <!-- Theme meta for Google Chrome on Android -->
+  <meta name="theme-color"           content="#ff5722">
 
   <title>Error! - <?php echo $gTitle ?></title>
 
@@ -90,23 +90,21 @@ if ($gTitle === false || strlen($gStatus) !== 3) {
 
 <div class="tab-content">
   <div class="tab-pane active">
-<?php
-echo '<div class="container">
-        <div class="jumbotron">
-          <div class="row">
-            <div class="col-sm-3">
-            </div>
-            <div class="col-sm-6">
-              <p><h2>'.$gTitle.'</h2></p>
-              <p>'.$gMessage.'</p>
-              <p class="small">'.$gApology.'</p>
-            </div>
-            <div class="col-sm-3">
-            </div>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-6">
+            <p><h2><?php echo $gTitle; ?></h2></p>
+            <p><?php echo $gMessage; ?></p>
+            <p class="small"><?php echo $gApology; ?></p>
+          </div>
+          <div class="col-sm-3">
           </div>
         </div>
-      </div';
-?>
+      </div>
+    </div>
   </div>
 </div>
 
