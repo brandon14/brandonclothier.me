@@ -2,7 +2,7 @@
 require_once('../phpincludes/last-modified.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
   <!-- General metadata -->
@@ -12,7 +12,7 @@ require_once('../phpincludes/last-modified.php');
   <meta name="description"           content="A website I made as a project to learn Bootstrap.">
   <meta name="author"                content="Brandon Clothier">
   <link rel="copyright"              href="#copyright">
-  <!-- TODO: Create a page favicon for the website -->
+  <link rel="icon"                   href="favicon.ico" type="image/x-icon" />
 
   <!-- Theme meta for Google Chrome on Android -->
   <meta name="theme-color"           content="#ff5722">
@@ -22,10 +22,12 @@ require_once('../phpincludes/last-modified.php');
   <meta property="og:type"           content="website" />
   <meta property="og:title"          content="Brandon Clothier" />
   <meta property="og:description"    content="A website about me!" />
-  <!-- TODO: Need to create an image for the OpenGraph property -->
-  <!--<meta property="og:image"          content="" /> -->
+  <meta property="og:image"          content="http://www.brandonclothier.net16.net/images/logo-large.png" />
 
-  <!-- TODO: Add Twitter card meta -->
+  <!-- Twitter meta -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@inhal3exh4le" />
+  <meta name="twitter:creator" content="@inhal3exh4le" />
 
   <title>Brandon Clothier</title>
 
