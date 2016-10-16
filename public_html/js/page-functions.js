@@ -9,27 +9,17 @@ var PageFunctions = (function() {
   var $offCanvasToggle = $('[data-toggle="offcanvas"]');
   var $offCanvasRow = $('.row-offcanvas');
 
-  var $tabDataToggle = $('a[data-toggle="tab"]');
-
   var $levelBar = $('.level-bar-inner');
 
   var $contactForm = $('#contact-form');
   var $name = $('#name');
   var $email = $('#email');
   var $message = $('#email-message');
-  var $formAjaxMessage = $('#contact-form-ajax-message');
 
   var $html = $('html');
   // ********** DOM Caching ********** //
 
   // ********** Basic initialization ********** //
-  // Go to the latest tab, if it exists:
-  var lastTab = localStorage.getItem('lastTab');
-  if (lastTab) {
-    var tab = $('[href="' + lastTab + '"]').tab('show');
-    $navbarBrand.text($(tab).text());
-  }
-
   // Set the progressbar widths to 0
   $levelBar.css('width', '0');
   // ********** Basic initialization ********** //
@@ -37,9 +27,6 @@ var PageFunctions = (function() {
   // ********** Bind events ********** //
   // Collapse navbar on select
   $(document).on('click', '.navbar-collapse.in', _hideOverlayOnSelect);
-
-  // Save the last selected tab to the local storage
-  $tabDataToggle.on('shown.bs.tab', _showLastTab);
 
   // Change the brand name on navbar item select
   $navbarItems.on('click', _setNavbarBrandText);
@@ -111,13 +98,6 @@ var PageFunctions = (function() {
    */
   function _setNavbarBrandText() {
     $navbarBrand.text($(this).text());
-  }
-
-  /**
-   * Function to show the last tab that was saved in the local storage.
-   */
-  function _showLastTab() {
-    localStorage.setItem('lastTab', $(this).attr('href'));
   }
 
   /**
