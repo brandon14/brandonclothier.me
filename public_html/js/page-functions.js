@@ -1,22 +1,23 @@
-var PageFunctions = (function() {
+(function(jQuery, ajax) {
+  "use strict";
   // ********** DOM Caching ********** //
-  var $darkOverlay = $('.dark-overlay');
+  var $darkOverlay = jQuery('.dark-overlay');
 
-  var $navbarToggle = $('.navbar-toggle');
-  var $navbarItems = $('#navbar-items > li > a');
-  var $navbarBrand = $('.navbar-brand');
+  var $navbarToggle = jQuery('.navbar-toggle');
+  var $navbarItems = jQuery('#navbar-items > li > a');
+  var $navbarBrand = jQuery('.navbar-brand');
 
-  var $offCanvasToggle = $('[data-toggle="offcanvas"]');
-  var $offCanvasRow = $('.row-offcanvas');
+  var $offCanvasToggle = jQuery('[data-toggle="offcanvas"]');
+  var $offCanvasRow = jQuery('.row-offcanvas');
 
-  var $levelBar = $('.level-bar-inner');
+  var $levelBar = jQuery('.level-bar-inner');
 
-  var $contactForm = $('#contact-form');
-  var $name = $('#name');
-  var $email = $('#email');
-  var $message = $('#email-message');
+  var $contactForm = jQuery('#contact-form');
+  var $name = jQuery('#name');
+  var $email = jQuery('#email');
+  var $message = jQuery('#email-message');
 
-  var $html = $('html');
+  var $html = jQuery('html');
   // ********** DOM Caching ********** //
 
   // ********** Basic initialization ********** //
@@ -26,7 +27,7 @@ var PageFunctions = (function() {
 
   // ********** Bind events ********** //
   // Collapse navbar on select
-  $(document).on('click', '.navbar-collapse.in', _hideOverlayOnSelect);
+  jQuery(document).on('click', '.navbar-collapse.in', _hideOverlayOnSelect);
 
   // Change the brand name on navbar item select
   $navbarItems.on('click', _setNavbarBrandText);
@@ -37,7 +38,7 @@ var PageFunctions = (function() {
   // Off canvas toggle
   $offCanvasToggle.on('click', _offCanvasToggle);
 
-  $(window).on('load', _animateProgressBars);
+  jQuery(window).on('load', _animateProgressBars);
 
   // Function to show the dark overlay whenever the navmenu is expanded
   $navbarToggle.on('click', _toggleOverlay);
@@ -53,8 +54,8 @@ var PageFunctions = (function() {
    * @param  {object} e The event.
    */
   function _hideOverlayOnSelect(e) {
-    if( $(e.target).is('a') && $(e.target).attr('class') !== 'navbar-toggle') {
-      $(this).collapse('hide');
+    if( jQuery(e.target).is('a') && jQuery(e.target).attr('class') !== 'navbar-toggle') {
+      jQuery(this).collapse('hide');
       if ($darkOverlay.is(':visible')) {
         $darkOverlay.hide();
         $html.removeClass('no-scroll');
@@ -73,9 +74,9 @@ var PageFunctions = (function() {
    * Function that will animate a single progress bar.
    */
   function _animateProgressBar() {
-    var itemWidth = $(this).data('level');
+    var itemWidth = jQuery(this).data('level');
 
-    $(this).animate({width: itemWidth}, 800);
+    jQuery(this).animate({width: itemWidth}, 800);
   }
 
   /**
@@ -97,7 +98,7 @@ var PageFunctions = (function() {
    * Function to set the navbar brand text.
    */
   function _setNavbarBrandText() {
-    $navbarBrand.text($(this).text());
+    $navbarBrand.text(jQuery(this).text());
   }
 
   /**
@@ -120,7 +121,7 @@ var PageFunctions = (function() {
     var email = $email.val();
     var message = $message.val();
 
-    AjaxFunctions.sendEmail(name, email, message, _processEmailResponse);
+    ajax.sendEmail(name, email, message, _processEmailResponse);
   }
 
   /**
@@ -131,16 +132,16 @@ var PageFunctions = (function() {
    */
   function _processEmailResponse(response) {
     if (response.responseType === 'SUCCESS') {
-      $.snackbar({content: response.response,
+      jQuery.snackbar({content: response.response,
                   timeout: 1500});
                   
       $name.val('');
       $email.val('');
       $message.val('');
     } else {
-      $.snackbar({content: 'Error Code: ' + response.responseType + '\nServer Response: ' + response.response,
+      jQuery.snackbar({content: 'Error Code: ' + response.responseType + '\nServer Response: ' + response.response,
                   timeout: 1500});
     }
   }
   // ********** Function declarations ********** //
-})();
+})(window.jQuery, window.AjaxModule);
