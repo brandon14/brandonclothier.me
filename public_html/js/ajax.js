@@ -3,9 +3,13 @@
  *
  * @type    {object}
  *
+ * @param   {jQuery} jQuery module.
+ *
  * @return  {object} sendEmail: Function to send an email
  */
-var AjaxFunctions = (function() {
+var AjaxModule = (function(jQuery) {
+  "use strict";
+  
   /**
    * The url for the send-email AJAX script.
    *
@@ -14,7 +18,7 @@ var AjaxFunctions = (function() {
   var ajaxUrl = '/ajax/send-email.php';
 
   /**
-   * Function to send an AJAX request to the send-email AJAX script to send a cotnact email
+   * Function to send an AJAX request to the send-email AJAX script to send a contact email
    * to me.
    *
    * @param  {string}   name     The name of the person sending a contact email.
@@ -23,7 +27,7 @@ var AjaxFunctions = (function() {
    * @param  {Function} callback Function to invoke upon AJAX request done.
    */
   function sendEmail(name, email, message, callback) {
-    var request = $.ajax({
+    var request = jQuery.ajax({
       type: 'POST',
       url: ajaxUrl,
       data: {'name' : name,
@@ -33,23 +37,23 @@ var AjaxFunctions = (function() {
     });
 
     request.done(function(response) {
-      var response;
+      var tResponse;
 
       try {
-        response = $.parseJSON(response);
+        tResponse = jQuery.parseJSON(response);
       } catch(error) {
         callback({'responseType' : 'PARSE_ERROR',
                   'response'     : 'I couldn\'nt even parse this AJAX response yo!'});
       }
 
-      callback(response);
+      callback(tResponse);
     });
   }
 
   /**
-   * Return our public API
+   * Return the public API
    */
   return {
     sendEmail : sendEmail
-  }
-})();
+  };
+})(window.jQuery);
