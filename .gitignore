@@ -1,4 +1,8 @@
 # remote-sync config
 .remote-sync.json
+# jshint config
+.jshintrc
+# Node modules
 node_modules
+# Bower components
 bower_components
