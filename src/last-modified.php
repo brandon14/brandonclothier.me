@@ -16,4 +16,3 @@ function getLastModifiedTime() {
 
   return date("F jS, Y", $tTimeStamp)." at ".date("h:i:s A T", $tTimeStamp);
 }
-?>

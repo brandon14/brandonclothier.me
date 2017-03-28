@@ -1,5 +1,5 @@
 <?php
-require_once('../phpincludes/last-modified.php');
+require_once('../src/last-modified.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">

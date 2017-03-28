@@ -1,5 +1,5 @@
 <?php
-require_once('../../phpincludes/last-modified.php');
+require_once('../../src/last-modified.php');
 
 $gStatus = $_SERVER['REDIRECT_STATUS'];
 $gCodes = array(
