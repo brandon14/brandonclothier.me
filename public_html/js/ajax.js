@@ -15,7 +15,7 @@ var AjaxModule = (function(jQuery) {
    *
    * @type  {string}
    */
-  var ajaxUrl = '/ajax/send-email/';
+  var ajaxUrl = '/ajax/send-mail/';
 
   /**
    * Function to send an AJAX request to the send-email AJAX script to send a contact email
