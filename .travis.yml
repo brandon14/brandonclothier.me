@@ -5,37 +5,24 @@ php:
   - 7.0
   - 7.1
 
-env:
-  global:
-    - setup=basic
-
-matrix:
-  fast_finish: true
-  include:
-    - php: 5.6
-      env: setup=lowest
-    - php: 5.6
-      env: setup=stable
-
-sudo: false
+sudo: required
 
 cache:
   directories:
     - $HOME/.composer/cache
 
 services:
-  - memcached
-  - redis-server
+  - mysql
 
-before_install:
-  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
-  - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - pecl install -f redis
-  - travis_retry composer self-update
-
-install:
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable --no-suggest; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
+before_script:
+  - cp .env.travis .env
+  - mysql -u root -e 'create database travis-ci;'
+  - composer self::update
+  - composer install --dev --prefer-source --no-interaction
+  - php artisan key:generate
+  - composer dump-autoload
+  - sudo chgrp -R www-data storage bootstrap/cache
+  - sudo chmod -R ug+rwx storage bootstrap/cache
+  - sudo php artisan config:cache
 
 script: vendor/bin/phpunit
