@@ -1,0 +1,306 @@
+/*
+ * Template Name: Orbit - Responsive Resume/CV Template for Developers
+ * Version: 1.0
+ * Author: Xiaoying Riley
+ * Twitter: @3rdwave_themes
+ * License: Creative Commons Attribution 3.0 License
+ * Website: http://themes.3rdwavemedia.com/
+*/
+/* styles.css */
+/* ======= Base ======= */
+
+@import "material-variables";
+
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+.sidebar-wrapper {
+  background: $resume-sidebar;
+  position: absolute;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  min-height: 800px;
+  color: $resume-sidebar-text-color;
+
+  a {
+    color: $resume-sidebar-text-color;
+  }
+
+  .profile-container {
+    padding: 30px;
+    background: darken($resume-sidebar, 5%);
+    text-align: center;
+    color: $resume-sidebar-text-color;
+  }
+
+  .name {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    color: rgba($resume-sidebar-text-color, 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .profile {
+    margin-bottom: 15px;
+  }
+
+  .contact-list {
+    .fa {
+      color: #fff;
+      margin-right: 5px;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    li {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .email .fa {
+      font-size: 14px;
+    }
+  }
+
+  .container-block {
+    padding: 30px;
+  }
+
+  .container-block-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .degree {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .education-container {
+    .item {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .meta {
+      color: rgb(255, 255, 255);
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .time {
+      color: rgb(255, 255, 255);
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+
+  .languages-container .lang-desc {
+    color: rgba($resume-sidebar-text-color, 0.7);
+  }
+
+  .languages-list, .interests-list {
+    margin-bottom: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.main-wrapper {
+  background: $resume-main-background;
+  padding: 60px 310px 60px 60px;
+
+  .section-title {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    color: $resume-section-title;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    a {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 500;
+      color: $resume-section-title;
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .fa {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      display: inline-block;
+      color: #fff;
+      border-radius: 50%;
+      background-clip: padding-box;
+      background: $resume-section-title;
+      text-align: center;
+      padding-top: 8px;
+      font-size: 16px;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .resume-section {
+    margin-bottom: 60px;
+  }
+
+  .download-section {
+    margin-bottom: 0;
+  }
+
+  .experiences-section .item {
+    margin-bottom: 30px;
+  }
+
+  .upper-row {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+
+  .job-title {
+    color: $resume-job-title;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+
+  .time {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $resume-job-details;
+  }
+
+  .company {
+    margin-bottom: 10px;
+    color: $resume-job-details;
+  }
+
+  .project-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .projects-section {
+    .intro {
+      margin-bottom: 30px;
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.skillset {
+  .item {
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .level-title {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .level-bar {
+    height: 12px;
+    background: $resume-level-bar;
+  }
+
+  .level-bar-inner {
+    height: 12px;
+    background: $resume-level-bar-filled;
+  }
+}
+
+.resume-jumbotron {
+  padding: 0 !important;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .sidebar-wrapper {
+    position: static;
+    width: inherit;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    padding: 30px;
+
+    .time {
+      position: static;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .upper-row {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .skillset {
+    .level-title {
+      display: inline-block;
+      float: left;
+      width: 30%;
+      margin-bottom: 0;
+    }
+
+    .level-bar {
+      display: inline-block;
+      width: 70%;
+      float: left;
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+/* Ex-Large devices (large desktops, 1200px and up) */

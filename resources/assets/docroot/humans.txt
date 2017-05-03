@@ -1,0 +1,15 @@
+/* TEAM */
+Lead developer: Brandon Clothier
+Site: https://brandonclothier.me
+Twitter: @inhal3exh4le
+Location: Kentucky, USA
+
+/* THANKS */
+Laravel: https://laravel.com
+000webhost: https://000webhost.com
+Clodflare: https://www.cloudflare.com
+
+/* SITE */
+Standards: HTML(5), JavaScript, CSS(3)
+Components: Laravel, Bootstrap, jQuery, axios, PHP, webpack
+ 

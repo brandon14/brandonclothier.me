@@ -1,11 +1,38 @@
-# remote-sync config
-.remote-sync.json
-# jshint config
-.jshintrc
 # Node modules
-node_modules
-# Bower components
-bower_components
+/node_modules
 
-# env file
+# Key files
+/storage/*.key
+
+# Composer vendor folder
+/vendor
+
+# IntelliJ files
+/.idea
+
+# Vargrant and homestead files
+/.vagrant
+Homestead.json
+Homestead.yaml
+
+# Dotenv file
 .env
+
+# Compiled front-end assets
+/public_html/js
+/public_html/css
+/public_html/files
+/public_html/fonts
+/public_html/images
+/public_html/.htaccess
+/public_html/favicon.ico
+/public_html/humans.txt
+/public_html/mix-manifest.json
+/public_html/robots.txt
+/public_html/hot
+/public_html/storage
+
+# Yarn and node debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

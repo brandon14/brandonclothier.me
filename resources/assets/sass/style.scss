@@ -1,0 +1,286 @@
+@import "material-variables";
+
+/* Hidden hack for IE 9 */
+[hidden] {
+  display: none;
+}
+/* End hidden hack for IE 9 */
+
+/* General style */
+body {
+  color: $main-text-color;
+  background-color: $background-color;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+/* End general style */
+
+/* No-scroll to apply when nav menu is shown */
+.no-scroll {
+  overflow: hidden;
+}
+/* End no-scroll */
+
+/* Navbar style */
+.navbar {
+  background-color: $navbar-color !important;
+}
+
+@media (min-width: 767px) {
+  .navbar {
+    background-color: rgba($navbar-color, 0.4) !important;
+    padding: 10px 0;
+    transition: background 0.25s ease-in-out, padding 0.25s ease-in-out;
+  }
+
+  .navbar.affix {
+    padding: 0;
+    background-color: $navbar-color !important;
+  }
+
+  .navbar .navbar-nav {
+    > li {
+      > a:hover,
+      > a.hover {
+        background-color: rgba($navbar-link-hover, 0.4);
+      }
+      > a:active,
+      > a.active {
+        background-color: rgba($navbar-link-active, 0.4);
+      }
+    }
+  }
+
+  .navbar.affix {
+    > li {
+      > a:hover,
+      > a.hover {
+        background-color: $navbar-link-hover;
+      }
+      > a:active,
+      > a.active {
+        background-color: $navbar-link-active;
+      }
+    }
+  }
+}
+
+/* Overrides for navbar links */
+@media (max-width: 766px) {
+  .navbar .navbar-nav {
+    > li {
+      > a:hover,
+      > a.hover {
+        background-color: $navbar-link-hover;
+      }
+      > a:active,
+      > a.active {
+        background-color: $navbar-link-active;
+      }
+    }
+  }
+}
+/* End overrides for navbar links */
+/* End navbar style */
+
+/* Section styles */
+hr {
+  border-top: 1px solid $divider-color;
+  margin: 0 auto 50px auto;
+  max-width: 400px;
+  position: relative;
+}
+
+.down-arrow-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 10px;
+
+  a {
+    font-size: 28px;
+  }
+}
+
+.section {
+  padding-top: 75px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.landing-section {
+  position: relative;
+  height: 100%;
+  background: url(../images/hallway.jpg) no-repeat left center fixed;
+  background-size: cover;
+
+  .quote-container {
+    width: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    max-width: 650px;
+    background: $quote-container-color;
+    padding: 10px;
+    font-family: 'daniel', 'Give You Glory', cursive;
+
+    .quote {
+      font-size: 26px;
+      color: $quote-color;
+    }
+
+    .author {
+      font-size: 20px;
+      color: $author-color;
+    }
+  }
+}
+
+.about-section {
+}
+
+.resume-section {;
+}
+
+.contact-section {
+  padding-bottom: 100px;
+
+  form {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+/* End section styles */
+
+/* Footer style */
+.footer {
+  color: $footer-color;
+  background: $footer-background;
+  padding: 10px 0;
+}
+
+.footer-right,
+.footer-left {
+  text-align: center;
+}
+
+.footer-right {
+  .social-buttons {
+    a.btn-block {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 250px;
+    }
+  }
+
+  .copyright {
+    padding: 5px;
+  }
+}
+
+.footer-left {
+  .footer-icon {
+    padding-bottom: 5px;
+
+    img {
+      height: 50px;
+    }
+  }
+}
+
+.twitter-button {
+  padding-top: 5px;
+}
+
+@media (min-width: 992px) {
+  .footer-left {
+    padding-top: 50px;
+    text-align: left;
+  }
+}
+/* End footer style */
+
+/* Dark overlay style */
+.dark-overlay {
+  width: 100%;
+  height: 100%;
+  background: $dark-overlay;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+/* End dark overlay style */
+
+/* Overrides for Social Buttons for Bootstrap */
+@mixin btn-social-override($color-bg, $color: #fff) {
+  background-color: $color-bg !important;
+  color: $color !important;
+  @include button-variant($color, $color-bg, rgba(0, 0, 0, 0.2));
+
+  &:focus,
+  &.focus {
+    background-color: darken($color-bg, 10%) !important;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: darken($color-bg, 10%) !important;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: darken($color-bg, 17%) !important;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $color-bg !important;
+    }
+  }
+}
+
+.btn-social {
+  text-transform: none !important;
+}
+
+.btn-adn           { @include btn-social-override(#d87a68); }
+.btn-bitbucket     { @include btn-social-override(#205081); }
+.btn-dropbox       { @include btn-social-override(#1087dd); }
+.btn-facebook      { @include btn-social-override(#3b5998); }
+.btn-flickr        { @include btn-social-override(#ff0084); }
+.btn-foursquare    { @include btn-social-override(#f94877); }
+.btn-github        { @include btn-social-override(#444444); }
+.btn-google        { @include btn-social-override(#dd4b39); }
+.btn-instagram     { @include btn-social-override(#3f729b); }
+.btn-linkedin      { @include btn-social-override(#007bb6); }
+.btn-microsoft     { @include btn-social-override(#2672ec); }
+.btn-odnoklassniki { @include btn-social-override(#f4731c); }
+.btn-openid        { @include btn-social-override(#f7931e); }
+.btn-pinterest     { @include btn-social-override(#cb2027); }
+.btn-reddit        { @include btn-social-override(#eff7ff, #000); }
+.btn-soundcloud    { @include btn-social-override(#ff5500); }
+.btn-tumblr        { @include btn-social-override(#2c4762); }
+.btn-twitter       { @include btn-social-override(#55acee); }
+.btn-vimeo         { @include btn-social-override(#1ab7ea); }
+.btn-vk            { @include btn-social-override(#587ea3); }
+.btn-yahoo         { @include btn-social-override(#720e9e); }
+/* End overrides for Social Buttons for Bootstrap */
