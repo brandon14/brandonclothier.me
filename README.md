@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/brandon14/brandonclothier.me.svg?branch=master)](https://travis-ci.org/brandon14/brandonclothier.me) [![Code Climate](https://codeclimate.com/github/brandon14/brandonclothier.me.svg)](https://codeclimate.com/github/brandon14/brandonclothier.me) [![Dependency Status](https://david-dm.org/brandon14/brandonclothier.me.svg)](https://david-dm.org/brandon14/brandonclothier.me) [![devDependency Status](https://david-dm.org/brandon14/brandonclothier.me/dev-status.svg)](https://david-dm.org/brandon14/brandonclothier.me#info=devDependencies) [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 # brandonclothier.me
 ### Source code for https://brandonclothier.me
 
@@ -12,3 +13,6 @@ an admin portal much like a WYSIWYG page.
 This code is released under the MIT license.
 
 Copyright 2017 Brandon Clothier
+
+[![forthebadge](http://forthebadge.com/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/badges/certified-steve-bruhle.svg)](http://forthebadge.com) 
+[![forthebadge](http://forthebadge.com/badges/powered-by-electricity.svg)](http://forthebadge.com)
