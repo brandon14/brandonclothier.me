@@ -2,7 +2,6 @@
 /**
  * brandonclothier.me - A personal website for Brandon Clothier.
  *
- * @package  brandonclothier.me
  * @author   Brandon Clothier <brandon14125@gmail.com>
  */
 
@@ -18,7 +17,7 @@
 |
 */
 
-require __DIR__ . '/../bootstrap/autoload.php';
+require __DIR__.'/../bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +31,7 @@ require __DIR__ . '/../bootstrap/autoload.php';
 |
 */
 
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
