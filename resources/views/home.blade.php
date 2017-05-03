@@ -238,7 +238,7 @@
               <!-- Project item -->
               <div class="item">
                 <span class="project-title">
-                  <a class="link" href="https://github.com/brandon14/my-website" target="_blank">brandonclothier.me</a>
+                  <a class="link" href="https://github.com/brandon14/brandonclothier.me" target="_blank">brandonclothier.me</a>
                 </span> -
                 <span class="project-tagline">The source code for this website. It is developed with Laravel, a PHP MVC framework.</span>
               </div>
