@@ -16,7 +16,7 @@ services:
 
 before_script:
   - cp .env.travis .env
-  - mysql -u root -e 'create database travis-ci;'
+  - mysql -u root -e 'create database travis_ci;'
   - composer self::update
   - composer install --dev --prefer-source --no-interaction
   - php artisan key:generate
