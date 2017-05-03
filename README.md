@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://travis-ci.org/brandon14/brandonclothier.me"><img src="https://travis-ci.org/brandonclothier.me.svg" alt="Build Status"></a>
-  <a href="https://codeclimate.com/github/brandon14/brandonclothier.me"><img src="https://codeclimate.com/brandon14/brandonclothier.me.svg" alt="Code Climate"></a>
+  <a href="https://travis-ci.org/brandon14/brandonclothier.me"><img src="https://travis-ci.org/brandon14/brandonclothier.me.svg?branch=master" alt="Build Status"></a>
+  <a href="https://codeclimate.com/github/brandon14/brandonclothier.me"><img src="https://codeclimate.com/github/brandon14/brandonclothier.me.svg" alt="Code Climate"></a>
   <a href="https://david-dm.org/brandon14/brandonclothier.me"><img src="https://david-dm.org/brandon14/brandonclothier.me.svg" alt="Dependencies"></a>
   <a href="https://david-dm.org/brandon14/brandonclothier.me#info=devDependencies"><img src="https://david-dm.org/brandon14/brandonclothier.me/dev-status.svg" alt="Dev Dependencies"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT"></a>
