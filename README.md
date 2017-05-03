@@ -21,5 +21,9 @@ This code is released under the MIT license.
 
 Copyright 2017 Brandon Clothier
 
-[![forthebadge](http://forthebadge.com/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/badges/certified-steve-bruhle.svg)](http://forthebadge.com) 
-[![forthebadge](http://forthebadge.com/badges/powered-by-electricity.svg)](http://forthebadge.com)
+<p align="center">
+  <a href="https://forthebadge.com"><img src="http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg" alt="Works 60% Of The Time"></a>
+  <a href="https://forthebadge.com"><img src="http://forthebadge.com/images/badges/certified-steve-bruhle.svg" alt="Dr. Steve Brule"></a>
+  <a href="https://forthebadge.com"><img src="http://forthebadge.com/images/badges/contains-technical-debt.svg" alt="Contains Technical Debt"></a>
+  <a href="https://forthebadge.com"><img src="http://forthebadge.com/images/badges/built-by-neckbeards.svg" alt="Built By Neckbeards"></a>
+</p>
