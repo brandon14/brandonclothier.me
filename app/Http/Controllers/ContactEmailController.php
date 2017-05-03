@@ -12,8 +12,8 @@ class ContactEmailController extends Controller
     {
         $contactEmail = config('mail.contactemail');
 
-        $name    = $request->input('name') ? strip_tags($request->input('name')) : null;
-        $email   = $request->input('email') ? filter_var($request->input('email'), FILTER_SANITIZE_EMAIL) : null;
+        $name = $request->input('name') ? strip_tags($request->input('name')) : null;
+        $email = $request->input('email') ? filter_var($request->input('email'), FILTER_SANITIZE_EMAIL) : null;
         $message = $request->input('message') ?: 'No message';
 
         if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
