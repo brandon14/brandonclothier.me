@@ -3,9 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Symfony\Component\Process\ProcessUtils;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\PhpExecutableFinder;
-use Symfony\Component\Process\ProcessUtils;
 
 class Serve extends Command
 {
@@ -32,7 +32,7 @@ class Serve extends Command
      */
     public function fire()
     {
-        chdir($this->laravel->basePath() . '/public_html');
+        chdir($this->laravel->basePath().'/public_html');
 
         $this->line("<info>Laravel development server started:</info> <http://{$this->host()}:{$this->port()}>");
 

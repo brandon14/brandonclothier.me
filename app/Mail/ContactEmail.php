@@ -4,16 +4,11 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ContactEmail extends Mailable
 {
     use Queueable;
 
-    /**
-     *
-     */
     protected $email;
     protected $name;
     protected $message;
@@ -25,8 +20,8 @@ class ContactEmail extends Mailable
      */
     public function __construct(array $emailVars)
     {
-        $this->email   = $emailVars['email'];
-        $this->name    = $emailVars['name'];
+        $this->email = $emailVars['email'];
+        $this->name = $emailVars['name'];
         $this->message = $emailVars['message'];
     }
 
