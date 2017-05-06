@@ -13,4 +13,10 @@
 ## Specifications
 
   - Laravel Version:
-  - Platform:
+  - Platform:
+  - Browser:
+
+## Notes
+
+
+## Screenshots
