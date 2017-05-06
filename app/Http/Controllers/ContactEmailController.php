@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactEmailController extends Controller
 {
+    /**
+     * Controller function to send a contact email to the contact email configured.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function sendEmail(Request $request)
     {
         $contactEmail = config('mail.contactemail');

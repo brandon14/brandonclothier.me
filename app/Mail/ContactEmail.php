@@ -16,7 +16,7 @@ class ContactEmail extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param  array $emailVars
      */
     public function __construct(array $emailVars)
     {
