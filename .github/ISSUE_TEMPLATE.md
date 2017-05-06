@@ -6,15 +6,15 @@
 
 ## Steps to Reproduce the Problem
 
-  1.
-  1.
-  1.
+1.
+1.
+1.
 
 ## Specifications
 
-  - Laravel Version:
-  - Platform:
-  - Browser:
+- Laravel Version:
+- Platform:
+- Browser:
 
 ## Notes
 
