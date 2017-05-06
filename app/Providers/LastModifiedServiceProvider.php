@@ -9,6 +9,20 @@ use Illuminate\Support\ServiceProvider;
 class LastModifiedServiceProvider extends ServiceProvider
 {
     /**
+     * List of excluded directories when traversing application folders.
+     *
+     * @var array
+     */
+    private $excludedDirectories = [
+        'vendor',
+        'node_modules',
+        'tmp',
+        'storage',
+        'tests',
+        'cache',
+    ];
+
+    /**
      * Register the application services.
      *
      * @return void
@@ -20,6 +34,11 @@ class LastModifiedServiceProvider extends ServiceProvider
         });
     }
 
+    /**
+     * Function to get the last modified file time for the web application directory.
+     *
+     * @return string
+     */
     protected function getLastModifiedDate()
     {
         date_default_timezone_set(config('app.timezone'));
@@ -29,9 +48,7 @@ class LastModifiedServiceProvider extends ServiceProvider
         $directories = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($this->app->basePath()));
 
         foreach ($directories as $path => $object) {
-            if (basename($path) !== '.ftpquota' &&
-                basename($path) !== 'DO_NOT_UPLOAD_HERE' &&
-                basename($path) !== 'tmp') {
+            if (! in_array(basename($path), $this->excludedDirectories, true)) {
                 $timeStamp = filemtime($path) > $timeStamp ? filemtime($path) : $timeStamp;
             }
         }
