@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,4 +11,4 @@
 |
 */
 
-Route::post('/contact', 'ContactEmailController@sendEmail');
+Route::post('/contact', 'ContactEmailController@sendEmail')->middleware('throttle:1,1');

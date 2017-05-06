@@ -44,21 +44,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($this->shouldntReport($exception)) {
-            return;
-        }
-
-        if ($request->is('contact-email')) {
+        // Make sure our api routes always return JSON
+        if ($request->is('api/*')) {
             $message = 'Oops! Something went wrong.';
+            $code = $exception->getStatusCode() ?: 500;
 
             if (config('app.debug')) {
-                $message = $eception->getMessage();
+                $message = $exception->getMessage();
             }
 
             return response()->json([
                 'error_message' => $message,
-                'status' => 500,
-            ], 500);
+                'status' => $code,
+            ], $code);
         }
 
         return parent::render($request, $exception);

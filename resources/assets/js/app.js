@@ -18,7 +18,6 @@ window.jQuery = $;
 require('jquery.easing');
 require('bootstrap-sass');
 require('bootstrap-material-design');
-require('snackbarjs');
 
 (() => {
   // ********** API URL ********** //
@@ -36,9 +35,12 @@ require('snackbarjs');
   const $levelBar = $('.level-bar-inner');
 
   const $contactForm = $('#contact-form');
+  const $sendButton = $('#send-email');
   const $name = $('#name');
   const $email = $('#email');
   const $message = $('#email-message');
+  const $modal = $('#contact-modal');
+  const $modalContent = $('#modal-content');
 
   const $html = $('html');
   // ********** DOM Caching ********** //
@@ -58,6 +60,9 @@ require('snackbarjs');
   // Animate the resume progress bars
   $window.on('load', animateProgressBars);
 
+  // Remove modal content on hide
+  $modal.on('hidden.bs.modal', removeModalContent);
+
   // Affix for navbar to collapse on scroll
   $navbar.affix({
     offset: {
@@ -73,9 +78,20 @@ require('snackbarjs');
   // ********** Bind events ********** //
 
   // ********** Function declarations ********** //
+  /**
+   * Function to reset the modal content.
+   */
+  function removeModalContent() {
+    $modalContent.html('');
+  }
+
+  /**
+   * Function to scroll to the section anchor on navbar click
+   *
+   * @param {object} e Event.
+   */
   function sectionOnClick(e) {
     const $anchor = $(this);
-    const hash = this.hash;
 
     e.preventDefault();
 
@@ -88,7 +104,7 @@ require('snackbarjs');
    * Function to hide the dark-overlay and reenable scrolling on the page
    * whenever a navbar item is selected.
    *
-   * @param  {object} e The event.
+   * @param {object} e Event.
    */
   function hideOverlayOnSelect(e) {
     if ($(e.target).is('a') && $(e.target).attr('class') !== 'navbar-toggle') {
@@ -129,7 +145,7 @@ require('snackbarjs');
    * Function to fire an AJAX request to send a contact email to my contact email from
    * a user on the page.
    *
-   * @param  {object} e The event from the form submit.
+   * @param {object} e Event from the form submit.
    */
   function sendEmail(e) {
     e.preventDefault();
@@ -138,6 +154,8 @@ require('snackbarjs');
     const email = $email.val();
     const message = $message.val();
 
+    $sendButton.prop('disabled', true);
+
     sendContactEmail(name, email, message, processEmailResponse);
   }
 
@@ -145,26 +163,35 @@ require('snackbarjs');
    * Function to process the AJAX response and show a snackbar to inform the user the
    * status of his contact email.
    *
-   * @param  {object} response The JSON response from the AJAX call.
+   * @param {object} response JSON response from the AJAX call.
    */
   function processEmailResponse(response) {
     if (response.status === 200) {
-      $.snackbar({
-        content: response.response,
-        timeout: 1500,
-      });
+      $modalContent.html(response.response);
 
       $name.val('');
       $email.val('');
       $message.val('');
+    } else if (response.status === 429) {
+      $modalContent.html(response.response);
     } else {
-      $.snackbar({
-        content: `Error Code: ${response.status} \nServer Response: ${response.response}`,
-        timeout: 1500,
-      });
+      $modalContent.html(`Error Code: ${response.status} \nServer Response: ${response.response}`);
     }
+
+    $modal.modal({
+      backdrop: 'static',
+    });
+
+    $sendButton.prop('disabled', false);
   }
 
+  /**
+   * Function to make the API request to send the contact email.
+   * @param {String}   name     Contact name.
+   * @param {String}   email    Contact from email address.
+   * @param {String}   message  Email message to send.
+   * @param {Function} callback Callback function to execute when response is returned.
+   */
   function sendContactEmail(name, email, message, callback) {
     axios.post(ajaxUrl, {
       name,
@@ -176,12 +203,22 @@ require('snackbarjs');
         response: response.data.response,
       });
     }).catch((error) => {
-      let tResponse;
+      let tResponse = {};
 
       if (error.response) {
+        let errorMessage = 'Undefined error.';
+
+        if (error.response.data.error_message) {
+          errorMessage = error.response.data.error_message;
+        } else if (error.response.data.response) {
+          errorMessage = error.response.data.response;
+        } else {
+          errorMessage = error.response.data;
+        }
+
         tResponse = {
           status: error.response.status,
-          response: error.response.data.response,
+          response: errorMessage,
         };
       } else if (error.request) {
         tResponse = {
