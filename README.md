@@ -8,7 +8,7 @@
 <p align="center">
   <a href="https://github.com/brandon14/brandonclothier.me/issues"><img src="https://img.shields.io/github/issues/brandon14/brandonclothier.me.svg?style=flat-square" alt="Issues"></a>
   <a href="https://github.com/brandon14/brandonclothier.me/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/brandon14/brandonclothier.me.svg?style=flat-square" alt="Issues Closed"></a>
-  <a href="https://github.com/brandon14/brandonclothier.me/pulls"><img src="https://img.shields.io/github/issues/brandon14/brandonclothier.me.svg?style=flat-square" alt="Pull Requests"></a>
+  <a href="https://github.com/brandon14/brandonclothier.me/pulls"><img src="https://img.shields.io/github/issues-pr/brandon14/brandonclothier.me.svg?style=flat-square" alt="Pull Requests"></a>
   <a href="https://github.com/brandon14/brandonclothier.me/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed/brandon14/brandonclothier.me.svg?style=flat-square" alt="Pull Requests Closed"></a>
 </p>
 
