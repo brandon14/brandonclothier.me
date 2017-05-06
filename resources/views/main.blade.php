@@ -1,36 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ config('app.locale') }}" @yield('prefix', '')>
   <head>
     <!-- General meta-data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"              content="width=device-width, initial-scale=1">
-    <meta name="description"           content="The official website of Brandon Clothier.">
-    <meta name="author"                content="Brandon Clothier">
-    <link rel="copyright"              href="#copyright">
-    <link rel="icon"                   href="favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"              content="width=device-width, initial-scale=1" />
+    @yield('meta', '')
 
-    <!-- Theme meta for Google Chrome on Android -->
-    <meta name="theme-color"           content="#212121">
+    @yield('theme-color', '')
 
-    <!-- Facebook OpenGraph meta -->
-    <meta property="og:url"            content="https://brandonclothier.me" />
-    <meta property="og:type"           content="website" />
-    <meta property="og:title"          content="Brandon Clothier" />
-    <meta property="og:description"    content="A website about me!" />
-    <meta property="og:image"          content="https://brandonclothier.me/images/logo-large.png" />
-
-    <!-- Twitter meta -->
-    <meta name="twitter:card"          content="summary" />
-    <meta name="twitter:site"          content="@inhal3exh4le" />
-    <meta name="twitter:creator"       content="@inhal3exh4le" />
+    @yield('social-media-meta', '')
 
     <!-- Google site verification -->
     <meta name="google-site-verification" content="IgeOtYawyBKAdF-WPySo9h_O2AL489RQlUxE4XFRqAE" />
 
-    <title>@yield('title')</title>
+    <title>@yield('title', config('app.name'))</title>
 
-    @include('components.app-css')
+    @includeIf('components.app-css')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,10 +31,5 @@
       ]) !!};
     </script>
   </head>
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75">
-    @include('components.header')
-    @yield('content')
-    @include('components.footer')
-    @include('components.app-js')
-  </body>
+  @yield('body', '<body></body>')
 </html>

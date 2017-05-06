@@ -1,5 +1,6 @@
 @import "node_modules/bootstrap-material-design/sass/_colors";
 
+// Main variables
 $brand-primary: $deep-orange;
 $navbar-color: $grey-900;
 $navbar-link-hover: lighten($navbar-color, 4%);
@@ -8,9 +9,11 @@ $link-color: $deep-orange;
 
 $background-color: $grey-200;
 $main-text-color: $grey-900;
+$light-text-color: $grey-200;
 
 $contact-sidebar-wrapper: $grey-500;
 
+// Footer variables
 $footer-background: $grey-900;
 $footer-color: $grey-200;
 
@@ -18,12 +21,14 @@ $dark-overlay: rgba($black, .7);
 
 $divider-color: $grey-500;
 
+// Quote variables
 $quote-container-color: rgba($black, 0.7);
 $quote-color: $grey-200;
 $author-color: $grey-500;
 
+// Resume variables
 $resume-sidebar: $deep-orange-500;
-$resume-sidebar-text-color: $grey-200;
+$resume-sidebar-text-color: $light-text-color;
 
 $resume-main-background: $grey-300;
 $resume-section-title: $deep-orange-900;
