@@ -125,7 +125,8 @@ hr {
   background: url(../images/hallway.jpg) no-repeat left center fixed;
   background-size: cover;
 
-  .quote-container {
+  .quote-container,
+  .error-container {
     width: 75%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -137,7 +138,8 @@ hr {
     padding: 10px;
     font-family: 'daniel', 'Give You Glory', cursive;
 
-    .quote {
+    .quote,
+    .error {
       font-size: 26px;
       color: $quote-color;
     }
