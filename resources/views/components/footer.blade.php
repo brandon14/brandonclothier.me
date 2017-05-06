@@ -11,14 +11,12 @@
           <div class="fb-share-button" data-href="https://brandonclothier.me/" data-layout="button_count"
                data-mobile-iframe="true">
             <a class="fb-xfbml-parse-ignore" target="_blank"
-               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share
-            </a>
+               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a>
           </div>
           <!-- Twitter button -->
           <div class="twitter-button">
             <a class="twitter-share-button"
-               href="https://twitter.com/intent/tweet?text=brandonclothier.me%20is%20an%20awesome%20website!">
-              Tweet</a>
+               href="https://twitter.com/intent/tweet?text=brandonclothier.me%20is%20an%20awesome%20website!"></a>
           </div>
         </div>
       </div>
@@ -53,8 +51,8 @@
           <!-- End email links -->
         </div>
         <div id="copyright" class="copyright">
-          Copyright &copy; {{ date('Y') }} - Brandon Clothier
-          <br/>Website last updated {{ $lastModified }}
+          Copyright &copy; 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
+          <br/>Website last updated {{ app('lastModified') }}
         </div>
       </div>
     </div>
