@@ -40,7 +40,7 @@
         </div>
         <div id="copyright" class="copyright">
           Copyright &copy; 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
-          <br/>Website last updated {{ app('lastModified') }}}
+          <br/>Website last updated {{ app('lastModified') }}
         </div>
       </div>
     </div>
