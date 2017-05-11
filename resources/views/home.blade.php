@@ -10,6 +10,8 @@ prefix="og: http://ogp.me/ns#"
 <meta name="keywords"              content="resume, personal website, web developer, php, laravel" />
 <link rel="copyright"              href="#copyright" />
 <link rel="icon"                   href="favicon.ico" type="image/x-icon" />
+
+<meta name="csrf-token"            content="{{ csrf_token() }}">
 @endsection
 
 @section('theme-color')

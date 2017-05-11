@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::post('/contact', 'ContactEmailController@sendEmail')->middleware('throttle:1,1');
