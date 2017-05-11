@@ -8,8 +8,16 @@
 import $ from 'jquery';
 import axios from 'axios';
 
-axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+// Set up CSRF token from meta tag for Axios AJAX requests
+const token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found.');
+}
 
 window.axios = axios;
 window.$ = $;
@@ -20,8 +28,8 @@ require('bootstrap-sass');
 require('bootstrap-material-design');
 
 (() => {
-  // ********** API URL ********** //
-  const ajaxUrl = '/api/contact';
+  // ********** Contact API URL ********** //
+  const ajaxUrl = '/contact';
 
   // ********** DOM Caching ********** //
   const $darkOverlay = $('.dark-overlay');
