@@ -1,5 +1,6 @@
 const { mix } = require('laravel-mix');
 const path = require('path');
+const webpack = require('webpack');
 
 const publicPath = path.resolve('public_html');
 const isDev = process.env.NODE_ENV === 'development';
@@ -17,7 +18,15 @@ const isDev = process.env.NODE_ENV === 'development';
 
 mix.setPublicPath(publicPath);
 
-// TODO: Configure eslint preloader and tune babel settings here
+mix.webpackConfig({
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
+    }),
+  ],
+});
 
 mix.js('resources/assets/js/app.js', 'js')
    .sass('resources/assets/sass/app.scss', 'css', {
