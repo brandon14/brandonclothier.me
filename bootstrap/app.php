@@ -52,7 +52,7 @@ $app->singleton(
 
 $app->configureMonologUsing(function ($monolog) use ($app) {
     $bubble = false;
-    
+
     $debugStreamHandler = new \Monolog\Handler\StreamHandler(
         $app->storagePath().'/logs/laravel_debug.log',
         \Monolog\Logger::DEBUG,
@@ -93,7 +93,7 @@ $app->configureMonologUsing(function ($monolog) use ($app) {
         \Monolog\Logger::EMERGENCY,
         $bubble
     );
-    
+
     $monolog->pushHandler($debugStreamHandler);
     $monolog->pushHandler($infoStreamHandler);
     $monolog->pushHandler($noticeStreamHandler);
