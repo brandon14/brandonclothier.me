@@ -4,10 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailer;
 
 class ContactEmailController extends Controller
 {
+    /**
+     * Mailer service.
+     *
+     * @var \Illuminate\Mail\Mailer
+     */
+    private $mailer;
+
+    /**
+     * ContactEmailController constructor.
+     *
+     * @param \Illuminate\Mail\Mailer $mailer
+     */
+    public function __construct(Mailer $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
     /**
      * Controller function to send a contact email to the contact email configured.
      *
@@ -23,7 +40,7 @@ class ContactEmailController extends Controller
         $message = $request->input('message') ?: 'No message';
 
         if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            Mail::to($contactEmail)->send(new ContactEmail([
+            $this->mailer->to($contactEmail)->send(new ContactEmail([
                 'name'    => $name,
                 'email'   => $email,
                 'message' => $message,
