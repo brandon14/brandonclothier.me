@@ -88,10 +88,10 @@
           <section class="summary-section resume-section">
             <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
             <div class="summary">
-              <p>Highly motivated and hardworking individual seeking full-time software developer position. Experienced in
-                 Computer Science and software development. Experienced with PHP, PostgreSQL, JavaScript, Java,
-                 MySQL, HTML, C#, Linux operating systems, classroom software engineering experience, and Android
-                 SDK experience. Also, experienced in customer service, and team work environments.</p>
+              <p>Highly motivated and hardworking individual. Experienced in Computer Science and software development.
+                 Experienced with PHP, PostgreSQL, JavaScript, Java, MySQL, HTML, C#, Linux operating systems,
+                 software engineering experience, and Android SDK experience. Also, experienced in customer service,
+                 and team work environments.</p>
             </div>
           </section>
           <!-- End summary section -->
@@ -112,8 +112,8 @@
               <div class="details">
                 <p>I maintain and develop trollandtoad.com, an eCommerce web application. The front end consists of HTML5
                    and CSS, with JavaScript as the scripting language. The backend consists of a custom PHP framework
-                   and a PostgreSQL database. I integrated Amazon Pay payment system into our
-                   eCommerce system.</p>
+                   and a PostgreSQL database. I integrated the mazon Pay payment system into our eCommerce system
+                </p>
                 <p>I also participate on a team to refactor legacy code using modern PHP standards such as class autoloading
                    and dependency injection. I am the lead on the team for autoloading.</p>
               </div>
