@@ -1,4 +1,4 @@
-@extends('main')
+@extends('base')
 
 @section('meta')
 <meta name="robots" content="noindex, nofollow" />
