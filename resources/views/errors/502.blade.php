@@ -7,7 +7,7 @@
 @section('title', 'Brandon Clothier | 502')
 
 @section('body')
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75" itemscope itemtype="http://schema.org/Person">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75">
   @includeIf('components.header-error')
   @section('error', '502 - Bad gateway!')
   @includeIf('components.error')

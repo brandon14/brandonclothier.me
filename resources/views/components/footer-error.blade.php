@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="images/profile-small.png" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ asset('images/profile-small.png', true) }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
       </div>
       <div class="col-md-6 footer-right">
@@ -47,3 +47,6 @@
   </div>
 </footer>
 <!-- End footer -->
+
+<!-- Dark overlay -->
+<div class="dark-overlay" hidden></div>
