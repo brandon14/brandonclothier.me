@@ -137,7 +137,7 @@ import 'bootstrap-material-design';
   // Set up CSRF token from meta tag for Axios AJAX requests
 
   if (token) {
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
   } else {
     console.error('CSRF token not found.');
   }
