@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
-use Illuminate\Http\Request;
 use Illuminate\Mail\Mailer;
+use Illuminate\Http\Request;
 
 class ContactEmailController extends Controller
 {
