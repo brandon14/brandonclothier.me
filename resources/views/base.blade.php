@@ -14,6 +14,12 @@
     <!-- Google site verification -->
     <meta name="google-site-verification" content="IgeOtYawyBKAdF-WPySo9h_O2AL489RQlUxE4XFRqAE" />
 
+    <!-- Bing site verification -->
+    <meta name="msvalidate.01" content="7CDE65628F07986372F78CECD79ED32A" />
+
+    <!-- Pinterest site verification -->
+    <meta name="p:domain_verify" content="b5787839fd0a4aa494bd04b4bc379e09" />
+
     <title>@yield('title', config('app.name'))</title>
 
     @includeIf('components.app-css')
@@ -24,12 +30,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script>
-      window.Laravel = {!! json_encode([
-        'csrfToken' => csrf_token(),
-      ]) !!};
-    </script>
   </head>
   @yield('body', '<body></body>')
 </html>

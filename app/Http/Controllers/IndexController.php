@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
     /**
      * Function to return the main application home page.
@@ -11,6 +11,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('index');
     }
 }

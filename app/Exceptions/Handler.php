@@ -44,8 +44,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        // Make sure our api routes always return JSON
-        if ($request->is('api/*')) {
+        // Make sure if the request expects JSON to return JSON
+        // exceptions
+        if ($request->expectsJson()) {
             $message = 'Oops! Something went wrong.';
             $code = $exception->getStatusCode() ?: 500;
 
@@ -54,7 +55,9 @@ class Handler extends ExceptionHandler
             }
 
             return response()->json([
-                'error_message' => $message,
+                'error' => [
+                    'message' => $message
+                ],
                 'status' => $code,
             ], $code);
         }

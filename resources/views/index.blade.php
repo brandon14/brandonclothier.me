@@ -1,4 +1,4 @@
-@extends('main')
+@extends('base')
 
 @section('prefix')
 prefix="og: http://ogp.me/ns#"
@@ -33,23 +33,37 @@ prefix="og: http://ogp.me/ns#"
 <meta name="twitter:creator"       content="@inhal3exh4le" />
 
 <!-- Dublin Core meta -->
-<meta name="DC.title" content="Brandon Clothier | Resume Website">
-<meta name="DC.description" content="The official website resume website of Brandon Clothier.">
-<meta name="DC.type" content="text">
-<meta name="DC.subject" content="Resume, Personal Website">
-<meta name="DC.language" content="{{ config('app.locale') }}">
-<meta name="DC.publisher" content="Brandon Clothier">
-<meta name="DC.contibutor" content="Brandon Clothier">
-<meta name="DC.coverage" content="Kentucky, USA 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }}">
+<meta name="DC.title"              content="Brandon Clothier | Resume Website">
+<meta name="DC.description"        content="The official website resume website of Brandon Clothier.">
+<meta name="DC.type"               content="text">
+<meta name="DC.subject"            content="Resume, Personal Website">
+<meta name="DC.language"           content="{{ config('app.locale') }}">
+<meta name="DC.publisher"          content="Brandon Clothier">
+<meta name="DC.contibutor"         content="Brandon Clothier">
+<meta name="DC.coverage"           content="Kentucky, USA 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }}">
 
 <!-- G+ author link -->
-<link rel=”author”                 href=”https://plus.google.com/u/0/+BrandonClothier”/>
+<link rel="author"                 href="https://plus.google.com/u/0/+BrandonClothier"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Brandon Clothier",
+    "gender": "Male",
+    "email": "mailto:brandon14125@gmail.com",
+    "jobTitle": "Web Developer",
+    "image": "https://brandonclothier.me/images/profile-small.png",
+    "url": "https://brandonclothier.me"
+  }
+</script>
 @endsection
 
 @section('title', 'Brandon Clothier | Resume Website')
 
 @section('body')
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75" itemscope itemtype="http://schema.org/Person">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75">
   @includeIf('components.header')
   @includeIf('sections.landing')
   <div class="container">
@@ -59,5 +73,7 @@ prefix="og: http://ogp.me/ns#"
   </div>
   @includeIf('components.footer')
   @includeIf('components.app-js')
+  @includeIf('components.ie10-viewport-js')
+  @includeIf('components.social-media-js')
 </body>
 @endsection
