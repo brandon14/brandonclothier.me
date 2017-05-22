@@ -1,0 +1,25 @@
+## brandonclothier.me Changelog
+### 1.1.0 May 21st, 2017
+- Move contact route out of api group.
+- Enforce CSRF token for contact route.
+- Add some sanity to all JSON responses. Use a unified JSON response format.
+- Ensure that any response when the request expects JSON is returned as JSON.
+- Use only import statements in app.js
+- Update Laravel skeleton to 5.4.23
+- Update Laravel framework to 5.4.23
+- Split Laravel logs into a separate log for each log level, and a unified daily log.
+- Add CodeCov support to TravisCI build.
+- Enable FrameGuard middleware.
+- Add Bing site validation.
+- Add Pinterest site validation.
+- Add Google+ button and Pinterest save button in footer.
+- Fix some asset URLs causing 302 too many redirects.
+- Add schema.org meta.
+
+### 1.0.1 May 7th, 2017
+- Cleanup README and the pull request template.
+- Fix extra } in the footer blade template.
+
+### 1.0.0 May 6th, 2017
+- Initial application release.
+- Application was ported over to a Laravel 5.4 application.

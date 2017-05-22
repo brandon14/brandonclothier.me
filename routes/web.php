@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'IndexController@index');
 
 Route::post('/contact', 'ContactEmailController@sendEmail')->middleware('throttle:1,1');

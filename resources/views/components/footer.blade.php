@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="images/profile-small.png" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ asset('images/profile-small.png', true) }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
         <div class="facebook-twitter-holder">
           <!-- Facebook share button -->
@@ -17,6 +17,10 @@
           <div class="twitter-button">
             <a class="twitter-share-button"
                href="https://twitter.com/intent/tweet?text=brandonclothier.me%20is%20an%20awesome%20website!"></a>
+          </div>
+          <div class="g-plusone" data-size="medium" data-href="https://brandonclothier.me"></div>
+          <div class="pinterest-button">
+            <a data-pin-do="buttonBookmark" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/"></a>
           </div>
         </div>
       </div>
@@ -61,8 +65,7 @@
 <!-- End footer -->
 
 <!-- Dark overlay -->
-<div class="dark-overlay" hidden ></div>
-<!-- End dark overlay -->
+<div class="dark-overlay" hidden></div>
 
 <!-- Facebook root div -->
 <div id="fb-root"></div>

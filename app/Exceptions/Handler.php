@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -44,22 +45,50 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        // Make sure our api routes always return JSON
-        if ($request->is('api/*')) {
-            $message = 'Oops! Something went wrong.';
-            $code = $exception->getStatusCode() ?: 500;
-
-            if (config('app.debug')) {
-                $message = $exception->getMessage();
-            }
-
-            return response()->json([
-                'error_message' => $message,
-                'status' => $code,
-            ], $code);
+        // Make sure if the request expects JSON to return JSON
+        // exceptions
+        if ($request->expectsJson()) {
+            $this->renderJsonException($exception);
         }
 
         return parent::render($request, $exception);
+    }
+
+    /**
+     * Render a exception into a JSON response.
+     *
+     * @param \Exception  $exception
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function renderJsonException(Exception $exception)
+    {
+        // Check that we have a getStatusCode method on the exception
+        if (method_exists($exception, 'getStatusCode')) {
+            $code = $exception->getStatusCode();
+        } else {
+            $code = 500;
+        }
+
+        // If the app is running in debug mode, we can try to get the exception message, otherwise we
+        // need to return a general error message.
+        if (config('app.debug')) {
+            if (method_exists($exception, 'getMessage') && ! empty($exception->getMessage())) {
+                $message = $exception->getMessage();
+            } else {
+                $message = 'Internal Server Error.';
+            }
+        } else {
+            $message = 'Oops! Something went wrong.';
+        }
+
+        // Return a new json response with the error message and code
+        return new JsonResponse([
+            'error' => [
+                'code' => $code,
+                'message' => $message,
+            ],
+        ], $code);
     }
 
     /**
@@ -72,8 +101,11 @@ class Handler extends ExceptionHandler
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
-            return response()->json([
-                'error' => 'Unauthenticated.',
+            return new JsonResponse([
+                'error' => [
+                    'code' => 401,
+                    'message' => 'Unauthenticated.',
+                ],
             ], 401);
         }
 
