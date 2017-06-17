@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+const mix = require('laravel-mix');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -36,7 +36,7 @@ mix.js('resources/assets/js/app.js', 'js')
    .copyDirectory('resources/assets/files', `${publicPath}/files`)
    .copyDirectory('resources/assets/fonts', `${publicPath}/fonts`)
    .copyDirectory('resources/assets/docroot', publicPath)
-   .extract(['axios', 'jquery']);
+   .extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design']);
 
 if (isDev) {
   mix.sourceMaps()
