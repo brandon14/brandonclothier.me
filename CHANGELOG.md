@@ -1,4 +1,8 @@
 ## brandonclothier.me Changelog
+### 1.1.2 June 17th, 2017
+- Clean up the resume style to be more consistent.
+- Prettify the resume style and layout on mobile views.
+
 ### 1.1.1 June 17th, 2017
 - Update to Laravel 5.4.27.
 - Update composer dependencies.
