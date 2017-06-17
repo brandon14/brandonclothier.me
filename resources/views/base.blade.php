@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}" @yield('prefix', '')>
+<html lang="{{ app()->getLocale() }}" @yield('prefix', '')>
   <head>
     <!-- General meta-data -->
     <meta charset="utf-8" />
@@ -11,6 +11,7 @@
 
     @yield('social-media-meta', '')
 
+    @if(config('app.env') === 'production')
     <!-- Google site verification -->
     <meta name="google-site-verification" content="IgeOtYawyBKAdF-WPySo9h_O2AL489RQlUxE4XFRqAE" />
 
@@ -19,6 +20,7 @@
 
     <!-- Pinterest site verification -->
     <meta name="p:domain_verify" content="b5787839fd0a4aa494bd04b4bc379e09" />
+    @endif
 
     <title>@yield('title', config('app.name'))</title>
 

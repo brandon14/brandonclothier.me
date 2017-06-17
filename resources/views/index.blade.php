@@ -23,7 +23,7 @@ prefix="og: http://ogp.me/ns#"
 <!-- Facebook OpenGraph meta -->
 <meta property="og:url"            content="https://brandonclothier.me" />
 <meta property="og:type"           content="website" />
-<meta property="og:title"          content="Brandon Clothier" />
+<meta property="og:title"          content="Brandon Clothier | Resume Website" />
 <meta property="og:description"    content="The official website resume website of Brandon Clothier." />
 <meta property="og:image"          content="https://brandonclothier.me/images/logo-large.png" />
 
@@ -39,8 +39,8 @@ prefix="og: http://ogp.me/ns#"
 <meta name="DC.subject"            content="Resume, Personal Website">
 <meta name="DC.language"           content="{{ config('app.locale') }}">
 <meta name="DC.publisher"          content="Brandon Clothier">
-<meta name="DC.contibutor"         content="Brandon Clothier">
-<meta name="DC.coverage"           content="Kentucky, USA 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }}">
+<meta name="DC.contributor"        content="Brandon Clothier">
+<meta name="DC.coverage"           content="Kentucky, USA 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }}">
 
 <!-- G+ author link -->
 <link rel="author"                 href="https://plus.google.com/u/0/+BrandonClothier"/>
@@ -55,6 +55,23 @@ prefix="og: http://ogp.me/ns#"
     "email": "mailto:brandon14125@gmail.com",
     "jobTitle": "Web Developer",
     "image": "https://brandonclothier.me/images/profile-small.png",
+    "url": "https://brandonclothier.me",
+    "sameAs": [
+      "https://www.facebook.com/brandon14125",
+      "https://plus.google.com/+BrandonClothier",
+      "https://www.instagram.com/b_randon14",
+      "https://twitter.com/inhal3exh4le",
+      "https://brandon14125.tumblr.com/",
+      "https://www.linkedin.com/in/brandon-clothier-16190b123"
+    ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "brandonclothier.me",
+    "alternateName": "The official resume website of Brandon Clothier.",
     "url": "https://brandonclothier.me"
   }
 </script>
@@ -74,6 +91,8 @@ prefix="og: http://ogp.me/ns#"
   @includeIf('components.footer')
   @includeIf('components.app-js')
   @includeIf('components.ie10-viewport-js')
-  @includeIf('components.social-media-js')
+  @if(config('app.env') === 'production')
+    @includeIf('components.social-media-js')
+  @endif
 </body>
 @endsection

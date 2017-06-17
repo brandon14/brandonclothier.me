@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="{{ asset('images/profile-small.png', true) }}" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ config('app.env') === 'production' ? asset('images/profile-small.png', true) : asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
       </div>
       <div class="col-md-6 footer-right">
@@ -39,8 +39,8 @@
           <!-- End email links -->
         </div>
         <div id="copyright" class="copyright">
-          Copyright &copy; 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
-          <br/>Website last updated {{ app('lastModified') }}
+          Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
+          <br/>Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
         </div>
       </div>
     </div>
