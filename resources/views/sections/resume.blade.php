@@ -80,6 +80,7 @@
             </ul>
           </div>
           <!-- End interest container-->
+          <hr>
         </div>
         <!-- End resume sidebar -->
         <!-- Main content wrapper -->
