@@ -4,8 +4,9 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="{{ asset('images/profile-small.png', true) }}" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ config('app.env') === 'production' ? asset('images/profile-small.png', true) : asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
+        @if(config('app.env') === 'production')
         <div class="facebook-twitter-holder">
           <!-- Facebook share button -->
           <div class="fb-share-button" data-href="https://brandonclothier.me/" data-layout="button_count"
@@ -23,6 +24,7 @@
             <a data-pin-do="buttonBookmark" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/"></a>
           </div>
         </div>
+        @endif
       </div>
       <div class="col-md-6 footer-right">
         <div class="social-buttons">
@@ -55,8 +57,8 @@
           <!-- End email links -->
         </div>
         <div id="copyright" class="copyright">
-          Copyright &copy; 2017{{ date('Y') > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
-          <br/>Website last updated {{ app('lastModified') }}
+          Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
+          <br/>Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
         </div>
       </div>
     </div>

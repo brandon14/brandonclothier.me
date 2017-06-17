@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 use Illuminate\Support\ServiceProvider;
@@ -37,7 +38,7 @@ class LastModifiedServiceProvider extends ServiceProvider
     /**
      * Function to get the last modified file time for the web application directory.
      *
-     * @return string
+     * @return \Carbon\Carbon
      */
     protected function getLastModifiedDate()
     {
@@ -53,6 +54,6 @@ class LastModifiedServiceProvider extends ServiceProvider
             }
         }
 
-        return date('F jS, Y', $timeStamp).' at '.date('h:i:s A T', $timeStamp);
+        return Carbon::createFromTimestamp($timeStamp);
     }
 }
