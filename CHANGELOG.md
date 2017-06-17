@@ -1,4 +1,18 @@
 ## brandonclothier.me Changelog
+### 1.1.1 June 17th, 2017
+- Update to Laravel 5.4.27.
+- Update composer dependencies.
+- Update npm dependencies.
+- Use local copies of Google fonts so we can control the cache headers.
+- Refactor JavaScript functions to be ES6 arrow functions.
+- Bundle out jquery.easing, bootstrap-sass and bootstrap-material-design JavaScript in the Webpack bundle.
+- LastModified service provider will now return a Carbon instance.
+- Make blade templates handle dev vs production environments when creating URL's.
+- Only include the social media widgets and JavaScript in production.
+- Fix for laravel/framework#19405
+- Add sameAs social media links to person schema.
+- Add website schema.
+
 ### 1.1.0 May 21st, 2017
 - Move contact route out of api group.
 - Enforce CSRF token for contact route.
