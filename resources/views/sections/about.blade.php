@@ -39,7 +39,6 @@
         <li>Modern software design patterns such as MVC and dependency injection</li>
         <li>SOLID principles</li>
       </ul>
-      </p>
     </div>
   </div>
   <!-- End row -->

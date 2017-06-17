@@ -122,64 +122,6 @@ import 'bootstrap-material-design';
 
   /*
    |--------------------------------------------------------------------------
-   | Basic Initialization
-   |--------------------------------------------------------------------------
-   | Perform some basic initialization for the page.
-   |
-   */
-
-  // Initialize the material design theme
-  $.material.init();
-
-  // Set up axios headers
-  axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-  // Set up CSRF token from meta tag for Axios AJAX requests
-
-  if (token) {
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
-  } else {
-    console.error('CSRF token not found.');
-  }
-
-  // Set the progressbar widths to 0
-  $levelBar.css('width', '0');
-
-  /*
-   |--------------------------------------------------------------------------
-   | Bind Events
-   |--------------------------------------------------------------------------
-   | Bind functions to the DOM element events.
-   |
-   */
-
-  // Collapse navbar on select
-  $document.on('click', '.navbar-collapse.in', hideOverlayOnSelect);
-
-  // Scroll to section on section click
-  $document.on('click', 'a.page-scroll', sectionOnClick);
-
-  // Animate the resume progress bars
-  $window.on('load', animateProgressBars);
-
-  // Remove modal content on hide
-  $modal.on('hidden.bs.modal', removeModalContent);
-
-  // Affix for navbar to collapse on scroll
-  $navbar.affix({
-    offset: {
-      top: 75,
-    },
-  });
-
-  // Function to show the dark overlay whenever the navmenu is expanded
-  $navbarToggle.on('click', toggleOverlay);
-
-  // Send email on form submit
-  $contactForm.on('submit', sendEmail);
-
-  /*
-   |--------------------------------------------------------------------------
    | Function Declarations
    |--------------------------------------------------------------------------
    | Declare application functions.
@@ -189,24 +131,24 @@ import 'bootstrap-material-design';
   /**
    * Function to reset the modal content.
    */
-  function removeModalContent() {
+  const removeModalContent = () => {
     $modalContent.html('');
-  }
+  };
 
   /**
    * Function to scroll to the section anchor on navbar click
    *
    * @param {object} e Event.
    */
-  function sectionOnClick(e) {
-    const $anchor = $(this);
+  const sectionOnClick = (e) => {
+    const $anchor = $(e.currentTarget);
 
     e.preventDefault();
 
     $htmlBody.stop().animate({
       scrollTop: $($anchor.attr('href')).offset().top,
     }, 1000, 'easeInOutExpo');
-  }
+  };
 
   /**
    * Function to hide the dark-overlay and re-enable scrolling on the page
@@ -214,40 +156,43 @@ import 'bootstrap-material-design';
    *
    * @param {object} e Event.
    */
-  function hideOverlayOnSelect(e) {
+  const hideOverlayOnSelect = (e) => {
     if ($(e.target).is('a') && $(e.target).attr('class') !== 'navbar-toggle') {
-      $(this).collapse('hide');
+      $(e.currentTarget).collapse('hide');
 
       if ($darkOverlay.is(':visible')) {
         $darkOverlay.hide();
         $html.removeClass('no-scroll');
       }
     }
-  }
+  };
 
   /**
    * Function to animate each progress bar in the DOM.
    */
-  function animateProgressBars() {
-    $levelBar.each(animateProgressBar);
-  }
+  const animateProgressBars = () => {
+    $levelBar.map(animateProgressBar);
+  };
 
   /**
    * Function that will animate a single progress bar.
+   *
+   * @param {integer} index   Index of element.
+   * @param {Element} element Element object.
    */
-  function animateProgressBar() {
-    const itemWidth = $(this).data('level');
+  const animateProgressBar = (index, element) => {
+    const itemWidth = $(element).data('level');
 
-    $(this).animate({ width: itemWidth }, 800);
-  }
+    $(element).animate({ width: itemWidth }, 800);
+  };
 
   /**
    * Function to toggle the dark-overlay and toggle scrolling.
    */
-  function toggleOverlay() {
+  const toggleOverlay = () => {
     $darkOverlay.toggle();
     $html.toggleClass('no-scroll');
-  }
+  };
 
   /**
    * Function to fire an AJAX request to send a contact email to my contact email from
@@ -255,7 +200,7 @@ import 'bootstrap-material-design';
    *
    * @param {object} e Event from the form submit.
    */
-  function sendEmail(e) {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     const name = $name.val();
@@ -265,7 +210,7 @@ import 'bootstrap-material-design';
     $sendButton.prop('disabled', true);
 
     sendContactEmail(name, email, message, processEmailResponse);
-  }
+  };
 
   /**
    * Function to process the AJAX response and show a modal to inform the user the
@@ -273,7 +218,7 @@ import 'bootstrap-material-design';
    *
    * @param {object} response JSON response from the AJAX call.
    */
-  function processEmailResponse(response) {
+  const processEmailResponse = (response) => {
     if (response.status === 200) {
       $modalContent.html(response.response);
 
@@ -291,7 +236,7 @@ import 'bootstrap-material-design';
     });
 
     $sendButton.prop('disabled', false);
-  }
+  };
 
   /**
    * Function to make the API request to send the contact email.
@@ -300,7 +245,7 @@ import 'bootstrap-material-design';
    * @param {string}   message  Email message to send.
    * @param {function} callback Callback function to execute when response is returned.
    */
-  function sendContactEmail(name, email, message, callback) {
+  const sendContactEmail = (name, email, message, callback) => {
     axios.post(ajaxUrl, {
       name,
       email,
@@ -342,5 +287,59 @@ import 'bootstrap-material-design';
 
       callback(tResponse);
     });
+  };
+
+  /*
+   |--------------------------------------------------------------------------
+   | Basic Initialization
+   |--------------------------------------------------------------------------
+   | Perform some basic initialization for the page.
+   |
+   */
+
+  // Initialize the material design theme
+  $.material.init();
+
+  // Set up CSRF token from meta tag for Axios AJAX requests
+  if (token) {
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
+  } else {
+    console.error('CSRF token not found.');
   }
+
+  // Set the progressbar widths to 0
+  $levelBar.css('width', '0');
+
+   /*
+   |--------------------------------------------------------------------------
+   | Bind Events
+   |--------------------------------------------------------------------------
+   | Bind functions to the DOM element events.
+   |
+   */
+
+  // Collapse navbar on select
+  $document.on('click', '.navbar-collapse.in', hideOverlayOnSelect);
+
+  // Scroll to section on section click
+  $document.on('click', 'a.page-scroll', sectionOnClick);
+
+  // Animate the resume progress bars
+  $window.on('load', animateProgressBars);
+
+  // Remove modal content on hide
+  $modal.on('hidden.bs.modal', removeModalContent);
+
+  // Affix for navbar to collapse on scroll
+  $navbar.affix({
+    offset: {
+      top: 75,
+    },
+  });
+
+  // Function to show the dark overlay whenever the navmenu is expanded
+  $navbarToggle.on('click', toggleOverlay);
+
+  // Send email on form submit
+  $contactForm.on('submit', sendEmail);
 })();
