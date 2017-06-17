@@ -28,12 +28,21 @@ $author-color: $grey-500;
 
 // Resume variables
 $resume-sidebar: $deep-orange-500;
-$resume-sidebar-text-color: $light-text-color;
+$resume-sidebar-text-color-desktop: $light-text-color;
+$resume-sidebar-text-color-mobile: $main-text-color;
 
 $resume-main-background: $grey-300;
 $resume-section-title: $deep-orange-900;
-$resume-job-title: #333;
+$resume-job-title: $main-text-color;
 $resume-job-details: $grey-600;
 
 $resume-level-bar: $grey-200;
 $resume-level-bar-filled: $deep-orange-400;
+
+$resume-sidebar-icon-desktop: $light-text-color;
+$resume-sidebar-icon-mobile: $main-text-color;
+
+$resume-sidebar-section-title-desktop: $light-text-color;
+$resume-sidebar-section-title-mobile: $resume-section-title;
+
+$resume-main-wrapper-icon: $light-text-color;

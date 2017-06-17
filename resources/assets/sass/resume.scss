@@ -1,4 +1,4 @@
-/*
+/**
  * Template Name: Orbit - Responsive Resume/CV Template for Developers
  * Version: 1.0
  * Author: Xiaoying Riley
@@ -14,6 +14,7 @@
 .wrapper {
   margin: 0 auto;
   position: relative;
+  background: $resume-sidebar;
 }
 
 .sidebar-wrapper {
@@ -23,41 +24,49 @@
   width: 250px;
   height: 100%;
   min-height: 800px;
-  color: $resume-sidebar-text-color;
+  color: $resume-sidebar-text-color-desktop;
+
+  hr {
+    display: none;
+  }
+
+  h2 {
+    color: $resume-sidebar-section-title-desktop;
+  }
 
   a {
-    color: $resume-sidebar-text-color;
+    color: $resume-sidebar-text-color-desktop;
   }
 
   .profile-container {
     padding: 30px;
     background: darken($resume-sidebar, 5%);
     text-align: center;
-    color: $resume-sidebar-text-color;
-  }
 
-  .name {
-    font-size: 32px;
-    font-weight: 900;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
+    .name {
+      color: $resume-sidebar-text-color-desktop;
+      font-size: 32px;
+      font-weight: 900;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
 
-  .tagline {
-    color: rgba($resume-sidebar-text-color, 0.7);
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+    .tagline {
+      color: rgba($resume-sidebar-text-color-desktop, 0.6);
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
-  .profile {
-    margin-bottom: 15px;
+    .profile {
+      margin-bottom: 15px;
+    }
   }
 
   .contact-list {
     .fa {
-      color: #fff;
+      color: $resume-sidebar-icon-desktop;
       margin-right: 5px;
       font-size: 18px;
       vertical-align: middle;
@@ -103,23 +112,21 @@
     }
 
     .meta {
-      color: rgb(255, 255, 255);
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba($resume-sidebar-text-color-desktop, 0.6);
       font-weight: 500;
       margin-bottom: 0;
       margin-top: 0;
     }
 
     .time {
-      color: rgb(255, 255, 255);
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba($resume-sidebar-text-color-desktop, 0.6);
       font-weight: 500;
       margin-bottom: 0;
     }
   }
 
   .languages-container .lang-desc {
-    color: rgba($resume-sidebar-text-color, 0.7);
+    color: rgba($resume-sidebar-text-color-desktop, 0.6);
   }
 
   .languages-list, .interests-list {
@@ -163,7 +170,7 @@
       height: 30px;
       margin-right: 8px;
       display: inline-block;
-      color: #fff;
+      color: $resume-main-wrapper-icon;
       border-radius: 50%;
       background-clip: padding-box;
       background: $resume-section-title;
@@ -261,9 +268,43 @@
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
   .sidebar-wrapper {
+    background: $resume-main-background;
     position: static;
     width: inherit;
     text-align: center;
+    color: $resume-sidebar-text-color-mobile;
+
+    hr {
+      display: block;
+    }
+
+    h2 {
+      color: $resume-sidebar-section-title-mobile;
+    }
+
+    a {
+      color: $resume-sidebar-text-color-mobile;
+    }
+
+    .contact-list {
+      .fa {
+        color: $resume-sidebar-icon-mobile;
+      }
+    }
+
+    .education-container {
+      .meta {
+        color: rgba($resume-sidebar-text-color-mobile, 0.6);
+      }
+
+      .time {
+        color: rgba($resume-sidebar-text-color-mobile, 0.6);
+      }
+    }
+
+    .languages-container .lang-desc {
+      color: rgba($resume-sidebar-text-color-mobile, 0.6);
+    }
   }
 
   .main-wrapper {
