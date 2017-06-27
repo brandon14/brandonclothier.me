@@ -38,16 +38,6 @@ class VerifyCsrfToken extends BaseVerifier
             return $this->addCookieToResponse($request, $next($request));
         }
 
-        // If the request expects JSON, return a 403 JSON response
-        if ($request->expectsJson()) {
-            return new JsonResponse([
-                'error' => [
-                    'code' => 403,
-                    'message' => 'CSRF Token Mismatch.',
-                ],
-            ], 403);
-        }
-
         throw new TokenMismatchException;
     }
 }
