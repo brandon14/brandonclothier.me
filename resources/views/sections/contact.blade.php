@@ -27,14 +27,17 @@
           <span class="help-block">Please enter your message.</span>
         </div>
         <!-- End message form group -->
+        <!-- Google reCAPTCHA -->
+        {!! Captcha::display() !!}
         <!-- Send form group -->
         <div class="form-group">
           <button id="send-email" type="submit" class="btn btn-raised btn-primary" aria-label="send">Send</button>
-          <!-- End placeholder for form validation alert -->
         </div>
         <!-- End send form group -->
       </form>
       <!-- End contact form -->
+      <!-- Google reCAPTCHA script -->
+      {!! Captcha::script() !!}
     </div>
     <!-- End column for contact page -->
   </div>

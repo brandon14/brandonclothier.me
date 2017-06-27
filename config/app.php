@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
