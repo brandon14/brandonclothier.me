@@ -35,6 +35,21 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        require base_path('routes/console.php');
+        require $this->app->basePath().'/routes/console.php';
+    }
+
+    /**
+     * Bootstrap the application for artisan commands.
+     *
+     * @return void
+     */
+    public function bootstrap()
+    {
+        // Bind the public path to public_html instead of public
+        $this->app->bind('path.public', function () {
+            return $this->app->basePath().'/public_html';
+        });
+
+        parent::bootstrap();
     }
 }
