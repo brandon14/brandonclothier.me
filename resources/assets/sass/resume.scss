@@ -14,11 +14,9 @@
 .wrapper {
   margin: 0 auto;
   position: relative;
-  background: $resume-sidebar;
 }
 
 .sidebar-wrapper {
-  background: $resume-sidebar;
   position: absolute;
   right: 0;
   width: 250px;
@@ -323,6 +321,11 @@
 }
 
 /* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .sidebar-wrapper {
+    background: $resume-sidebar;
+  }
+}
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .skillset {
