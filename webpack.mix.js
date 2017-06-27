@@ -1,8 +1,7 @@
 const mix = require('laravel-mix');
-const path = require('path');
-const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
-const publicPath = path.resolve('public_html');
+const publicPath = 'public_html';
 const isDev = process.env.NODE_ENV === 'development';
 
 /*
@@ -18,29 +17,26 @@ const isDev = process.env.NODE_ENV === 'development';
 
 mix.setPublicPath(publicPath);
 
-mix.webpackConfig({
-  plugins: [
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      jquery: 'jquery',
-    }),
+mix.autoload({
+  jquery: ['$', 'jQuery', 'jquery'],
+})
+.js('resources/assets/js/app.js', 'js')
+.sass('resources/assets/sass/app.scss', 'css', {
+  includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/'],
+})
+.copyDirectory('resources/assets/images', `${publicPath}/images`)
+.copyDirectory('resources/assets/files', `${publicPath}/files`)
+.copyDirectory('resources/assets/docroot', publicPath)
+.extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design'], '/js/vendor')
+.options({
+  postCss: [
+    autoprefixer(),
   ],
 });
 
-mix.js('resources/assets/js/app.js', 'js')
-   .sass('resources/assets/sass/app.scss', 'css', {
-     includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/'],
-   })
-   .copyDirectory('resources/assets/images', `${publicPath}/images`)
-   .copyDirectory('resources/assets/files', `${publicPath}/files`)
-   .copyDirectory('resources/assets/fonts', `${publicPath}/fonts`)
-   .copyDirectory('resources/assets/docroot', publicPath)
-   .extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design']);
-
 if (isDev) {
-  mix.sourceMaps()
-     .browserSync(process.env.MIX_BROWSERSYNC_URL);
+  mix.browserSync(process.env.MIX_BROWSERSYNC_URL)
+  .webpackConfig({ devtool: 'inline-source-map' });
 } else {
   mix.version();
 }

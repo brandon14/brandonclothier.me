@@ -1,4 +1,17 @@
 ## brandonclothier.me Changelog
+### 1.2.02 June 26th, 2017
+- Add reCAPTCHA to contact form
+- Add contact route validation and custom FormRequest.
+- Fix Google+ button alignment when footer is collapsed.
+- Refactor exception handler to better handle TokenMismatchExceptions and return consistent responses for validation errors.
+- Update npm and composer dependencies.
+- Update to laravel-mix 1.0.6
+- Use spatie's laravel sitemap generator.
+- Simplify and refactor webpack build script.
+- Change the public path for the console kernel in the kernel bootstrap function.
+- Add a Google+ and Twitter follow button to the footer.
+- Clean up the css a little.
+
 ### 1.1.2 June 17th, 2017
 - Clean up the resume style to be more consistent.
 - Prettify the resume style and layout on mobile views.

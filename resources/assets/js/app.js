@@ -19,6 +19,13 @@ import 'bootstrap-material-design';
    */
   const token = $('meta[name="csrf-token"]').attr('content');
 
+  /**
+   * Google reCAPTCHA object.
+   *
+   * @type {object}
+   */
+  const recaptcha = window.grecaptcha || undefined;
+
   /*
    |--------------------------------------------------------------------------
    | DOM Caching
@@ -177,8 +184,8 @@ import 'bootstrap-material-design';
   /**
    * Function that will animate a single progress bar.
    *
-   * @param {integer} index   Index of element.
-   * @param {Element} element Element object.
+   * @param {number}  index   Index of element.
+   * @param {element} element Element object.
    */
   const animateProgressBar = (index, element) => {
     const itemWidth = $(element).data('level');
@@ -203,13 +210,23 @@ import 'bootstrap-material-design';
   const sendEmail = (e) => {
     e.preventDefault();
 
+    $sendButton.html('Sending...');
+    $sendButton.prop('disabled', true);
+
     const name = $name.val();
     const email = $email.val();
     const message = $message.val();
 
-    $sendButton.prop('disabled', true);
-
-    sendContactEmail(name, email, message, processEmailResponse);
+    sendContactEmail(name, email, message)
+    .then((response) => {
+      processEmailResponse({
+        status: response.status,
+        response: response.data.message,
+      });
+    })
+    .catch((response) => {
+      processEmailResponse(handleContactErrorResponse(response));
+    });
   };
 
   /**
@@ -219,74 +236,132 @@ import 'bootstrap-material-design';
    * @param {object} response JSON response from the AJAX call.
    */
   const processEmailResponse = (response) => {
-    if (response.status === 200) {
-      $modalContent.html(response.response);
+    if (recaptcha) {
+      recaptcha.reset();
+    }
 
+    $sendButton.prop('disabled', false);
+    $sendButton.html('Send');
+
+    if (response.status === 200) {
       $name.val('');
       $email.val('');
       $message.val('');
-    } else if (response.status === 429) {
-      $modalContent.html(response.response);
-    } else {
-      $modalContent.html(`Error Code: ${response.status} \nServer Response: ${response.response}`);
     }
+
+    $modalContent.html(response.response);
 
     $modal.modal({
       backdrop: 'static',
     });
-
-    $sendButton.prop('disabled', false);
   };
 
   /**
-   * Function to make the API request to send the contact email.
-   * @param {string}   name     Contact name.
-   * @param {string}   email    Contact from email address.
-   * @param {string}   message  Email message to send.
-   * @param {function} callback Callback function to execute when response is returned.
+   * Function to make the API request to send the contact email and return the
+   * Promise. Will reject a Promise if no Google reCAPTCHA object is found.
+   *
+   * @param   {string}   name     Contact name.
+   * @param   {string}   email    Contact from email address.
+   * @param   {string}   message  Email message to send.
+   *
+   * @returns {Promise}
    */
-  const sendContactEmail = (name, email, message, callback) => {
-    axios.post(ajaxUrl, {
+  const sendContactEmail = (name, email, message) => {
+    if (!recaptcha) {
+      return Promise.reject({
+        status: 500,
+        message: 'Cannot find Google reCAPTCHA API.',
+      });
+    }
+
+    return axios.post(ajaxUrl, {
       name,
       email,
       message,
-    }).then((response) => {
-      callback({
-        status: response.status,
-        response: response.data.response,
-      });
-    }).catch((error) => {
-      let tResponse = {};
+      'g-recaptcha-response': recaptcha.getResponse(),
+    });
+  };
 
-      if (error.response) {
-        let errorMessage = 'Undefined error.';
+  /**
+   * Function to handle the error response from the AJAX call and return a standardized
+   * response object.
+   *
+   * @param   {object} error Error object.
+   *
+   * @returns {object}
+   */
+  const handleContactErrorResponse = (error) => {
+    const unknownError = 'Unknown error occurred.';
+    let response;
+    let status = 500;
 
-        if (error.response.data.error.message) {
-          errorMessage = error.response.data.error.message;
-        } else if (error.response.data.response) {
-          errorMessage = error.response.data.response;
-        } else {
-          errorMessage = error.response.data;
+    if (error.response) {
+      status = error.response.status ? error.response.status : 500;
+      response = handleErrorResponse(error.response);
+    } else if (error.request) {
+      response = error.request;
+    } else {
+      response = error.message;
+    }
+
+    return {
+      status,
+      response: response || unknownError,
+    };
+  };
+
+  /**
+   * Handle a error response from the server.
+   *
+   * @param   {object} error Error response object.
+   * @returns {string}
+   */
+  const handleErrorResponse = (error) => {
+    if (error.data && error.data.error) {
+      const errorResponse = error.data.error;
+
+      if (errorResponse.message) {
+        if (errorResponse.errors) {
+          return `${errorResponse.message}<br />${handleMultipleErrors(errorResponse.errors)}`;
         }
 
-        tResponse = {
-          status: error.response.status,
-          response: errorMessage,
-        };
-      } else if (error.request) {
-        tResponse = {
-          status: 500,
-          response: error.request,
-        };
+        return errorResponse.message;
+      } else if (errorResponse.errors) {
+        return handleMultipleErrors(errorResponse.errors);
+      }
+    } else {
+      return error.response.data;
+    }
+
+    return '';
+  };
+
+  /**
+   * Function to parse multiple errors into an error string with <br />'s
+   * separating the error messages for display in the modal.
+   *
+   * @param   {object|array} errors Errors JSON object or array.
+   *
+   * @returns {string}
+   */
+  const handleMultipleErrors = (errors) => {
+    let message = '';
+
+    $.each(errors, (key, value) => {
+      let error;
+
+      if ($.isArray(value)) {
+        $.each(value, (key2, value2) => {
+          error = error ? `${error}<br />${value2}` : value2;
+        });
       } else {
-        tResponse = {
-          status: 500,
-          response: error.message,
-        };
+        error = value;
       }
 
-      callback(tResponse);
+      message = message ? `${message}<br />${error}` : error;
     });
+
+    return message;
   };
 
   /*
