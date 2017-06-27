@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run development",
-    "clean": "rimraf ./public_html/css && rimraf ./public_html/js && rimraf ./public_html/files && rimraf ./public_html/images && rimraf ./public_html/favicon.ico && rimraf ./public_html/robots.txt && rimraf ./public_html/humans.txt && rimraf ./public_html/.htaccess",
+    "clean": "rimraf ./public_html/css && rimraf ./public_html/js && rimraf ./public_html/files && rimraf ./public_html/images && rimraf ./public_html/favicon.ico && rimraf ./public_html/robots.txt && rimraf ./public_html/humans.txt && rimraf ./public_html/.htaccess && rimraf ./public_html/mix-manifest.json",
     "development": "npm run clean && cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-poll": "npm run watch -- --watch-poll",
@@ -23,6 +23,8 @@
     "bootstrap-material-design": "^0.5.10",
     "bootstrap-sass": "^3.3.7",
     "bootstrap-social": "^5.1.1",
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.1.4",
     "cross-env": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -33,10 +35,9 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
-    "laravel-mix": "0.*",
+    "laravel-mix": "^1.0.6",
     "lodash": "^4.17.4",
-    "rimraf": "^2.6.1",
-    "webpack": "^2.5.1"
+    "rimraf": "^2.6.1"
   },
   "babel": {
     "presets": [
@@ -120,5 +121,10 @@
       "require-yield": 0,
       "import/no-webpack-loader-syntax": 0
     }
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ]
 }
