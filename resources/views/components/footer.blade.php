@@ -7,7 +7,6 @@
           <img class="profile" src="{{ config('app.env') === 'production' ? asset('images/profile-small.png', true) : asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
         @if(config('app.env') === 'production')
-        <div class="facebook-twitter-holder">
         <div class="share-buttons">
           <!-- Facebook share button -->
           <div class="fb-share-button" data-href="https://brandonclothier.me/" data-layout="button_count"
