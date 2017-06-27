@@ -8,6 +8,7 @@
         </div>
         @if(config('app.env') === 'production')
         <div class="facebook-twitter-holder">
+        <div class="share-buttons">
           <!-- Facebook share button -->
           <div class="fb-share-button" data-href="https://brandonclothier.me/" data-layout="button_count"
                data-mobile-iframe="true">
@@ -51,6 +52,13 @@
             <span class="fa fa-linkedin"></span>
           </a>
           <!-- End social buttons -->
+          <!-- Twitter follow button -->
+          <div class="twitter-follow">
+            <a class="twitter-follow-button" href="https://twitter.com/inhal3exh4le"></a>
+          </div>
+          <div class="google-follow">
+            <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/105418902459110698510" data-rel="author"></div>
+          </div>
           <!-- Email links -->
           <a class="btn btn-block btn-sm btn-social btn-github" href="mailto:brandon14125@gmail.com"><span class="fa fa-envelope"></span>brandon14125@gmail.com</a>
           <a class="btn btn-block btn-sm btn-social btn-github" href="mailto:brandon_clothier@mymail.eku.edu"><span class="fa fa-envelope"></span>brandon_clothier@mymail.eku.edu</a>
@@ -67,7 +75,7 @@
 <!-- End footer -->
 
 <!-- Dark overlay -->
-<div class="dark-overlay" hidden></div>
+<div class="dark-overlay"></div>
 
 <!-- Facebook root div -->
 <div id="fb-root"></div>

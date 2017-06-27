@@ -49,4 +49,4 @@
 <!-- End footer -->
 
 <!-- Dark overlay -->
-<div class="dark-overlay" hidden></div>
+<div class="dark-overlay"></div>
