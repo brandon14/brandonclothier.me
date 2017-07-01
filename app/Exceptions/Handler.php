@@ -5,9 +5,9 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
