@@ -1,5 +1,8 @@
 ## brandonclothier.me Changelog
-### 1.2.02 June 26th, 2017
+### 1.2.1 June 30th, 2017
+- Hotfix for the Google reCAPTCHA JavaScript object not being available inside the closure.
+
+### 1.2.0 June 26th, 2017
 - Add reCAPTCHA to contact form
 - Add contact route validation and custom FormRequest.
 - Fix Google+ button alignment when footer is collapsed.

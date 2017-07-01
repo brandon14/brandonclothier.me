@@ -19,13 +19,6 @@ import 'bootstrap-material-design';
    */
   const token = $('meta[name="csrf-token"]').attr('content');
 
-  /**
-   * Google reCAPTCHA object.
-   *
-   * @type {object}
-   */
-  const recaptcha = window.grecaptcha || undefined;
-
   /*
    |--------------------------------------------------------------------------
    | DOM Caching
@@ -236,8 +229,8 @@ import 'bootstrap-material-design';
    * @param {object} response JSON response from the AJAX call.
    */
   const processEmailResponse = (response) => {
-    if (recaptcha) {
-      recaptcha.reset();
+    if (window.grecaptcha) {
+      window.grecaptcha.reset();
     }
 
     $sendButton.prop('disabled', false);
@@ -267,7 +260,7 @@ import 'bootstrap-material-design';
    * @returns {Promise}
    */
   const sendContactEmail = (name, email, message) => {
-    if (!recaptcha) {
+    if (!window.grecaptcha) {
       return Promise.reject({
         status: 500,
         message: 'Cannot find Google reCAPTCHA API.',
@@ -278,7 +271,7 @@ import 'bootstrap-material-design';
       name,
       email,
       message,
-      'g-recaptcha-response': recaptcha.getResponse(),
+      'g-recaptcha-response': window.grecaptcha.getResponse(),
     });
   };
 
