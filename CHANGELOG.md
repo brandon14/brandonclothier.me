@@ -1,4 +1,7 @@
 ## brandonclothier.me Changelog
+### 1.2.2 June 30th, 2017
+- Hotfix to fix the Travis-CI build.
+
 ### 1.2.1 June 30th, 2017
 - Hotfix for the Google reCAPTCHA JavaScript object not being available inside the closure.
 
