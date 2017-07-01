@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SendContactEmail;
 use App\Mail\ContactEmail;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Mail\Mailer;
+use Illuminate\Http\JsonResponse;
+use App\Http\Requests\SendContactEmail;
 
 class ContactEmailController extends Controller
 {
@@ -45,7 +45,7 @@ class ContactEmailController extends Controller
             'message' => $message,
         ]));
 
-         return new JsonResponse([
+        return new JsonResponse([
             'message' => 'Message was sent.',
             'status'   => 200,
         ], 200, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
