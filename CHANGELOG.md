@@ -1,4 +1,7 @@
 ## brandonclothier.me Changelog
+### 1.2.3 July 1st, 2017
+- Fix broken logic in contact email blade template.
+
 ### 1.2.2 June 30th, 2017
 - Hotfix to fix the Travis-CI build.
 
