@@ -2,7 +2,7 @@
   <a href="https://travis-ci.org/brandon14/brandonclothier.me"><img src="https://img.shields.io/travis/brandon14/brandonclothier.me/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://codeclimate.com/github/brandon14/brandonclothier.me"><img src="https://img.shields.io/codeclimate/github/brandon14/brandonclothier.me.svg?style=flat-square" alt="Code Climate"></a>
   <a href="https://codecov.io/gh/brandon14/brandonclothier.me"><img src="https://img.shields.io/codecov/c/github/brandon14/brandonclothier.me.svg?style=flat-square" alt="CodeCov"></a>
-  <a href="https://insight.sensiolabs.com/projects/9fdb6a1c-e576-4cb5-9e93-0facf312e3c6"><img src="https://img.shields.io/sensiolabs/i/45afb680-d4e6-4e66-93ea-bcfa79eb8a87.svg?style=flat-square" alt="Sensio Insight"></a>
+  <a href="https://insight.sensiolabs.com/projects/3737c8f8-3f43-4a9f-9050-45b258296849"><img src="https://img.shields.io/sensiolabs/i/3737c8f8-3f43-4a9f-9050-45b258296849.svg?style=flat-square" alt="Sensio Insight"></a>
   <a href="https://david-dm.org/brandon14/brandonclothier.me"><img src="https://david-dm.org/brandon14/brandonclothier.me.svg?style=flat-square" alt="Dependencies"></a>
   <a href="https://david-dm.org/brandon14/brandonclothier.me#info=devDependencies"><img src="https://david-dm.org/brandon14/brandonclothier.me/dev-status.svg?style=flat-square" alt="Dev Dependencies"></a>
   <a href="https://github.com/brandon14/brandonclothier.me/blob/master/LICENSE"><img src="https://img.shields.io/github/license/brandon14/brandonclothier.me.svg?style=flat-square" alt="License"></a>

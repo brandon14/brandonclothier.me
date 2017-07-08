@@ -7,9 +7,6 @@
 # Composer vendor folder
 /vendor
 
-# IntelliJ files
-/.idea
-
 # Vargrant and homestead files
 /.vagrant
 Homestead.json

@@ -1,4 +1,9 @@
 ## brandonclothier.me Changelog
+### 1.2.4 July 7th, 2017
+- Update composer dependencies.
+- Bring project skeleton inline with latest Laravel 5.4.x release.
+- Apply some Sensio Insight error and warning fixes for missing use statements and parameter hints.
+
 ### 1.2.3 July 1st, 2017
 - Fix broken logic in contact email blade template.
 

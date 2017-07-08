@@ -50,7 +50,7 @@ $app->singleton(
 |
 */
 
-$app->configureMonologUsing(function ($monolog) use ($app) {
+$app->configureMonologUsing(function (\Monolog\Logger $monolog) use ($app) {
     $bubble = false;
 
     $debugStreamHandler = new \Monolog\Handler\StreamHandler(
