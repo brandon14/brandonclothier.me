@@ -1,4 +1,7 @@
 ## brandonclothier.me Changelog
+### 1.2.5 July 7th, 2017
+- Add newlines to the Github PR template and contributing markdown. Fixes some Sensio Insight warnings.
+
 ### 1.2.4 July 7th, 2017
 - Update composer dependencies.
 - Bring project skeleton inline with latest Laravel 5.4.x release.
