@@ -232,6 +232,44 @@ hr {
 }
 /* End dark overlay style */
 
+/* Coner ribbon style */
+.cr {
+  z-index: 9999;
+  width: 200px;
+  padding: 16px;
+  position: absolute;
+  text-align: center;
+  color: $corner-ribbon-text-color;
+  background-color: $corner-ribbon-background-color;
+  font-size: 16px;
+
+  a {
+    color: $corner-ribbon-text-color;
+  }
+
+  i {
+    color: $corner-ribbon-text-color;
+  }
+}
+
+.cr-sticky {
+  position: fixed;
+}
+
+.cr-top {
+  top: 20px;
+}
+
+.cr-right {
+  right: -50px;
+}
+
+
+.cr-top.cr-right {
+  transform: rotate(45deg);
+}
+/* End corner ribbon style */
+
 /* Cookie consent style */
 .js-cookie-consent {
   position: fixed;
