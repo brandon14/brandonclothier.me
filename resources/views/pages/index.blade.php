@@ -98,13 +98,16 @@ prefix="og: http://ogp.me/ns#"
   data-target=".navbar-fixed-top"
 @endsection
 @section('data-offset')
-  data-offset="75"
+  data-offset="77"
 @endsection
 
 @section('content')
   <div class="cr cr-top cr-right cr-sticky cr-blue hidden-xs">
     <a href="https://github.com/brandon14/brandonclothier.me" target="_blank">Visit me on <i class="fa fa-github" aria-hidden="true"></i></a>
   </div>
+  <button id="scroll-top" class="btn btn-raised btn-circle scroll-top-btn" data-spy="affix" data-offset-top="150">
+    <span class="glyphicon glyphicon glyphicon-chevron-up">
+  </button>
   @includeIf('partials.header')
 
   @includeIf('pages.sections.landing')

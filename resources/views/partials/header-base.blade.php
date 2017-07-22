@@ -1,6 +1,6 @@
 <header>
   <!-- Navbar -->
-  <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <nav class="navbar navbar-fixed-top navbar-default" role="navigation" data-spy="affix" data-offset-top="150">
     <div class="container">
       <!-- Navbar header -->
       <div class="navbar-header page-scroll">
