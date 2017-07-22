@@ -102,6 +102,9 @@ prefix="og: http://ogp.me/ns#"
 @endsection
 
 @section('content')
+  <div class="cr cr-top cr-right cr-sticky cr-blue hidden-xs">
+    <a href="https://github.com/brandon14/brandonclothier.me" target="_blank">Visit me on <i class="fa fa-github" aria-hidden="true"></i></a>
+  </div>
   @includeIf('partials.header')
 
   @includeIf('pages.sections.landing')
