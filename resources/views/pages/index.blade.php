@@ -32,7 +32,7 @@ prefix="og: http://ogp.me/ns#"
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:image" content="{{ asset('/images/profile-large.png') }}" />
+<meta property="og:image" content="{{ secure_asset('/images/profile-large.png') }}" />
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary" />
@@ -61,8 +61,8 @@ prefix="og: http://ogp.me/ns#"
     "gender": "Male",
     "email": "mailto:brandon14125@gmail.com",
     "jobTitle": "Web Developer",
-    "image": "https://brandonclothier.me/images/profile-small.png",
-    "url": "{{ url('/') }}",
+    "image": "{{ secure_asset('images/profile-small.png') }}",
+    "url": "{{ secure_url('/') }}",
     "sameAs": [
       "https://www.facebook.com/brandon14125",
       "https://plus.google.com/+BrandonClothier",
@@ -79,7 +79,7 @@ prefix="og: http://ogp.me/ns#"
     "@type": "WebSite",
     "name": "brandonclothier.me",
     "alternateName": "{{ $description }}",
-    "url": "{{ url('/') }}"
+    "url": "{{ secure_url('/') }}"
   }
 </script>
 @endsection
