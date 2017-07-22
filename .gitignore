@@ -15,20 +15,11 @@ Homestead.yaml
 # Dotenv file
 .env
 
-# Compiled front-end assets
-/public_html/js
-/public_html/css
-/public_html/files
-/public_html/fonts
-/public_html/images
-/public_html/.htaccess
-/public_html/favicon.ico
-/public_html/humans.txt
-/public_html/mix-manifest.json
-/public_html/robots.txt
-/public_html/sitemap.xml
-/public_html/hot
-/public_html/storage
+# Ignore the public_html folder except for index.php
+# as everything else inside that folder is managed by
+# the webpack build process.
+/public_html/*
+!public_html/index.php
 
 # Yarn and node debug files
 npm-debug.log*

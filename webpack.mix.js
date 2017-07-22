@@ -20,23 +20,23 @@ mix.setPublicPath(publicPath);
 mix.autoload({
   jquery: ['$', 'jQuery', 'jquery'],
 })
-.js('resources/assets/js/app.js', 'js')
-.sass('resources/assets/sass/app.scss', 'css', {
-  includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/'],
-})
-.copyDirectory('resources/assets/images', `${publicPath}/images`)
-.copyDirectory('resources/assets/files', `${publicPath}/files`)
-.copyDirectory('resources/assets/docroot', publicPath)
-.extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design'], '/js/vendor')
-.options({
-  postCss: [
-    autoprefixer(),
-  ],
-});
+  .js('resources/assets/js/app.js', 'js')
+  .sass('resources/assets/sass/app.scss', 'css', {
+    includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/'],
+  })
+  .copyDirectory('resources/assets/images', `${publicPath}/images`)
+  .copyDirectory('resources/assets/files', `${publicPath}/files`)
+  .copyDirectory('resources/assets/docroot', publicPath)
+  .extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design'], '/js/vendor')
+  .options({
+    postCss: [
+      autoprefixer(),
+    ],
+  });
 
 if (isDev) {
   mix.browserSync(process.env.MIX_BROWSERSYNC_URL)
-  .webpackConfig({ devtool: 'inline-source-map' });
+    .webpackConfig({ devtool: 'inline-source-map' });
 } else {
   mix.version();
 }

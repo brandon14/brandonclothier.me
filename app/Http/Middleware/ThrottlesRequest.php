@@ -12,9 +12,10 @@ class ThrottlesRequest extends ThrottleRequests
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  int  $maxAttempts
-     * @param  float|int  $decayMinutes
+     * @param  \Closure                  $next
+     * @param  int                       $maxAttempts
+     * @param  float|int                 $decayMinutes
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1)
@@ -44,7 +45,8 @@ class ThrottlesRequest extends ThrottleRequests
      * Create a 'too many attempts' JSON response.
      *
      * @param  string  $key
-     * @param  int  $maxAttempts
+     * @param  int     $maxAttempts
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     protected function buildJsonResponse($key, $maxAttempts)
