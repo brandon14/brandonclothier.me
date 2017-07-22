@@ -22,6 +22,7 @@ class VerifyCsrfToken extends BaseVerifier
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     *
      * @return mixed
      *
      * @throws \Illuminate\Session\TokenMismatchException

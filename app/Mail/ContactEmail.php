@@ -9,8 +9,23 @@ class ContactEmail extends Mailable
 {
     use Queueable;
 
+    /**
+     * Email address the contact email is from.
+     *
+     * @var  string
+     */
     protected $email;
+    /**
+     * Contact email name.
+     *
+     * @var  string
+     */
     protected $name;
+    /**
+     * Contact email message.
+     *
+     * @var  string
+     */
     protected $message;
 
     /**
