@@ -11,6 +11,7 @@
         "graham-campbell/htmlmin": "^4.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "spatie/laravel-cookie-consent": "^1.8",
         "spatie/laravel-sitemap": "^2.2"
     },
     "require-dev": {

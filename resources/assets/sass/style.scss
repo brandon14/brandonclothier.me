@@ -232,6 +232,19 @@ hr {
 }
 /* End dark overlay style */
 
+/* Cookie consent style */
+.js-cookie-consent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: $cookie-consent-alert-text-color !important;
+}
+/* End cookie consenyt style */
+
 /* Overrides for Social Buttons for Bootstrap */
 @mixin btn-social-override($color-bg, $color: #fff) {
   background-color: $color-bg !important;

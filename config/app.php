@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
         Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+        Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Spatie\Sitemap\SitemapServiceProvider::class,
 
         /*
