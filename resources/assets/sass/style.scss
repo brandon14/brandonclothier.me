@@ -161,6 +161,11 @@ hr {
 /* End section styles */
 
 /* Footer style */
+#google_translate_element {
+  text-align: center;
+  margin-top: 15px;
+}
+
 .footer {
   color: $footer-color;
   background: $footer-background;
@@ -231,6 +236,89 @@ hr {
   top: 0;
 }
 /* End dark overlay style */
+
+/* Coner ribbon style */
+.cr {
+  z-index: 9999;
+  width: 200px;
+  padding: 16px;
+  position: absolute;
+  text-align: center;
+  color: $corner-ribbon-text-color;
+  background-color: $corner-ribbon-background-color;
+  font-size: 16px;
+
+  a {
+    color: $corner-ribbon-text-color;
+  }
+
+  i {
+    color: $corner-ribbon-text-color;
+  }
+}
+
+.cr-sticky {
+  position: fixed;
+}
+
+.cr-top {
+  top: 20px;
+}
+
+.cr-right {
+  right: -50px;
+}
+
+
+.cr-top.cr-right {
+  transform: rotate(45deg);
+}
+/* End corner ribbon style */
+
+/* Scroll to top button */
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.scroll-top-btn {
+  z-index: 9999;
+  position: absolute;
+  bottom: -150px;
+  right: 0;
+  margin: 0 15px 15px 0;
+  background-color: rgba($scroll-top-button-background, 0.5) !important;
+  color: $scroll-top-button-text !important;
+}
+
+.scroll-top-btn.affix-top {
+  position: absolute;
+  bottom: -150px;
+}
+
+.scroll-top-btn.affix {
+  position: fixed;
+  bottom: 0;
+}
+/* End scroll to top button */
+
+/* Cookie consent style */
+.js-cookie-consent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: $cookie-consent-alert-text-color !important;
+}
+/* End cookie consenyt style */
 
 /* Overrides for Social Buttons for Bootstrap */
 @mixin btn-social-override($color-bg, $color: #fff) {

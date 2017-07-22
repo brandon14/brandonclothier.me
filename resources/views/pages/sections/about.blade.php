@@ -9,7 +9,7 @@
         stay up to date with modern practices in the web development industry. The industry moves at a break-neck
         speed and one must keep up with the pace. I enjoy working on projects in my spare time which is where the
         idea to design this website came from. At work, I mostly deal with PHP and JavaScript using a in-house PHP
-        framework. I my spare time I enjoy learning new technologies and furthering my software development skill set.
+        framework. In my spare time I enjoy learning new technologies and furthering my software development skill set.
       </p>
       <p>
         I started out creating this website to further my HTML, CSS and JavaScript skills because in school most of the

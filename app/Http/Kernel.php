@@ -18,7 +18,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \Illuminate\Http\Middleware\FrameGuard::class,
     ];
 
     /**
@@ -28,6 +27,8 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            // Minify html coming from web routes
+            \GrahamCampbell\HTMLMin\Http\Middleware\MinifyMiddleware::class,
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -35,8 +36,10 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            // Minify html coming from web routes
-            \GrahamCampbell\HTMLMin\Http\Middleware\MinifyMiddleware::class,
+            // Add frame guard middleware
+            \Illuminate\Http\Middleware\FrameGuard::class,
+            // Add Cookie Consent dialog
+            \Spatie\CookieConsent\CookieConsentMiddleware::class,
         ],
 
         'api' => [
@@ -52,11 +55,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth'       => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \App\Http\Middleware\ThrottlesRequest::class,
+        'bindings'   => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'        => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'   => \App\Http\Middleware\ThrottlesRequest::class,
     ];
 }
