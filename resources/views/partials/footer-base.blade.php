@@ -48,7 +48,17 @@
       </div>
     </div>
   </div>
+  <!-- Google translate footer -->
+  <div id="google_translate_element"></div>
 </footer>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+window.googleTranslateElementInit = function() {
+  new google.translate.TranslateElement({pageLanguage: 'en', gaTrack: true, gaId: 'UA-98105282-1'}, 'google_translate_element');
+};
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <!-- End footer -->
 
 <!-- Dark overlay -->
