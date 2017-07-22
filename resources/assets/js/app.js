@@ -52,12 +52,6 @@ import 'bootstrap-material-design';
    */
   const $htmlBody = $('html, body');
   /**
-   * Navbar class jQuery object.
-   *
-   * @type {jQuery object}
-   */
-  const $navbar = $('.navbar');
-  /**
    * Navbar toggle class jQuery object.
    *
    * @type {jQuery object}
@@ -119,6 +113,12 @@ import 'bootstrap-material-design';
    * @type {jQuery object}
    */
   const $modalContent = $('#modal-content');
+  /**
+   * Scroll to top button.
+   *
+   * @type {jQuery object}
+   */
+  const $scrollButton = $('#scroll-top');
 
   /*
    |--------------------------------------------------------------------------
@@ -357,6 +357,15 @@ import 'bootstrap-material-design';
     return message;
   };
 
+  /**
+   * Function to scroll to the top on a button click.
+   */
+  const scrollToTop = () => {
+    $htmlBody.stop().animate({
+      scrollTop: 0,
+    }, 1000, 'easeInOutExpo');
+  };
+
   /*
    |--------------------------------------------------------------------------
    | Basic Initialization
@@ -398,12 +407,8 @@ import 'bootstrap-material-design';
   // Remove modal content on hide
   $modal.on('hidden.bs.modal', removeModalContent);
 
-  // Affix for navbar to collapse on scroll
-  $navbar.affix({
-    offset: {
-      top: 75,
-    },
-  });
+  // Scroll to top on button click
+  $scrollButton.on('click', scrollToTop);
 
   // Function to show the dark overlay whenever the navmenu is expanded
   $navbarToggle.on('click', toggleOverlay);

@@ -98,10 +98,13 @@ prefix="og: http://ogp.me/ns#"
   data-target=".navbar-fixed-top"
 @endsection
 @section('data-offset')
-  data-offset="75"
+  data-offset="77"
 @endsection
 
 @section('content')
+  <button id="scroll-top" class="btn btn-raised btn-circle scroll-top-btn" data-spy="affix" data-offset-top="150">
+    <span class="glyphicon glyphicon glyphicon-chevron-up">
+  </button>
   @includeIf('partials.header')
 
   @includeIf('pages.sections.landing')
