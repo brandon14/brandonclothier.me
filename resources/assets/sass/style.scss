@@ -287,7 +287,9 @@ hr {
 }
 
 .scroll-top-btn {
-  bottom: 0;
+  z-index: 9999;
+  position: absolute;
+  bottom: -150px;
   right: 0;
   margin: 0 15px 15px 0;
   background-color: rgba($scroll-top-button-background, 0.5) !important;
@@ -301,7 +303,7 @@ hr {
 
 .scroll-top-btn.affix {
   position: fixed;
-  display: 0;
+  bottom: 0;
 }
 /* End scroll to top button */
 
