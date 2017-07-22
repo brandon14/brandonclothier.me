@@ -1,4 +1,8 @@
 ## brandonclothier.me Changelog
+### 1.3.2 July 22nd, 2017
+- Hotfix to fix the HTTPS URLs.
+- Add the app version into the app config.
+
 ### 1.3.1 July 22nd, 2017
 - Update composer and npm dependencies.
 
