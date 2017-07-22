@@ -43,7 +43,8 @@
         </div>
         <div id="copyright" class="copyright">
           Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
-          <br/>Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
+          <br />Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
+          <br />Website Version: {{ env('APP_VERSION', '1.0.0') }}
         </div>
       </div>
     </div>
