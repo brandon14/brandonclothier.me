@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="{{ asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ secure_asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
         @yield('share-buttons', '')
       </div>
@@ -44,7 +44,7 @@
         <div id="copyright" class="copyright">
           Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
           <br />Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
-          <br />Website Version: {{ env('APP_VERSION', '1.0.0') }}
+          <br />Website Version: {{ config('app.version') }}
         </div>
       </div>
     </div>
