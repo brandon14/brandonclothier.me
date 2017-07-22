@@ -11,7 +11,7 @@
         <div class="sidebar-wrapper">
           <!-- Profile container -->
           <div class="profile-container">
-            <img class="profile" src="{{ config('app.env') === 'production' ? asset('images/profile-small.png', true) : asset('images/profile-small.png') }}" alt="Profile Image" />
+            <img class="profile" src="{{ asset('images/profile-small.png') }}" alt="Profile Image" />
             <h1 class="name">Brandon Clothier</h1>
             <h3 class="tagline">Web Developer</h3>
           </div>
@@ -348,7 +348,7 @@
 
           <!-- Downloads section -->
           <section class="download-section section">
-            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ asset('/files/resume.pdf', true) }}">Download Resume</a></h2>
+            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ asset('/files/resume.pdf') }}">Download Resume</a></h2>
             <div class="item">
             </div>
           </section>
