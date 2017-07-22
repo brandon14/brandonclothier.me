@@ -1,4 +1,8 @@
 ## brandonclothier.me Changelog
+### 1.3.3 July 22nd, 2017
+- Hotfix to fix a error blade template I forgot about.
+- Fix the open graph URL meta.
+
 ### 1.3.2 July 22nd, 2017
 - Hotfix to fix the HTTPS URLs.
 - Add the app version into the app config.

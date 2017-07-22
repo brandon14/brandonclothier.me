@@ -28,7 +28,7 @@ prefix="og: http://ogp.me/ns#"
 
 @section('social-media-meta')
 <!-- Facebook OpenGraph meta -->
-<meta property="og:url" content="{{ url('/') }}" />
+<meta property="og:url" content="{{ secure_url('/') }}" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
