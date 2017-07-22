@@ -1,4 +1,7 @@
 ## brandonclothier.me Changelog
+### 1.3.1 July 22nd, 2017
+- Update composer and npm dependencies.
+
 ### 1.3.0 July 22nd, 2017
 - Refactor blade templates to be more organized and extendable.
 - Clean up code and fix spacing in the doc blocks.
