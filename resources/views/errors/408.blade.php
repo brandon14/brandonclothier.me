@@ -1,16 +1,8 @@
-@extends('base')
-
-@section('meta')
-<meta name="robots" content="noindex, nofollow" />
-@endsection
+@extends('layouts.error-base')
 
 @section('title', 'Brandon Clothier | 408')
 
-@section('body')
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="75">
-  @includeIf('components.header-error')
-  @section('error', '408 - Request timeout!')
-  @includeIf('components.error')
-  @includeIf('components.footer-error')
-</body>
+@section('error-section')
+    @section('error', '408 - Request timeout!')
+    @includeIf('partials.error')
 @endsection

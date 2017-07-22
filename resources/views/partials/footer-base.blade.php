@@ -1,12 +1,14 @@
 @inject('lastModified', 'lastModified')
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="{{ config('app.env') === 'production' ? asset('images/profile-small.png', true) : asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
+        @yield('share-buttons', '')
       </div>
       <div class="col-md-6 footer-right">
         <div class="social-buttons">
@@ -33,6 +35,7 @@
             <span class="fa fa-linkedin"></span>
           </a>
           <!-- End social buttons -->
+          @yield('follow-buttons', '')
           <!-- Email links -->
           <a class="btn btn-block btn-sm btn-social btn-github" href="mailto:brandon14125@gmail.com"><span class="fa fa-envelope"></span>brandon14125@gmail.com</a>
           <a class="btn btn-block btn-sm btn-social btn-github" href="mailto:brandon_clothier@mymail.eku.edu"><span class="fa fa-envelope"></span>brandon_clothier@mymail.eku.edu</a>
