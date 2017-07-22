@@ -29,6 +29,6 @@ class GenerateSitemap extends Command
     public function handle()
     {
         SitemapGenerator::create(config('app.url'))
-                        ->writeToFile($this->laravel->make('path.public').'sitemap.xml');
+                        ->writeToFile($this->laravel->make('path.public').'/sitemap.xml');
     }
 }
