@@ -1,4 +1,15 @@
 ## brandonclothier.me Changelog
+### 1.3.0 July 22nd, 2017
+- Refactor blade templates to be more organized and extendable.
+- Clean up code and fix spacing in the doc blocks.
+- Remove some usages of helper functions and facades in code.
+- Add a corner ribbon with a link to the Github project.
+- Add a scroll to top button.
+- Add Google Translate widget in footer.
+- Add a cookie consent alert using spatie's cookie consent package.
+- Use SetEnvIfNoCase to block bad bots in .htaccess and clean up that file.
+- Add the website version to the footer.
+
 ### 1.2.5 July 7th, 2017
 - Add newlines to the Github PR template and contributing markdown. Fixes some Sensio Insight warnings.
 
