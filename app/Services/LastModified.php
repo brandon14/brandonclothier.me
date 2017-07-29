@@ -8,7 +8,6 @@ use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
-use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
 class LastModified
 {
