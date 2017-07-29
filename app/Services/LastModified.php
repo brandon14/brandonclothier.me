@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
-use DirectoryIterator;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use Carbon\Carbon;
+use DirectoryIterator;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
 class LastModified
 {
@@ -46,7 +47,8 @@ class LastModified
     }
 
     /**
-     * [buildIncludedDirectories description]
+     * Function to populate {@link $this->includedDirectories} with the
+     * directories to consider for the last modified file time.
      *
      * @return void
      */
