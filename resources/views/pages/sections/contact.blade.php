@@ -5,7 +5,7 @@
       <h1>Contact</h1>
       <hr>
       <!-- Contact form -->
-      <form id="contact-form" role="form">
+      <form id="contact-form">
         <!-- Name form group -->
         <div class="form-group label-floating is-empty">
           <label for="name" class="control-label">Name</label>

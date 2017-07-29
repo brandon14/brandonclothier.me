@@ -15,8 +15,10 @@ prefix="og: http://ogp.me/ns#"
 <meta name="description" content="{{ $description }}" />
 <meta name="author" content="{{ $author }}" />
 <meta name="keywords" content="{{ $keywords }}" />
-<link rel="copyright" href="#copyright" />
+<link rel="license" href="{{ secure_url('/') }}/#copyright" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="cannonical" href="{{ secure_url('/') }}" />
+<base href="{{ secure_url('/') }}" target="_blank" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -106,7 +108,7 @@ prefix="og: http://ogp.me/ns#"
     <a href="https://github.com/brandon14/brandonclothier.me" target="_blank">Visit me on <i class="fa fa-github" aria-hidden="true"></i></a>
   </div>
   <button id="scroll-top" class="btn btn-raised btn-circle scroll-top-btn" data-spy="affix" data-offset-top="150">
-    <span class="glyphicon glyphicon glyphicon-chevron-up">
+    <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
   </button>
   @includeIf('partials.header')
 
