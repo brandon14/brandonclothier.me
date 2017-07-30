@@ -1,4 +1,12 @@
 ## brandonclothier.me Changelog
+### 1.4.0 July 29th, 2017
+- Refactor LastModified service. It is much faster now and should be easier to start testing.
+- Remove the React based airbnb eslint config in favor of the airbnb-base config.
+- Fix some HTML validation errors in the page.
+- Update composer dependencies & npm dependencies.
+- Use eslint 4.3
+- Drop support for PHP 7.0. Website require PHP 7.1 or greater. Come on we gotta stay up to date!
+
 ### 1.3.3 July 22nd, 2017
 - Hotfix to fix a error blade template I forgot about.
 - Fix the open graph URL meta.
