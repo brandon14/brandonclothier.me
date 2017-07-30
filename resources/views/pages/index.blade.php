@@ -17,7 +17,7 @@ prefix="og: http://ogp.me/ns#"
 <meta name="keywords" content="{{ $keywords }}" />
 <link rel="license" href="{{ secure_url('/') }}/#copyright" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<link rel="cannonical" href="{{ secure_url('/') }}" />
+<link rel="canonical" href="{{ secure_url('/') }}" />
 <base href="{{ secure_url('/') }}" target="_blank" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">

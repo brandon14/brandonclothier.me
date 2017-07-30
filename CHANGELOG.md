@@ -1,4 +1,7 @@
 ## brandonclothier.me Changelog
+### 1.4.1 July 29th, 2017
+- Fix typo in canonical link meta
+
 ### 1.4.0 July 29th, 2017
 - Refactor LastModified service. It is much faster now and should be easier to start testing.
 - Remove the React based airbnb eslint config in favor of the airbnb-base config.
