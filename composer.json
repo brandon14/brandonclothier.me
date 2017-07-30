@@ -8,7 +8,7 @@
     "require": {
         "php": ">=7.1.0",
         "arcanedev/no-captcha": "^4.0",
-        "graham-campbell/htmlmin": "^4.5",
+        "htmlmin/htmlmin": "^4.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "spatie/laravel-cookie-consent": "^1.8",
