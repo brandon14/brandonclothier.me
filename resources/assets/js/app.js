@@ -211,15 +211,15 @@ import 'bootstrap-material-design';
     const message = $message.val();
 
     sendContactEmail(name, email, message)
-    .then((response) => {
-      processEmailResponse({
-        status: response.status,
-        response: response.data.message,
+      .then((response) => {
+        processEmailResponse({
+          status: response.status,
+          response: response.data.message,
+        });
+      })
+      .catch((response) => {
+        processEmailResponse(handleContactErrorResponse(response));
       });
-    })
-    .catch((response) => {
-      processEmailResponse(handleContactErrorResponse(response));
-    });
   };
 
   /**
@@ -381,13 +381,13 @@ import 'bootstrap-material-design';
   if (token) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = token;
   } else {
-    console.error('CSRF token not found.');
+    console.error('CSRF token not found.'); // eslint-disable-line no-console
   }
 
   // Set the progressbar widths to 0
   $levelBar.css('width', '0');
 
-   /*
+  /*
    |--------------------------------------------------------------------------
    | Bind Events
    |--------------------------------------------------------------------------

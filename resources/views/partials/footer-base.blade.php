@@ -41,10 +41,10 @@
           <a class="btn btn-block btn-sm btn-social btn-github" href="mailto:brandon_clothier@mymail.eku.edu"><span class="fa fa-envelope"></span>brandon_clothier@mymail.eku.edu</a>
           <!-- End email links -->
         </div>
-        <div id="copyright" class="copyright">
-          Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier
-          <br />Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
+        <div class="footer-details">
+          <br />Website last updated {{ app('lastModified')->getLastModifiedFile()->format('F jS, Y \a\t h:i:s A T') }}
           <br />Website Version: {{ config('app.version') }}
+          <br /><small id="copyright">Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier</small>
         </div>
       </div>
     </div>
