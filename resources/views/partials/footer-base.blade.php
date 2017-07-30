@@ -42,7 +42,7 @@
           <!-- End email links -->
         </div>
         <div class="footer-details">
-          Website last updated {{ app('lastModified')->format('F jS, Y \a\t h:i:s A T') }}
+          <br />Website last updated {{ app('lastModified')->getLastModifiedFile()->format('F jS, Y \a\t h:i:s A T') }}
           <br />Website Version: {{ config('app.version') }}
           <br /><small id="copyright">Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier</small>
         </div>
