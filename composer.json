@@ -6,7 +6,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.1.0",
         "arcanedev/no-captcha": "^4.0",
         "graham-campbell/htmlmin": "^4.5",
         "laravel/framework": "5.4.*",
