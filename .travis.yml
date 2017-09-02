@@ -26,7 +26,7 @@ before_script:
   - sudo chgrp -R www-data storage bootstrap/cache
   - sudo chmod -R ug+rwx storage bootstrap/cache
   - php artisan config:cache
-  - nvm install 6.10.3
+  - nvm install 8.4.0
   - npm install npm@latest -g
   - npm install -g yarn
   - yarn
