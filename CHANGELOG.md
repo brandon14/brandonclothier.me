@@ -2,6 +2,20 @@
 
 ## brandonclothier.me
 
+### 1.5.0 September 2nd, 2017
+
+- [[4d37416](https://github.com/brandon14/brandonclothier.me/commit/4d374163f557397fc972de7d7570dd1e0d375d6a)] CHANGELOG.md: Refactor changelog layout using a custom git log alias. [Brandon Clothier] on Sat, 2 Sep 2017 01:48:58 -0400
+- [[fbba034](https://github.com/brandon14/brandonclothier.me/commit/fbba0344c20f376d502846247a5bc03c56b47d4d)] Apply fixes from StyleCI [Brandon Clothier] on Sat, 2 Sep 2017 04:50:13 +0000
+- [[3f863fe](https://github.com/brandon14/brandonclothier.me/commit/3f863fedb7d986a65fdffc2d9a6ddddd492a00b4)] travis-ci: Use node 8.4.0 during travis CI. [Brandon Clothier] on Sat, 2 Sep 2017 00:48:22 -0400
+- [[48f3c37](https://github.com/brandon14/brandonclothier.me/commit/48f3c376f00f7d0dbf7a9eed417b4900391b5bfb)] trusted-proxies: Pulbish trusted proxies config. [Brandon Clothier] on Sat, 2 Sep 2017 00:46:46 -0400
+- [[c2b33d6](https://github.com/brandon14/brandonclothier.me/commit/c2b33d61c6a9f88ca2bb2f33eb0b8954d33d724f)] webpack.mix.js: Use APP_URL for bnrowsersync URL. [Brandon Clothier] on Sat, 2 Sep 2017 00:46:23 -0400
+- [[1de6472](https://github.com/brandon14/brandonclothier.me/commit/1de6472bd2ff5a869288fbf72229a7f1a57d34ed)] sitemap: Publish laravel-sitemap vendor files. [Brandon Clothier] on Sat, 2 Sep 2017 00:46:00 -0400
+- [[167528a](https://github.com/brandon14/brandonclothier.me/commit/167528a7a0c15422a5b5ff64063fc2cdc6654310)] no-captcha: Publish nocaptcha config. [Brandon Clothier] on Sat, 2 Sep 2017 00:45:30 -0400
+- [[c5d6ecd](https://github.com/brandon14/brandonclothier.me/commit/c5d6ecd36e02f1c6b33daff7b267b4e86330d550)] cookie-consent: Publish cookie-consent vendor files. [Brandon Clothier] on Sat, 2 Sep 2017 00:43:51 -0400
+- [[67c2308](https://github.com/brandon14/brandonclothier.me/commit/67c230858b1d1b61cd18c4ef9a93fd8cedcf39b9)] Laravel 5.5: Update laravel to 5.5 :smiley: :neckbeard: :+1: [Brandon Clothier] on Sat, 2 Sep 2017 00:43:09 -0400
+- [[fe76ba0](https://github.com/brandon14/brandonclothier.me/commit/fe76ba07c97f545a677b44d9502360c6d1abb1b1)] env: Comment .env.example file and add reCAPTCHA configs and cookie configs [Brandon Clothier] on Sat, 2 Sep 2017 00:37:37 -0400
+- [[51bac5f](https://github.com/brandon14/brandonclothier.me/commit/51bac5f59234d3644f451046fd318675b2d6faef)] NPM deps: Update npm dependencies. [Brandon Clothier] on Sat, 2 Sep 2017 00:36:20 -0400
+
 ### 1.4.1 July 29th, 2017
 
 - [[fb65ec6](https://github.com/brandon14/brandonclothier.me/commit/fb65ec6fff7559a95658ce9dab778b4d6758f0d9)] Typo hotfix 1.4.1 [Brandon Clothier] on Sun, 30 Jul 2017 00:15:47 -0400
