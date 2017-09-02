@@ -22,13 +22,16 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected $dontReport = [
-        \Illuminate\Auth\AuthenticationException::class,
-        \Illuminate\Auth\Access\AuthorizationException::class,
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
-        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
-        \Illuminate\Session\TokenMismatchException::class,
-        \Illuminate\Validation\ValidationException::class,
+    protected $dontReport = [];
+
+    /**
+     * A list of the inputs that are never flashed for validation exceptions.
+     *
+     * @var array
+     */
+    protected $dontFlash = [
+        'password',
+        'password_confirmation',
     ];
 
     /**
@@ -37,6 +40,7 @@ class Handler extends ExceptionHandler
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
      * @param  \Exception  $exception
+     *
      * @return void
      */
     public function report(Exception $exception)
@@ -48,41 +52,48 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception                $e
+     * @param  \Exception                $exception
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $e)
+    public function render($request, Exception $exception)
     {
-        $e = $this->prepareException($e);
-
-        if ($e instanceof HttpResponseException) {
-            return $e->getResponse();
-        } elseif ($e instanceof AuthenticationException) {
-            return $this->unauthenticated($request, $e);
-        } elseif ($e instanceof ValidationException) {
-            return $this->convertValidationExceptionToResponse($e, $request);
-        }
-
-        return $request->expectsJson()
-            ? $this->prepareJsonResponse($request, $e)
-            : $this->prepareResponse($request, $e);
+        return parent::render($request, $exception);
     }
 
     /**
-     * Render a exception into a JSON response.
+     * Prepare exception for rendering.
+     *
+     * @param  \Exception  $exception
+     * @return \Exception
+     */
+    protected function prepareException(Exception $exception)
+    {
+        if ($exception instanceof ModelNotFoundException) {
+            $exception = new NotFoundHttpException($exception->getMessage(), $exception);
+        } elseif ($exception instanceof AuthorizationException) {
+            $exception = new AccessDeniedHttpException($exception->getMessage());
+        } elseif ($exception instanceof TokenMismatchException) {
+            $exception = new HttpException(419, $exception->getMessage() ?: 'Token mismatch.');
+        }
+
+        return $exception;
+    }
+
+    /**
+     * Prepare a JSON response for the given exception.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception                $e
+     * @param  \Exception                $exception
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function prepareJsonResponse($request, Exception $e)
+    protected function prepareJsonResponse($request, Exception $exception)
     {
         // Get the error code, headers and message from the exception.
-        $status = $this->isHttpException($e) ? $e->getStatusCode() : 500;
-        $headers = $this->isHttpException($e) ? $e->getHeaders() : [];
-        $message = $this->isHttpException($e) ? $e->getMessage() : 'Internal Server Error.';
+        $status = $this->isHttpException($exception) ? $exception->getStatusCode() : 500;
+        $headers = $this->isHttpException($exception) ? $exception->getHeaders() : [];
+        $message = $this->isHttpException($exception) ? $exception->getMessage() : 'Internal Server Error.';
 
         // Construct the general JSON data array.
         $data = [
@@ -95,9 +106,9 @@ class Handler extends ExceptionHandler
         // If the app is running in debug mode, we can get more debug information such as the file, line
         // and stack trace.
         if (config('app.debug')) {
-            $data['error']['file'] = $e->getFile();
-            $data['error']['line'] = $e->getLine();
-            $data['error']['trace'] = $e->getTrace();
+            $data['error']['file'] = $exception->getFile();
+            $data['error']['line'] = $exception->getLine();
+            $data['error']['trace'] = $exception->getTrace();
         }
 
         // Return a new json response with the error message and code
@@ -105,74 +116,14 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Prepare exception for rendering.
-     *
-     * @param  \Exception  $e
-     *
-     * @return \Exception
-     */
-    protected function prepareException(Exception $e)
-    {
-        if ($e instanceof ModelNotFoundException) {
-            $e = new NotFoundHttpException($e->getMessage(), $e);
-        } elseif ($e instanceof AuthorizationException) {
-            $e = new AccessDeniedHttpException($e->getMessage());
-        } elseif ($e instanceof TokenMismatchException) {
-            $e = new HttpException(419, 'CSRF Token Mismatch.');
-        }
-
-        return $e;
-    }
-
-    /**
-     * Create a response object from the given validation exception.
-     *
-     * @param  \Illuminate\Validation\ValidationException  $e
-     * @param  \Illuminate\Http\Request                    $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    protected function convertValidationExceptionToResponse(ValidationException $e, $request)
-    {
-        $errors = $e->validator->errors()->getMessages();
-
-        if ($request->expectsJson()) {
-            $data = [
-                'error' => [
-                    'code'    => 422,
-                    'message' => $e->getMessage(),
-                    'errors'  => $errors,
-                ],
-            ];
-
-            if (config('app.debug')) {
-                $data['error']['file'] = $e->getFile();
-                $data['error']['line'] = $e->getLine();
-                $data['error']['trace'] = $e->getTrace();
-            }
-
-            return new JsonResponse($data, 422, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        }
-
-        if ($e->response) {
-            return $e->response;
-        }
-
-        return redirect()
-            ->back()
-            ->withInput($request->input())
-            ->withErrors($errors);
-    }
-
-    /**
-     * Convert an authentication exception into an unauthenticated response.
+     * Convert an authentication exception into a response.
      *
      * @param  \Illuminate\Http\Request                  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $e
+     * @param  \Illuminate\Auth\AuthenticationException  $exception
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\Response
      */
-    protected function unauthenticated($request, AuthenticationException $e)
+    protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
             $data = [
@@ -183,14 +134,44 @@ class Handler extends ExceptionHandler
             ];
 
             if (config('app.debug')) {
-                $data['error']['file'] = $e->getFile();
-                $data['error']['line'] = $e->getLine();
-                $data['error']['trace'] = $e->getTrace();
+                $data['error']['file'] = $exception->getFile();
+                $data['error']['line'] = $exception->getLine();
+                $data['error']['trace'] = $exception->getTrace();
             }
 
             return new JsonResponse($data, 401, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
 
         return redirect()->guest(route('login'));
+    }
+
+    /**
+     * Convert a validation exception into a JSON response.
+     *
+     * @param  \Illuminate\Http\Request                    $request
+     * @param  \Illuminate\Validation\ValidationException  $exception
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function invalidJson($request, ValidationException $exception)
+    {
+        $errors = $exception->validator->errors()->getMessages();
+        $code = $exception->status;
+
+        $data = [
+            'error' => [
+                'code'    => $code,
+                'message' => $exception->getMessage(),
+                'errors'  => $errors,
+            ],
+        ];
+
+        if (config('app.debug')) {
+            $data['error']['file'] = $exception->getFile();
+            $data['error']['line'] = $exception->getLine();
+            $data['error']['trace'] = $exception->getTrace();
+        }
+
+        return new JsonResponse($data, $code, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 }

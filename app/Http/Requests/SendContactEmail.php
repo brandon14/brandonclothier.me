@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Arcanedev\NoCaptcha\Rules\CaptchaRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SendContactEmail extends FormRequest
@@ -24,7 +25,7 @@ class SendContactEmail extends FormRequest
     public function rules()
     {
         return [
-            'g-recaptcha-response' => 'bail|required|captcha',
+            'g-recaptcha-response' => ['bail', 'required', new CaptchaRule],
             'name'                 => 'bail|required|string',
             'email'                => 'bail|required|email',
             'message'              => 'required|string',
