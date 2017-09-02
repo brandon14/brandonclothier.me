@@ -12,10 +12,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [
-        Commands\Serve::class,
-        Commands\GenerateSitemap::class,
-    ];
+    protected $commands = [];
 
     /**
      * Define the application's command schedule.
@@ -31,12 +28,14 @@ class Kernel extends ConsoleKernel
     }
 
     /**
-     * Register the Closure based commands for the application.
+     * Register the commands for the application.
      *
      * @return void
      */
     protected function commands()
     {
+        $this->load(__DIR__.'/Commands');
+
         require $this->app->basePath().'/routes/console.php';
     }
 

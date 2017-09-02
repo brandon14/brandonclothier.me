@@ -10,6 +10,7 @@ return [
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
+    |
     */
 
     'name' => env('APP_NAME', 'Laravel'),
@@ -178,11 +179,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Laravel\Tinker\TinkerServiceProvider::class,
-        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
-        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
-        Spatie\CookieConsent\CookieConsentServiceProvider::class,
-        Spatie\Sitemap\SitemapServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -215,7 +211,6 @@ return [
         'Broadcast'    => Illuminate\Support\Facades\Broadcast::class,
         'Bus'          => Illuminate\Support\Facades\Bus::class,
         'Cache'        => Illuminate\Support\Facades\Cache::class,
-        'Captcha'      => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
         'Config'       => Illuminate\Support\Facades\Config::class,
         'Cookie'       => Illuminate\Support\Facades\Cookie::class,
         'Crypt'        => Illuminate\Support\Facades\Crypt::class,
@@ -225,7 +220,6 @@ return [
         'File'         => Illuminate\Support\Facades\File::class,
         'Gate'         => Illuminate\Support\Facades\Gate::class,
         'Hash'         => Illuminate\Support\Facades\Hash::class,
-        'HTMLMin'      => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
         'Lang'         => Illuminate\Support\Facades\Lang::class,
         'Log'          => Illuminate\Support\Facades\Log::class,
         'Mail'         => Illuminate\Support\Facades\Mail::class,

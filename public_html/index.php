@@ -4,6 +4,7 @@
  *
  * @author   Brandon Clothier <brandon14125@gmail.com>
  */
+define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@
 |
 */
 
-require __DIR__.'/../bootstrap/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
