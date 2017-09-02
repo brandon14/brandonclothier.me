@@ -4,7 +4,6 @@
  *
  * @author   Brandon Clothier <brandon14125@gmail.com>
  */
-
 define('LARAVEL_START', microtime(true));
 
 /*
