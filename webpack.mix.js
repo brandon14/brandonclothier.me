@@ -35,7 +35,7 @@ mix.autoload({
   });
 
 if (isDev) {
-  mix.browserSync(process.env.MIX_BROWSERSYNC_URL)
+  mix.browserSync(process.env.APP_URL)
     .webpackConfig({ devtool: 'inline-source-map' });
 } else {
   mix.version();
