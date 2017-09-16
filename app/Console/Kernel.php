@@ -48,7 +48,7 @@ class Kernel extends ConsoleKernel
     {
         // Bind the public path to public_html instead of public
         $this->app->bind('path.public', function () {
-            return $this->app->basePath().'/public_html';
+            return $this->app->basePath().DIRECTORY_SEPARATOR.env('APP_PUBLIC_PATH', 'public');
         });
 
         parent::bootstrap();
