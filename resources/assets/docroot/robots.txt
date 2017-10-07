@@ -1,6 +1,0 @@
-# Website sitemap.
-Sitemap: https://brandonclothier.me/sitemap.xml
-
-# Disallow the contact URL.
-User-agent: *
-Disallow: /contact

@@ -30,7 +30,6 @@ mix.autoload({
   })
   .copyDirectory('resources/assets/images', `${publicPath}/images`)
   .copyDirectory('resources/assets/files', `${publicPath}/files`)
-  .copyDirectory('resources/assets/docroot', publicPath)
   .extract(['axios', 'jquery', 'jquery.easing', 'bootstrap-sass', 'bootstrap-material-design'], '/js/vendor')
   .options({
     postCss: [

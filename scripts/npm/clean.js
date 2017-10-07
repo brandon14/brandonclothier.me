@@ -24,7 +24,7 @@ process.stdout.write('Cleanup started...\n');
  *
  * @type  {string[]}
  */
-const files = filter(fs.readdirSync(publicDir), (file) => file !== 'index.php');
+const files = filter(fs.readdirSync(publicDir), (file) => file !== 'index.php' && file !== 'favicon.ico' && file !== 'humans.txt' && file !== 'robots.txt');
 // Delete each file/directory.
 forEach(files, (file) => {
   const resolvedPath = resolve(publicDir, file);

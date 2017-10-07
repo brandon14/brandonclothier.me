@@ -20,6 +20,9 @@ Homestead.yaml
 # the webpack build process.
 /public/*
 !public/index.php
+!public/humans.txt
+!public/robots.txt
+!public/favicon.ico
 
 # Yarn and node debug files
 npm-debug.log*
