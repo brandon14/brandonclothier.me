@@ -1,7 +1,7 @@
 {
     "name": "brandon14/brandonclothier.me",
     "description": "A personal website for Brandon Clothier.",
-    "version": "v1.5.1",
+    "version": "v1.5.2",
     "keywords": ["website", "laravel"],
     "license": "MIT",
     "type": "project",
