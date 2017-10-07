@@ -2,8 +2,16 @@
 
 ## brandonclothier.me
 
+### 1.5.1 October 7th, 2017
+
+- [[22ba330](https://github.com/brandon14/brandonclothier.me/commit/22ba330356cf231056f40441d33cf23900161e5a)] feature: Front-end Tooling: Remove docroot folder. [Brandon Clothier] on Sat, 7 Oct 2017 01:06:07 -0400
+- [[da3cb6c](https://github.com/brandon14/brandonclothier.me/commit/da3cb6cfd12170b63d6f7c6ff28815d873e72b7b)] Apply fixes from StyleCI [Brandon Clothier] on Sat, 7 Oct 2017 04:57:37 +0000
+- [[07b4f93](https://github.com/brandon14/brandonclothier.me/commit/07b4f93a1037b46f96b426924f14ca28cc03c28a)] feature: Front-end Tooling [Brandon Clothier] on Sat, 7 Oct 2017 00:54:38 -0400
+- [[14a2f41](https://github.com/brandon14/brandonclothier.me/commit/14a2f413c81d313c6191c32c0243de457d5eba6a)] feature: Front-end Tooling [Brandon Clothier] on Fri, 15 Sep 2017 22:26:13 -0400
+
 ### 1.5.0 September 2nd, 2017
 
+- [[577d55b](https://github.com/brandon14/brandonclothier.me/commit/577d55b35a34a4cb8f2a80d1914181332a0a6831)] Prepare 1.5.0 release. [Brandon Clothier] on Sat, 2 Sep 2017 02:01:01 -0400
 - [[4d37416](https://github.com/brandon14/brandonclothier.me/commit/4d374163f557397fc972de7d7570dd1e0d375d6a)] CHANGELOG.md: Refactor changelog layout using a custom git log alias. [Brandon Clothier] on Sat, 2 Sep 2017 01:48:58 -0400
 - [[fbba034](https://github.com/brandon14/brandonclothier.me/commit/fbba0344c20f376d502846247a5bc03c56b47d4d)] Apply fixes from StyleCI [Brandon Clothier] on Sat, 2 Sep 2017 04:50:13 +0000
 - [[3f863fe](https://github.com/brandon14/brandonclothier.me/commit/3f863fedb7d986a65fdffc2d9a6ddddd492a00b4)] travis-ci: Use node 8.4.0 during travis CI. [Brandon Clothier] on Sat, 2 Sep 2017 00:48:22 -0400

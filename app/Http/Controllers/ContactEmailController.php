@@ -35,7 +35,7 @@ class ContactEmailController extends Controller
      */
     public function sendEmail(SendContactEmail $request)
     {
-        $contactEmail = config('mail.contactemail');
+        $contactEmail = config('mail.contact_email');
         $name = filter_var($request->input('name'), FILTER_SANITIZE_STRING);
         $email = filter_var($request->input('email'), FILTER_SANITIZE_EMAIL);
         $message = filter_var($request->input('message'), FILTER_SANITIZE_STRING);

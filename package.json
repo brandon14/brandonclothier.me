@@ -1,40 +1,85 @@
 {
+  "name": "brandonclothier.me-frontend-assests",
+  "version": "1.0.0",
+  "description": "Frontend assets and tooling for brandonclothier.me",
+  "keywords": [
+    "laravel",
+    "laravel-mix",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brandon14/brandonclothier.me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brandon14/brandonclothier.me/issues",
+    "email": "brandon14125@gmail.com"
+  },
+  "engines": {
+    "npm": ">=3.0.0",
+    "node": ">=6.11.3"
+  },
+  "contributors": [
+    {
+      "name": "Brandon Clothier",
+      "url": "https://brandonclothier.me",
+      "email": "brandon14125@gmail.com"
+    }
+  ],
+  "author": "Brandon Clothier <brandon14125@gmail.com> (https://brandonclothier.me)",
+  "license": "MIT",
   "private": true,
   "scripts": {
+    "analyze:clean": "rimraf ./resources/assets/stats.json",
+    "preanalyze": "npm run analyze:clean",
+    "analyze": "node ./scripts/npm/analyze.js",
+    "checkver": "node ./scripts/npm/checkver.js",
+    "preinstall": "npm run checkver",
+    "build:clean": "shjs ./scripts/npm/clean.js",
+    "clean:all": "npm run analyze:clean && npm run build:clean",
     "dev": "npm run development",
-    "clean": "rimraf ./public_html/css && rimraf ./public_html/js && rimraf ./public_html/files && rimraf ./public_html/images && rimraf ./public_html/favicon.ico && rimraf ./public_html/robots.txt && rimraf ./public_html/humans.txt && rimraf ./public_html/.htaccess && rimraf ./public_html/mix-manifest.json",
-    "development": "npm run clean && cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "npm run build:clean && cross-env NODE_ENV=development webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": " npm run clean && cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "npm run test && npm run build:clean && cross-env NODE_ENV=production webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --color --format codeframe",
+    "lint:js": "npm run lint:eslint -- . "
   },
   "devDependencies": {
     "axios": "^0.16.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-dynamic-import-node": "^1.0.1",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap-material-design": "^0.5.10",
     "bootstrap-sass": "^3.3.7",
     "bootstrap-social": "^5.1.1",
-    "browser-sync": "^2.18.12",
-    "browser-sync-webpack-plugin": "^1.1.4",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "chalk": "^2.1.0",
     "cross-env": "^5.0.5",
-    "eslint": "^4.6.0",
-    "eslint-config-airbnb-base": "^11.3.2",
-    "eslint-plugin-import": "^2.2.0",
+    "dotenv": "^4.0.0",
+    "dotenv-expand": "^4.0.1",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
-    "laravel-mix": "^1.0.6",
+    "laravel-mix": "^1.4.2",
     "lodash": "^4.17.4",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "semver": "^5.4.1",
+    "shelljs": "^0.7.8",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
   },
   "babel": {
     "presets": [
@@ -67,7 +112,9 @@
     "extends": "airbnb-base",
     "env": {
       "browser": true,
-      "es6": true
+      "es6": true,
+      "shelljs": true,
+      "node": true
     },
     "parserOptions": {
       "ecmaVersion": 6,
@@ -109,6 +156,13 @@
       "class-methods-use-this": 0,
       "require-yield": 0,
       "import/no-webpack-loader-syntax": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "./node_modules/laravel-mix/setup/webpack.config.js"
+        }
+      }
     }
   },
   "browserslist": [

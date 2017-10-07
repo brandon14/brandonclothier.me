@@ -37,8 +37,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            // Add frame guard middleware
-            \Illuminate\Http\Middleware\FrameGuard::class,
             // Add Cookie Consent dialog
             \Spatie\CookieConsent\CookieConsentMiddleware::class,
         ],

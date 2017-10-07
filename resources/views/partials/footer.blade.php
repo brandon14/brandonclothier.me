@@ -6,7 +6,7 @@
       <!-- Facebook root div -->
       <div id="fb-root"></div>
       <!-- Facebook share button -->
-      <div class="fb-share-button" data-href="https://brandonclothier.me/" data-layout="button_count"
+      <div class="fb-share-button" data-href="{{ url('/') }}" data-layout="button_count"
         data-mobile-iframe="true">
         <a class="fb-xfbml-parse-ignore" target="_blank"
           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a>
@@ -17,7 +17,7 @@
           href="https://twitter.com/intent/tweet?text=brandonclothier.me%20is%20an%20awesome%20website!"></a>
       </div>
       <!-- Google+ button -->
-      <div class="g-plusone" data-size="medium" data-href="https://brandonclothier.me"></div>
+      <div class="g-plusone" data-size="medium" data-href="{{ url('/') }}"></div>
       <!-- Pinterest save button -->
       <div class="pinterest-button">
         <a data-pin-do="buttonBookmark" data-pin-save="true" href="https://www.pinterest.com/pin/create/button/"></a>

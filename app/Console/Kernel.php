@@ -23,8 +23,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        // Schedule comands to run here.
     }
 
     /**
@@ -34,6 +33,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
+        // Autoload artisan console commands.
         $this->load(__DIR__.'/Commands');
 
         require $this->app->basePath().'/routes/console.php';
@@ -46,11 +46,13 @@ class Kernel extends ConsoleKernel
      */
     public function bootstrap()
     {
-        // Bind the public path to public_html instead of public
-        $this->app->bind('path.public', function () {
-            return $this->app->basePath().'/public_html';
-        });
-
+        // Bootstrap the kernel before we bind the public path so that the
+        // environment variables have been loaded.
         parent::bootstrap();
+
+        // Bind the public path to public_html instead of public.
+        $this->app->bind('path.public', function () {
+            return $this->app->basePath().DIRECTORY_SEPARATOR.config('app.public_path');
+        });
     }
 }
