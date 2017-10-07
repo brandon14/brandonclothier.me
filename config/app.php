@@ -88,7 +88,7 @@ return [
     |
     */
 
-    'timezone' => 'America/Kentucky/Monticello',
+    'timezone' => env('APP_TIMEZONE', 'America/Kentucky/Monticello'),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -129,7 +129,7 @@ return [
 
     'key'    => env('APP_KEY'),
 
-    'cipher' => 'AES-256-CBC',
+    'cipher' => env('APP_CIPHER', 'AES-256-CBC'),
 
     /*
     |--------------------------------------------------------------------------
