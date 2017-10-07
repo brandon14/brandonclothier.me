@@ -30,13 +30,13 @@ return [
      */
     'proxies' => env('TRUSTED_PROXIES_PROXY_LIST', '') ? explode(',', env('TRUSTED_PROXIES_PROXY_LIST', '')) : [],
 
-    /**
+    /*
      * Or, to trust all proxies that connect
      * directly to your server, uncomment this:
      */
      // 'proxies' => '*',
 
-    /**
+    /*
      * Or, to trust ALL proxies, including those that
      * are in a chain of forwarding, uncomment this:
      */
