@@ -15,13 +15,19 @@ Homestead.yaml
 # Dotenv file
 .env
 
-# Ignore the public_html folder except for index.php
+# Ignore the public folder except for index.php
 # as everything else inside that folder is managed by
 # the webpack build process.
-/public_html/*
-!public_html/index.php
+/public/*
+!public/index.php
+!public/humans.txt
+!public/robots.txt
+!public/favicon.ico
 
 # Yarn and node debug files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Webpack stats.json file
+/resources/assets/stats.json

@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'contactemail' => env('CONTACT_EMAIL', 'test@test.com'),
+    'contact_email' => env('MAIL_CONTACT_EMAIL', 'test@test.com'),
 
     /*
     |--------------------------------------------------------------------------

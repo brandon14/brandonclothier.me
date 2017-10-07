@@ -261,7 +261,7 @@ import 'bootstrap-material-design';
    */
   const sendContactEmail = (name, email, message) => {
     if (!window.grecaptcha) {
-      return Promise.reject({
+      return Promise.reject({ // eslint-disable-line prefer-promise-reject-errors
         status: 500,
         message: 'Cannot find Google reCAPTCHA API.',
       });

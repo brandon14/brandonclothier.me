@@ -15,10 +15,10 @@ prefix="og: http://ogp.me/ns#"
 <meta name="description" content="{{ $description }}" />
 <meta name="author" content="{{ $author }}" />
 <meta name="keywords" content="{{ $keywords }}" />
-<link rel="license" href="{{ secure_url('/') }}/#copyright" />
+<link rel="license" href="{{ url('/') }}/#copyright" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<link rel="canonical" href="{{ secure_url('/') }}" />
-<base href="{{ secure_url('/') }}" target="_blank" />
+<link rel="canonical" href="{{ url('/') }}" />
+<base href="{{ url('/') }}" target="_blank" />
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
@@ -30,11 +30,11 @@ prefix="og: http://ogp.me/ns#"
 
 @section('social-media-meta')
 <!-- Facebook OpenGraph meta -->
-<meta property="og:url" content="{{ secure_url('/') }}" />
+<meta property="og:url" content="{{ url('/') }}" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:image" content="{{ secure_asset('/images/profile-large.png') }}" />
+<meta property="og:image" content="{{ asset('/images/profile-large.png') }}" />
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary" />
@@ -63,8 +63,8 @@ prefix="og: http://ogp.me/ns#"
     "gender": "Male",
     "email": "mailto:brandon14125@gmail.com",
     "jobTitle": "Web Developer",
-    "image": "{{ secure_asset('images/profile-small.png') }}",
-    "url": "{{ secure_url('/') }}",
+    "image": "{{ asset('images/profile-small.png') }}",
+    "url": "{{ url('/') }}",
     "sameAs": [
       "https://www.facebook.com/brandon14125",
       "https://plus.google.com/+BrandonClothier",
@@ -81,7 +81,7 @@ prefix="og: http://ogp.me/ns#"
     "@type": "WebSite",
     "name": "brandonclothier.me",
     "alternateName": "{{ $description }}",
-    "url": "{{ secure_url('/') }}"
+    "url": "{{ url('/') }}"
   }
 </script>
 @endsection

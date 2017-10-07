@@ -13,3 +13,6 @@
 
 Route::get('/', 'IndexController@index')->name('home');
 Route::post('/contact', 'ContactEmailController@sendEmail')->middleware('throttle:5,1');
+Route::redirect('/about', '/#about', 301);
+Route::redirect('/resume', '/#resume', 301);
+Route::redirect('/contact-me', '/#contact', 301);
