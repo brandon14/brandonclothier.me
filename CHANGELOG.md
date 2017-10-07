@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.5.3 October 7th, 2017
+
+- [[7c80fe0](https://github.com/brandon14/brandonclothier.me/commit/7c80fe04309208d8d5ccf58dabe346eaa206f014)] hotfix/1.5.3: Forgot to add the changes I made to the amil config [Brandon Clothier] on Sat, 7 Oct 2017 02:24:54 -0400
+
 ### 1.5.2 October 7th, 2017
 
+- [[b45dde7](https://github.com/brandon14/brandonclothier.me/commit/b45dde75c77d211a9c568d9491c652474485e501)] Hotfix 1.5.2 [Brandon Clothier] on Sat, 7 Oct 2017 02:22:35 -0400
 - [[6f961f6](https://github.com/brandon14/brandonclothier.me/commit/6f961f6ef5a36eb74f164187798c83e3daec88b5)] Hotfix: Fix travis build (hopefully) and remove checkver script [Brandon Clothier] on Sat, 7 Oct 2017 02:19:49 -0400
 
 ### 1.5.1 October 7th, 2017
