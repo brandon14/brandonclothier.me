@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" @yield('prefix', '')>
+<html lang="{{ config('app.locale') }}" @yield('prefix', '')>
   <head>
     <!-- General meta-data -->
     <meta charset="utf-8" />

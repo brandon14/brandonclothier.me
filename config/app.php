@@ -42,6 +42,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Public Path Directory
+    |--------------------------------------------------------------------------
+    | This is the document root of the Laravel application, and where your
+    | webserver will serve your application from.
+    |
+    */
+
+    'public_path' => env('APP_PUBLIC_PATH', 'public'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
