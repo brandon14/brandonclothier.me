@@ -29,7 +29,6 @@ before_script:
   - nvm install 8.4.0
   - npm install npm@latest -g
   - npm install -g yarn
-  - npm install -g semver
   - yarn
   - npm run development
 

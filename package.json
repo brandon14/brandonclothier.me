@@ -33,8 +33,6 @@
     "analyze:clean": "rimraf ./resources/assets/stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./scripts/npm/analyze.js",
-    "checkver": "node ./scripts/npm/checkver.js",
-    "preinstall": "npm run checkver",
     "build:clean": "shjs ./scripts/npm/clean.js",
     "clean:all": "npm run analyze:clean && npm run build:clean",
     "dev": "npm run development",
@@ -43,7 +41,7 @@
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "npm run test && npm run build:clean && cross-env NODE_ENV=production webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "npm run build:clean && cross-env NODE_ENV=production webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore --color --format codeframe",
     "lint:js": "npm run lint:eslint -- . "

@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.5.2 October 7th, 2017
+
+- [[6f961f6](https://github.com/brandon14/brandonclothier.me/commit/6f961f6ef5a36eb74f164187798c83e3daec88b5)] Hotfix: Fix travis build (hopefully) and remove checkver script [Brandon Clothier] on Sat, 7 Oct 2017 02:19:49 -0400
+
 ### 1.5.1 October 7th, 2017
 
+- [[4bc3409](https://github.com/brandon14/brandonclothier.me/commit/4bc34094e39142ca539cfd5c03ac006b84c771b2)] Prepare 1.5.1 release [Brandon Clothier] on Sat, 7 Oct 2017 01:19:18 -0400
 - [[22ba330](https://github.com/brandon14/brandonclothier.me/commit/22ba330356cf231056f40441d33cf23900161e5a)] feature: Front-end Tooling: Remove docroot folder. [Brandon Clothier] on Sat, 7 Oct 2017 01:06:07 -0400
 - [[da3cb6c](https://github.com/brandon14/brandonclothier.me/commit/da3cb6cfd12170b63d6f7c6ff28815d873e72b7b)] Apply fixes from StyleCI [Brandon Clothier] on Sat, 7 Oct 2017 04:57:37 +0000
 - [[07b4f93](https://github.com/brandon14/brandonclothier.me/commit/07b4f93a1037b46f96b426924f14ca28cc03c28a)] feature: Front-end Tooling [Brandon Clothier] on Sat, 7 Oct 2017 00:54:38 -0400
