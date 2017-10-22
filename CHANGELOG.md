@@ -2,6 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.6.0 October 21st, 2017
+
+- [[efeb987](https://github.com/brandon14/brandonclothier.me/commit/efeb98755a8d5102dab5e4fb04f52104c18751cd)] feature: Remove XSRF cookie [Brandon Clothier] on Sat, 21 Oct 2017 23:44:51 -0400
+- [[686a9a2](https://github.com/brandon14/brandonclothier.me/commit/686a9a237c0c8e42edd231ea9747609ee7bf0100)] feature: Update Javascript dependencies [Brandon Clothier] on Sat, 21 Oct 2017 23:26:44 -0400
+- [[824b200](https://github.com/brandon14/brandonclothier.me/commit/824b2005c9d92722e112cbe25a9bf66991b4bfeb)] feature: Update PHP dependencies [Brandon Clothier] on Sat, 21 Oct 2017 23:20:35 -0400
+- [[6842638](https://github.com/brandon14/brandonclothier.me/commit/68426384be7e02df7b71305fbd569eca1538775f)] feature: Add route for Expect-CT header failures [Brandon Clothier] on Sat, 21 Oct 2017 23:13:23 -0400
+
 ### 1.5.3 October 7th, 2017
 
 - [[7c80fe0](https://github.com/brandon14/brandonclothier.me/commit/7c80fe04309208d8d5ccf58dabe346eaa206f014)] hotfix/1.5.3: Forgot to add the changes I made to the amil config [Brandon Clothier] on Sat, 7 Oct 2017 02:24:54 -0400
