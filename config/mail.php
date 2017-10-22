@@ -74,6 +74,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Expect-CT Failure Report Email Address
+    |--------------------------------------------------------------------------
+    |
+    | This is the email address that failures with the Expect-CT header will
+    | send reports to.
+    |
+    */
+
+    'ct_report_email' => env('MAIL_CT_REPORT_EMAIL', 'report@test.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
     |--------------------------------------------------------------------------
     |
