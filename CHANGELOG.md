@@ -2,6 +2,12 @@
 
 ## brandonclothier.me
 
+### 1.7.0 February 3rd, 2018
+
+- [[42fde98](https://github.com/brandon14/brandonclothier.me/commit/42fde98b488ed99271728b7bffe95d6d6fcea05a)] Apply fixes from StyleCI [Brandon Clothier] on Sun, 4 Feb 2018 02:40:29 +0000
+- [[af5ae4c](https://github.com/brandon14/brandonclothier.me/commit/af5ae4cc8672d276c8366c640bfb4af77e9de09b)] feature/update-asset-build: Add sass-lint [Brandon Clothier] on Sat, 3 Feb 2018 21:37:20 -0500
+- [[e869146](https://github.com/brandon14/brandonclothier.me/commit/e869146b2fef731cbce6a2e9df1c136347b8990f)] feature/update-asset-build: Allow assets to be built to a separate dir [Brandon Clothier] on Sat, 3 Feb 2018 21:03:22 -0500
+
 ### 1.6.0 October 21st, 2017
 
 - [[efeb987](https://github.com/brandon14/brandonclothier.me/commit/efeb98755a8d5102dab5e4fb04f52104c18751cd)] feature: Remove XSRF cookie [Brandon Clothier] on Sat, 21 Oct 2017 23:44:51 -0400
