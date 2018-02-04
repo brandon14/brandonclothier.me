@@ -42,6 +42,58 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Webpack Asset URL
+    |--------------------------------------------------------------------------
+    |
+    | This is used in conjunction with the webpack_asset() helper function so
+    | that you can output webpack assets to a custom folder that is to be served
+    | as a separate domain and still embed the versioned assets in templates.
+    | You can specify a custom webpack asset base URL here.
+    |
+    */
+
+    'webpack_asset_url' => env('APP_WEBPACK_ASSET_URL', 'http://localhost'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Webpack Asset Directory
+    |--------------------------------------------------------------------------
+    |
+    | This is used in conjunction with the webpack_asset() helper function so
+    | that you can output webpack assets to a custom folder that is to be served
+    | as a separate domain and still embed the versioned assets in templates.
+    | You can specify a custom webpack output directory here.
+    |
+    */
+
+    'webpack_asset_dir' => env('APP_WEBPACK_ASSET_DIR', 'public'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | CDN Asset URL
+    |--------------------------------------------------------------------------
+    |
+    | This is a convenient config option to define the base URL where CDN
+    | assets are located if not in the public folder.
+    |
+    */
+
+    'cdn_asset_url' => env('APP_CDN_ASSET_URL', 'http://localhost'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Image Asset URL
+    |--------------------------------------------------------------------------
+    |
+    | This is a convenient config option to define the base URL where image
+    | assets are located if not in the public folder.
+    |
+    */
+
+    'image_asset_url' => env('APP_IMAGE_ASSET_URL', 'http://localhost'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Public Path Directory
     |--------------------------------------------------------------------------
     | This is the document root of the Laravel application, and where your
@@ -164,9 +216,9 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Auth\AuthServiceProvider::class,
-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        Illuminate\Bus\BusServiceProvider::class,
+        // Illuminate\Auth\AuthServiceProvider::class,
+        // Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        // Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
@@ -176,12 +228,12 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
-        Illuminate\Notifications\NotificationServiceProvider::class,
-        Illuminate\Pagination\PaginationServiceProvider::class,
+        // Illuminate\Notifications\NotificationServiceProvider::class,
+        // Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        // Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
@@ -194,9 +246,9 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AuthServiceProvider::class,
+        // App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
+        // App\Providers\EventServiceProvider::class,
         App\Providers\LastModifiedServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

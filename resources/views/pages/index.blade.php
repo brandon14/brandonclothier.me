@@ -16,7 +16,6 @@ prefix="og: http://ogp.me/ns#"
 <meta name="author" content="{{ $author }}" />
 <meta name="keywords" content="{{ $keywords }}" />
 <link rel="license" href="{{ url('/') }}/#copyright" />
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="canonical" href="{{ url('/') }}" />
 <base href="{{ url('/') }}" target="_blank" />
 
@@ -34,7 +33,7 @@ prefix="og: http://ogp.me/ns#"
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:image" content="{{ asset('/images/profile-large.png') }}" />
+<meta property="og:image" content="{{ webpack_asset('images/profile-large.png') }}" />
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary" />
@@ -52,7 +51,7 @@ prefix="og: http://ogp.me/ns#"
 <meta name="DC.coverage" content="Kentucky, USA 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }}">
 
 <!-- G+ author link -->
-<link rel="author" href="https://plus.google.com/u/0/+BrandonClothier"/>
+<link rel="author" href="//plus.google.com/u/0/+BrandonClothier"/>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -89,7 +88,7 @@ prefix="og: http://ogp.me/ns#"
 @section('title', $title)
 
 @push('stylesheets')
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ webpack_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @section('body-id', 'page-top')
@@ -105,7 +104,7 @@ prefix="og: http://ogp.me/ns#"
 
 @section('content')
   <div class="cr cr-top cr-right cr-sticky cr-blue hidden-xs">
-    <a href="https://github.com/brandon14/brandonclothier.me" target="_blank">Visit me on <i class="fa fa-github" aria-hidden="true"></i></a>
+    <a href="//github.com/brandon14/brandonclothier.me" target="_blank">Visit me on <i class="fa fa-github" aria-hidden="true"></i></a>
   </div>
   <button id="scroll-top" class="btn btn-raised btn-circle scroll-top-btn" data-spy="affix" data-offset-top="150">
     <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
@@ -123,10 +122,10 @@ prefix="og: http://ogp.me/ns#"
   @includeIf('partials.footer')
 
   @push('scripts')
-    <script src="{{ mix('/js/manifest.js') }}"></script>
-    <script src="{{ mix('/js/vendor.js') }}"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{{ webpack_asset('js/manifest.js') }}"></script>
+    <script src="{{ webpack_asset('js/vendor.js') }}"></script>
+    <script src="{{ webpack_asset('js/app.js') }}"></script>
+    <script src="{{ asset('//maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js') }}"></script>
 
     @if(config('app.env') === 'production')
       @includeIf('partials.social-media-js')

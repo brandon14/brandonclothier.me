@@ -7,6 +7,9 @@
 # Composer vendor folder
 /vendor
 
+# Static folder
+/static
+
 # Vargrant and homestead files
 /.vagrant
 Homestead.json
@@ -22,7 +25,6 @@ Homestead.yaml
 !public/index.php
 !public/humans.txt
 !public/robots.txt
-!public/favicon.ico
 
 # Yarn and node debug files
 npm-debug.log*

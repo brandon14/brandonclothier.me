@@ -1,8 +1,8 @@
+# Issue
+
 ## Expected Behavior
 
-
 ## Actual Behavior
-
 
 ## Steps to Reproduce the Problem
 
@@ -17,6 +17,5 @@
 - Browser:
 
 ## Notes
-
 
 ## Screenshots
