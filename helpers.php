@@ -13,7 +13,8 @@ if (! function_exists('webpack_asset')) {
      *
      * @return void
      */
-    function webpack_asset($path, $baseUrl = '') {
+    function webpack_asset($path, $baseUrl = '')
+    {
         static $manifests = [];
 
         $manifestDirectory = app('config')->get('app.webpack_asset_dir');
@@ -61,7 +62,8 @@ if (! function_exists('image_asset')) {
      * @param  string  $path
      * @return void
      */
-    function image_asset($path) {
+    function image_asset($path)
+    {
         $cdnDirectory = app('config')->get('app.cdn_asset_url');
 
         if (Str::startsWith($path, '/')) {
@@ -80,7 +82,8 @@ if (! function_exists('cdn_asset')) {
      * @param  string  $path
      * @return void
      */
-    function cdn_asset($path) {
+    function cdn_asset($path)
+    {
         $imageDirectory = app('config')->get('app.image_asset_url');
 
         if (Str::startsWith($path, '/')) {
