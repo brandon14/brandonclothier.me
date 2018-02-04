@@ -35,8 +35,8 @@ class LastModified
     /**
      * Constructs a LastModified service object.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Illuminate\Contracts\Cache\Repository       $cache
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \Illuminate\Contracts\Cache\Repository  $cache
      */
     public function __construct(Application $app, CacheRepository $cache)
     {

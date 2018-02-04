@@ -1,21 +1,22 @@
+$fa-font-path: '~font-awesome/fonts';
 
 // Fonts
-@import "fonts.scss";
+@import 'fonts';
 
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-@import "material-variables";
+@import 'material-variables';
 
-@import "node_modules/bootstrap-material-design/sass/bootstrap-material-design";
-@import "node_modules/bootstrap-material-design/sass/ripples";
+@import '~bootstrap-material-design/sass/bootstrap-material-design';
+@import '~bootstrap-material-design/sass/ripples';
 
-@import "node_modules/font-awesome/scss/font-awesome";
+@import '~font-awesome/scss/font-awesome';
 
-@import "node_modules/bootstrap-social/bootstrap-social.scss";
+@import '~bootstrap-social/bootstrap-social.scss';
 
-@import "resume";
-@import "style";
+@import 'resume';
+@import 'style';

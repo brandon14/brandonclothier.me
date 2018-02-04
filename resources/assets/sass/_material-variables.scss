@@ -1,4 +1,4 @@
-@import "node_modules/bootstrap-material-design/sass/_colors";
+@import '~bootstrap-material-design/sass/colors';
 
 // Main variables
 $brand-primary: $deep-orange;
@@ -22,7 +22,7 @@ $dark-overlay: rgba($black, .7);
 $divider-color: $grey-500;
 
 // Quote variables
-$quote-container-color: rgba($black, 0.7);
+$quote-container-color: rgba($black, .7);
 $quote-color: $grey-200;
 $author-color: $grey-500;
 

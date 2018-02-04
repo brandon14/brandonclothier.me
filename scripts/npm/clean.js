@@ -9,28 +9,38 @@ const { resolve } = require('path');
 const addCheckMark = require('./helpers/checkmark.js');
 const forEach = require('lodash/forEach');
 const filter = require('lodash/filter');
+const includes = require('lodash/includes');
 
 /**
- * Public directory.
+ * Webpack asset directory.
  *
  * @type  {string}
  */
-const publicDir = process.env.APP_PUBLIC_PATH || 'public';
+const assetDir = process.env.APP_WEBPACK_ASSET_DIR || 'public/assets';
+const excludedFiles = [
+  '.gitignore',
+  'index.php',
+  'robots.txt',
+  'humans.txt',
+];
 
 process.stdout.write('Cleanup started...\n');
 
-/**
- * All files in the public folder excluding index.php.
- *
- * @type  {string[]}
- */
-const files = filter(fs.readdirSync(publicDir), (file) => file !== 'index.php' && file !== 'favicon.ico' && file !== 'humans.txt' && file !== 'robots.txt');
-// Delete each file/directory.
-forEach(files, (file) => {
-  const resolvedPath = resolve(publicDir, file);
+if (fs.existsSync(assetDir)) {
+  /**
+   * All files in the asset directory except for the gitignore file.
+   *
+   * @type  {string[]}
+   */
+  const files = filter(fs.readdirSync(assetDir), (file) => !includes(excludedFiles, file));
 
-  rimraf.sync(resolvedPath);
-});
+  // Delete each file/directory.
+  forEach(files, (file) => {
+    const resolvedPath = resolve(assetDir, file);
+
+    rimraf.sync(resolvedPath);
+  });
+}
 
 addCheckMark();
 

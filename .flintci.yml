@@ -1,0 +1,17 @@
+services:
+  eslint: true
+  phpcsfixer:
+    version: latest
+  phpcs:
+    version: latest
+    config_path: vendor/pragmarx/laravelcs/Standards/Laravel/
+    composer: true
+  composernormalize:
+    version: latest
+  shellcheck:
+    version: latest
+    config:
+      shell: bash
+  xmllint:
+    version: latest
+

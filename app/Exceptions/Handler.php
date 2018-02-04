@@ -5,8 +5,10 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -16,6 +18,13 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class Handler extends ExceptionHandler
 {
+    /**
+     * Response factory.
+     *
+     * @var \Illuminate\Contracts\Routing\ResponseFactory;
+     */
+    protected $response;
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -34,30 +43,16 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
+     * Constructs a new application exception handler.
      *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
-     *
-     * @return void
+     * @param  Container  $container
+     * @param  ResponseFactory  $response
      */
-    public function report(Exception $exception)
+    public function __construct(Container $container, ResponseFactory $response)
     {
-        parent::report($exception);
-    }
+        parent::__construct($container);
 
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception                $exception
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        return parent::render($request, $exception);
+        $this->response = $response;
     }
 
     /**
@@ -111,7 +106,7 @@ class Handler extends ExceptionHandler
         }
 
         // Return a new json response with the error message and code
-        return new JsonResponse($data, $status, $headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return $this->response->json($data, $status, $headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -138,7 +133,7 @@ class Handler extends ExceptionHandler
                 $data['error']['trace'] = $exception->getTrace();
             }
 
-            return new JsonResponse($data, 401, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            return $this->response->json($data, 401, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
 
         return redirect()->guest(route('login'));
@@ -171,6 +166,6 @@ class Handler extends ExceptionHandler
             $data['error']['trace'] = $exception->getTrace();
         }
 
-        return new JsonResponse($data, $code, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return $this->response->json($data, $code, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 }

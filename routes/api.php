@@ -10,5 +10,3 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::post('/report/expect-ct', 'CTReportController@sendReport')->middleware('throttle:5,1');
