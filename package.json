@@ -30,6 +30,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "precommit": "npm run lint",
     "analyze:clean": "rimraf ./resources/assets/stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./scripts/npm/analyze.js",
@@ -42,9 +43,10 @@
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "npm run build:clean && cross-env NODE_ENV=production webpack --no-progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && gulp build",
-    "lint": "npm run lint:js",
+    "lint": "npm run lint:js && npm run lint:sass",
     "lint:eslint": "eslint --ignore-path .gitignore --color --format codeframe",
-    "lint:js": "npm run lint:eslint -- . "
+    "lint:js": "npm run lint:eslint -- ./resources/assets/js ",
+    "lint:sass": "sass-lint"
   },
   "babel": {
     "presets": [
@@ -111,6 +113,7 @@
     "laravel-mix": "^1.6.1",
     "lodash": "^4.17.4",
     "rimraf": "^2.6.1",
+    "sass-lint": "^1.12.1",
     "shelljs": "^0.8.1",
     "shx": "^0.2.2",
     "webpack": "^3.10.0"

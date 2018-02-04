@@ -6,6 +6,7 @@ language:
 
 php:
   - 7.1
+  - 7.2
 
 sudo: required
 
@@ -26,7 +27,7 @@ before_script:
   - sudo chgrp -R www-data storage bootstrap/cache
   - sudo chmod -R ug+rwx storage bootstrap/cache
   - php artisan config:cache
-  - nvm install 8.4.0
+  - nvm install 8.9.4
   - npm install npm@latest -g
   - npm install -g yarn
   - yarn
