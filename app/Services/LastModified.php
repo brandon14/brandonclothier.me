@@ -4,10 +4,10 @@ namespace App\Services;
 
 use Carbon\Carbon;
 use DirectoryIterator;
-use RecursiveIteratorIterator;
-use RecursiveDirectoryIterator;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Illuminate\Contracts\Foundation\Application;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 class LastModified
 {

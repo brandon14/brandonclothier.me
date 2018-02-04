@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactEmail;
-use Illuminate\Mail\Mailer;
-use Illuminate\Http\JsonResponse;
 use App\Http\Requests\SendContactEmail;
+use App\Mail\ContactEmail;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Mail\Mailer;
 
 class ContactEmailController extends Controller
 {
