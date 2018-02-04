@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Routing\Redirector;
 use Illuminate\Contracts\Auth\Factory as AuthFactory;
+use Illuminate\Routing\Redirector;
 
 class RedirectIfAuthenticated
 {
