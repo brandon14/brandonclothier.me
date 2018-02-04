@@ -11,7 +11,7 @@
         <div class="sidebar-wrapper">
           <!-- Profile container -->
           <div class="profile-container">
-            <img class="profile" src="{{ asset('images/profile-small.png') }}" alt="Profile Image" />
+            <img class="profile" src="{{ webpack_asset('images/profile-small.png') }}" alt="Profile Image" />
             <h1 class="name">Brandon Clothier</h1>
             <h3 class="tagline">Web Developer</h3>
           </div>
@@ -24,16 +24,16 @@
                 <i class="fa fa-envelope"></i><a href="mailto:brandon14125@gmail.com" target="_blank">brandon14125@gmail.com</a>
               </li>
               <li class="website">
-                <i class="fa fa-globe"></i><a href="https://brandonclothier.me" target="_blank">brandonclothier.me</a>
+                <i class="fa fa-globe"></i><a href="//brandonclothier.me" target="_blank">brandonclothier.me</a>
               </li>
               <li class="github">
-                <i class="fa fa-github"></i><a href="https://github.com/brandon14" target="_blank">github.com/brandon14</a>
+                <i class="fa fa-github"></i><a href="//github.com/brandon14" target="_blank">github.com/brandon14</a>
               </li>
               <li class="twitter">
-                <i class="fa fa-twitter"></i><a href="https://twitter.com/inhal3exh4le" target="_blank">@inhal3exh4le</a>
+                <i class="fa fa-twitter"></i><a href="//twitter.com/inhal3exh4le" target="_blank">@inhal3exh4le</a>
               </li>
               <li class="linkedin">
-                <i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/brandon-clothier-16190b123" target="_blank">Brandon Clothier</a>
+                <i class="fa fa-linkedin"></i><a href="//www.linkedin.com/in/brandon-clothier-16190b123" target="_blank">Brandon Clothier</a>
               </li>
             </ul>
           </div>
@@ -163,14 +163,14 @@
             <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
             <div class="intro">
               <p>I enjoy working on software projects in my free time. Most of my work can be found at my Github:
-                <a class="link" href="https://github.com/brandon14" target="_blank">github.com/brandon14</a></p>
+                <a class="link" href="//github.com/brandon14" target="_blank">github.com/brandon14</a></p>
             </div>
             <!-- End intro-->
 
             <!-- Project item -->
             <div class="item">
                   <span class="project-title">
-                    <a class="link" href="https://github.com/brandon14/brandonclothier.me" target="_blank">brandonclothier.me</a>
+                    <a class="link" href="//github.com/brandon14/brandonclothier.me" target="_blank">brandonclothier.me</a>
                   </span> -
               <span class="project-tagline">The source code for this website. It is developed with Laravel, a PHP MVC framework.</span>
             </div>
@@ -179,7 +179,7 @@
             <!-- Project item -->
             <div class="item">
                   <span class="project-title">
-                    <a class="link" href="https://github.com/brandon14/expnsr-webapp" target="_blank">Expnsr Web Application</a>
+                    <a class="link" href="//github.com/brandon14/expnsr-webapp" target="_blank">Expnsr Web Application</a>
                   </span> -
               <span class="project-tagline">This project will eventually serve as the web application to consume the Expnsr API I am working
                       on. The Expnsr API will allow users to manage bills, keep track of account balances and manage budgets.</span>
@@ -189,7 +189,7 @@
             <!-- Project item -->
             <div class="item">
                   <span class="project-title">
-                    <a class="link" href="https://github.com/brandon14/expnsr-api" target="_blank">Expnsr API</a>
+                    <a class="link" href="//github.com/brandon14/expnsr-api" target="_blank">Expnsr API</a>
                   </span> -
               <span class="project-tagline">This repository will house the API for Expnsr. It will be developed as a RESTful API using Laravel with
                       dingo-api. The front-end web application (and in the future an Android and iOS app) will be able to consume the API.</span>
@@ -198,7 +198,7 @@
 
             <!-- Project item -->
             <div class="item">
-              <span class="project-title"><a class="link" href="https://github.com/brandon14/checkbook">Checkbook</a></span> -
+              <span class="project-title"><a class="link" href="//github.com/brandon14/checkbook">Checkbook</a></span> -
               <span class="project-tagline">An Andorid checkbook register application built using the Material Design library from Google. It is a work
                       in progress and will be fully functional eventually.</span>
             </div>
@@ -207,7 +207,7 @@
             <!-- Project item -->
             <div class="item">
                   <span class="project-title">
-                    <a class="link" href="https://github.com/brandon14/simple-calc" target="_blank">SimpleCalc</a>
+                    <a class="link" href="//github.com/brandon14/simple-calc" target="_blank">SimpleCalc</a>
                   </span> -
               <span class="project-tagline">A Java Swing calculator application I wrote as a Sophomore at EKU. It uses the BigDecimal class for the number
                       crunching, and is designed to function like the Windows 7 Calculator program.</span>
@@ -217,7 +217,7 @@
             <!-- Project item -->
             <div class="item">
                   <span class="project-title">
-                    <a class="link" href="https://github.com/brandon14/meeting-coordinator-team" target="_blank">Meeting Coordinator</a>
+                    <a class="link" href="//github.com/brandon14/meeting-coordinator-team" target="_blank">Meeting Coordinator</a>
                   </span> -
               <span class="project-tagline">This was the team project for CSC 440 Software Engineering at EKU. It is a Windows Forms .NET desktop application
                       that allows users to schedule and plan meetings with other users.</span>
@@ -348,7 +348,7 @@
 
           <!-- Downloads section -->
           <section class="download-section section">
-            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ asset('/files/resume.pdf') }}">Download Resume</a></h2>
+            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ webpack_asset('files/resume.pdf') }}">Download Resume</a></h2>
             <div class="item">
             </div>
           </section>

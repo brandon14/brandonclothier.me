@@ -4,32 +4,41 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use Illuminate\Mail\Mailer;
-use Illuminate\Http\JsonResponse;
 use App\Http\Requests\SendContactEmail;
+use Illuminate\Contracts\Routing\ResponseFactory;
 
 class ContactEmailController extends Controller
 {
     /**
      * Mailer service.
      *
-     * @var \Illuminate\Mail\Mailer
+     * @var  \Illuminate\Mail\Mailer
      */
     private $mailer;
 
     /**
+     * Response factory.
+     *
+     * @var  \Illuminate\Contracts\Routing\ResponseFactory
+     */
+    private $response;
+
+    /**
      * ContactEmailController constructor.
      *
-     * @param \Illuminate\Mail\Mailer $mailer
+     * @param  \Illuminate\Mail\Mailer  $mailer
+     * @param  \Illuminate\Contracts\Routing\ResponseFactory  $response
      */
-    public function __construct(Mailer $mailer)
+    public function __construct(Mailer $mailer, ResponseFactory $response)
     {
         $this->mailer = $mailer;
+        $this->response = $response;
     }
 
     /**
      * Controller function to send a contact email to the contact email configured.
      *
-     * @param  \App\Http\Requests\SendContactEmail $request
+     * @param  \App\Http\Requests\SendContactEmail  $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -48,7 +57,7 @@ class ContactEmailController extends Controller
             ])
         );
 
-        return new JsonResponse([
+        return $this->response->json([
             'message' => 'Message was sent.',
             'status'  => 200,
         ], 200, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);

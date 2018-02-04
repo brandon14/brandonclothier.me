@@ -12,7 +12,8 @@ anywhere in this project's codebase.
 ## Contributing Code
 
 Make sure you have the proper dependencies:
-- PHP >= 5.5
+
+- PHP >= 7.2
 - Yarn
 - Composer
 - Nodejs & NPM

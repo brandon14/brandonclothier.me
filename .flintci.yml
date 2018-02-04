@@ -1,0 +1,13 @@
+services:
+  eslint: true
+  phpcsfixer:
+    version: latest
+  composernormalize:
+    version: latest
+  shellcheck:
+    version: latest
+    config:
+      shell: bash
+  xmllint:
+    version: latest
+
