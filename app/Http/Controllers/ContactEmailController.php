@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
 use Illuminate\Mail\Mailer;
-use Illuminate\Http\JsonResponse;
 use App\Http\Requests\SendContactEmail;
 use Illuminate\Contracts\Routing\ResponseFactory;
 
