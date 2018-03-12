@@ -25,6 +25,20 @@ class LastModified
     private $cache;
 
     /**
+     * Whether to cache the timestamp or not.
+     *
+     * @var boolean
+     */
+    private $cacheTimestamp;
+
+    /**
+     * How long to cache the last modified timestamp for.
+     *
+     * @var integer
+     */
+    private $cacheTtl;
+
+    /**
      * List of directories to traverse to determine last modified file time.
      * This array is built in the function {@link buildIncludedDirectoies}.
      *
@@ -37,11 +51,17 @@ class LastModified
      *
      * @param  \Illuminate\Contracts\Foundation\Application  $app
      * @param  \Illuminate\Contracts\Cache\Repository  $cache
+     * @param  boolean  $cacheTimestamp
+     * @param  integer  $cacheTtl
+     *
+     * @return void
      */
-    public function __construct(Application $app, CacheRepository $cache)
+    public function __construct(Application $app, CacheRepository $cache, $cacheTimestamp, $cacheTtl)
     {
         $this->app = $app;
         $this->cache = $cache;
+        $this->cacheTimestamp = $cacheTimestamp;
+        $this->cacheTtl = $cacheTtl;
         $this->buildIncludedDirectories();
     }
 
@@ -81,7 +101,7 @@ class LastModified
     {
         $timestamp = null;
 
-        if ($this->cache->has('lastModifiedTime')) {
+        if ($this->cacheTimestamp && $this->cache->has('lastModifiedTime')) {
             $timestamp = $this->cache->get('lastModifiedTime');
         } else {
             foreach ($this->includedDirectories as $directory) {
@@ -104,7 +124,7 @@ class LastModified
                 }
             }
 
-            $this->cache->put('lastModifiedTime', $timestamp, 30);
+            $this->cache->put('lastModifiedTime', $timestamp, $this->cacheTtl);
         }
 
         return Carbon::createFromTimestamp($timestamp);

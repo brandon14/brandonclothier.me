@@ -8,31 +8,30 @@ return [
      | NoCAPTCHA credentials.
      |
      */
-
-    'secret'  => env('NOCAPTCHA_SECRET') ?: 'no-captcha-secret',
-    'sitekey' => env('NOCAPTCHA_SITEKEY') ?: 'no-captcha-sitekey',
-
+    'secret' => env('NOCAPTCHA_SECRET'),
+    'sitekey' => env('NOCAPTCHA_SITEKEY'),
     /*
      |--------------------------------------------------------------------------
-     | Localization
-     |---------------------------------------------------------------------------
-     | NoCAPTCHA language.
+     | Options
+     |--------------------------------------------------------------------------
+     | NoCAPTCHA HTTP Guzzle client options.
      |
      */
-
-    'lang'    => app()->getLocale(),
+    'options' => [
+        'timeout' => 2.0,
+    ],
 
     /*
      |--------------------------------------------------------------------------
      | Attributes
      |--------------------------------------------------------------------------
-     | NoCAPTCHA widget attributes.
+     | NoCAPTCHA element attributes.
      |
      */
-
     'attributes' => [
         'data-theme' => env('NOCAPTCHA_THEME', 'light'),
         'data-type'  => env('NOCAPTCHA_TYPE', 'image'),
         'data-size'  => env('NOCAPTCHA_SIZE', 'normal'),
     ],
+
 ];

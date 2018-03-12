@@ -11,7 +11,7 @@
         <div class="sidebar-wrapper">
           <!-- Profile container -->
           <div class="profile-container">
-            <img class="profile" src="{{ webpack_asset('images/profile-small.png') }}" alt="Profile Image" />
+            <img class="profile" src="{{ manifest_asset('images/profile-small.png') }}" alt="Profile Image" />
             <h1 class="name">Brandon Clothier</h1>
             <h3 class="tagline">Web Developer</h3>
           </div>
@@ -111,9 +111,10 @@
                 <div class="company">Troll And Toad, Corbin, KY</div>
               </div><!-- End meta -->
               <div class="details">
-                <p>I maintain and develop trollandtoad.com, an eCommerce web application. The front end consists of HTML5
-                   and CSS, with JavaScript as the scripting language. The backend consists of a custom PHP framework
-                   and a PostgreSQL database. I integrated the mazon Pay payment system into our eCommerce system
+                <p>I maintain and develop <a href="//www.trollandtoad.com">TrollAndToad.Com</a>, an eCommerce web application.
+                   The front end consists of HTML5 and CSS, with JavaScript as the scripting language. The backend consists of
+                   a custom PHP framework and a PostgreSQL database. I integrated the Amazon Pay payment system into our eCommerce
+                   system.
                 </p>
                 <p>I also participate on a team to refactor legacy code using modern PHP standards such as class autoloading
                    and dependency injection. I am the lead on the team for autoloading.</p>
@@ -348,7 +349,7 @@
 
           <!-- Downloads section -->
           <section class="download-section section">
-            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ webpack_asset('files/resume.pdf') }}">Download Resume</a></h2>
+            <h2 class="section-title"><i class="fa fa-download"></i><a href="{{ config('app.webpack_asset_url') }}/files/resume.pdf">Download Resume</a></h2>
             <div class="item">
             </div>
           </section>

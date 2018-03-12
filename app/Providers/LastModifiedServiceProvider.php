@@ -15,7 +15,12 @@ class LastModifiedServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('lastModified', function ($app) {
-            return new LastModified($app, $app['cache.store']);
+            return new LastModified(
+                $app,
+                $app['cache.store'],
+                $app['config']->get('lastmodified.cache'),
+                $app['config']->get('lastmodified.cachettl')
+            );
         });
     }
 }

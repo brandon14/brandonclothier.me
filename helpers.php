@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Str;
 
-if (! function_exists('webpack_asset')) {
+if (! function_exists('manifest_asset')) {
     /**
-     * Will return a URL for a given webpack asset. Looks for the entry in
+     * Will return a URL for a given versioned asset. Looks for the entry in
      * the mix-manifest.json. Similar to Laravel's mix() function but uses
      * a configurable base URL and and allows the manifest to be elsewhere.
      *
@@ -13,7 +13,7 @@ if (! function_exists('webpack_asset')) {
      *
      * @return void
      */
-    function webpack_asset($path, $baseUrl = '')
+    function manifest_asset($path, $baseUrl = '')
     {
         static $manifests = [];
 
@@ -54,15 +54,15 @@ if (! function_exists('webpack_asset')) {
     }
 }
 
-if (! function_exists('image_asset')) {
+if (! function_exists('cdn_asset')) {
     /**
-     * Convenience function to generate a image URL using the configured image_asset_url
+     * Convenience function to generate a CDN URL using the configured image_asset_url
      * config value.
      *
      * @param  string  $path
      * @return void
      */
-    function image_asset($path)
+    function cdn_asset($path)
     {
         $cdnDirectory = app('config')->get('app.cdn_asset_url');
 
@@ -74,15 +74,15 @@ if (! function_exists('image_asset')) {
     }
 }
 
-if (! function_exists('cdn_asset')) {
+if (! function_exists('image_asset')) {
     /**
-     * Convenience function to generate a CDN URL using the configured cdn_asset_url
+     * Convenience function to generate an image URL using the configured cdn_asset_url
      * config value.
      *
      * @param  string  $path
      * @return void
      */
-    function cdn_asset($path)
+    function image_asset($path)
     {
         $imageDirectory = app('config')->get('app.image_asset_url');
 
