@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="@yield('favicon', webpack_asset('images/favicon.png'))" type="image/x-icon" />
+    <link rel="icon" href="@yield('favicon', manifest_asset('images/favicon.png'))" type="image/x-icon" />
     @yield('meta', '')
 
     @yield('theme-color', '')

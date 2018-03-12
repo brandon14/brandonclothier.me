@@ -12,14 +12,14 @@ class ContactEmailController extends Controller
     /**
      * Mailer service.
      *
-     * @var  \Illuminate\Mail\Mailer
+     * @var \Illuminate\Mail\Mailer
      */
     private $mailer;
 
     /**
      * Response factory.
      *
-     * @var  \Illuminate\Contracts\Routing\ResponseFactory
+     * @var \Illuminate\Contracts\Routing\ResponseFactory
      */
     private $response;
 
@@ -28,6 +28,8 @@ class ContactEmailController extends Controller
      *
      * @param  \Illuminate\Mail\Mailer  $mailer
      * @param  \Illuminate\Contracts\Routing\ResponseFactory  $response
+     *
+     * @return void
      */
     public function __construct(Mailer $mailer, ResponseFactory $response)
     {

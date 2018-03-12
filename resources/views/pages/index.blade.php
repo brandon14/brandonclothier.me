@@ -33,7 +33,7 @@ prefix="og: http://ogp.me/ns#"
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:image" content="{{ webpack_asset('images/profile-large.png') }}" />
+<meta property="og:image" content="{{ manifest_asset('images/profile-large.png') }}" />
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary" />
@@ -88,7 +88,7 @@ prefix="og: http://ogp.me/ns#"
 @section('title', $title)
 
 @push('stylesheets')
-  <link href="{{ webpack_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ manifest_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @section('body-id', 'page-top')
@@ -122,9 +122,9 @@ prefix="og: http://ogp.me/ns#"
   @includeIf('partials.footer')
 
   @push('scripts')
-    <script src="{{ webpack_asset('js/manifest.js') }}"></script>
-    <script src="{{ webpack_asset('js/vendor.js') }}"></script>
-    <script src="{{ webpack_asset('js/app.js') }}"></script>
+    <script src="{{ manifest_asset('js/manifest.js') }}"></script>
+    <script src="{{ manifest_asset('js/vendor.js') }}"></script>
+    <script src="{{ manifest_asset('js/app.js') }}"></script>
     <script src="{{ asset('//maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js') }}"></script>
 
     @if(config('app.env') === 'production')
