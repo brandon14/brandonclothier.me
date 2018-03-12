@@ -5,7 +5,7 @@
 @endsection
 
 @push('stylesheets')
-  <link href="{{ webpack_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ manifest_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @section('body-id', 'page-top')

@@ -23,9 +23,17 @@ const includeFilesInManifest = [
   '.otf',
   '.woff',
   '.woff2',
-  '.pdf',
-  '.docx',
   '.ico',
+];
+
+const excludedPatterns = [
+  /^\/favicon.ico$/,
+  /mix-manifest.json$/,
+  /.php$/,
+  /robots.txt$/,
+  /humans.txt$/,
+  /.docx$/,
+  /.pdf$/,
 ];
 
 // Gulp task to build the assets. We take the webpack compiled assets
@@ -38,13 +46,8 @@ gulp.task('build', () =>
       fileNameManifest: 'mix-manifest.json',
       hashLength,
       includeFilesInManifest,
-      dontGlobal: [
-        /mix-manifest.json$/,
-        /.php$/,
-        /robots.txt$/,
-        /humans.txt$/,
-      ],
-      // Replace abolsute URLs with the assetUrl configured in the .env file.
+      dontGlobal: excludedPatterns,
+      // Replace absolute URLs with the assetUrl configured in the .env file.
       prefix: assetUrl.charAt(assetUrl.length - 1) === '/' ? assetUrl : `${assetUrl}/`,
     }))
     .pipe(gulp.dest(`./${output}/`))

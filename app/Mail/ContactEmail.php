@@ -12,19 +12,19 @@ class ContactEmail extends Mailable
     /**
      * Email address the contact email is from.
      *
-     * @var  string
+     * @var string
      */
     protected $email;
     /**
      * Contact email name.
      *
-     * @var  string
+     * @var string
      */
     protected $name;
     /**
      * Contact email message.
      *
-     * @var  string
+     * @var string
      */
     protected $message;
 
@@ -32,6 +32,8 @@ class ContactEmail extends Mailable
      * Create a new message instance.
      *
      * @param  array $emailVars
+     *
+     * @return void
      */
     public function __construct(array $emailVars)
     {

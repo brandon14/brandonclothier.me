@@ -7,7 +7,6 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -17,13 +16,6 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class Handler extends ExceptionHandler
 {
-    /**
-     * Response factory.
-     *
-     * @var \Illuminate\Contracts\Routing\ResponseFactory;
-     */
-    protected $response;
-
     /**
      * A list of the exception types that should not be reported.
      *
@@ -47,11 +39,9 @@ class Handler extends ExceptionHandler
      * @param  Container  $container
      * @param  ResponseFactory  $response
      */
-    public function __construct(Container $container, ResponseFactory $response)
+    public function __construct(Container $container)
     {
         parent::__construct($container);
-
-        $this->response = $response;
     }
 
     /**
@@ -105,7 +95,7 @@ class Handler extends ExceptionHandler
         }
 
         // Return a new json response with the error message and code
-        return $this->response->json($data, $status, $headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return response()->json($data, $status, $headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -132,7 +122,7 @@ class Handler extends ExceptionHandler
                 $data['error']['trace'] = $exception->getTrace();
             }
 
-            return $this->response->json($data, 401, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            return response()->json($data, 401, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
 
         return redirect()->guest(route('login'));
@@ -165,6 +155,6 @@ class Handler extends ExceptionHandler
             $data['error']['trace'] = $exception->getTrace();
         }
 
-        return $this->response->json($data, $code, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return response()->json($data, $code, [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 }

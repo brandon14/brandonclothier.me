@@ -28,7 +28,7 @@
         </div>
         <!-- End message form group -->
         <!-- Google reCAPTCHA -->
-        {!! Captcha::display() !!}
+        {!! NoCaptcha::display(config('captcha.attributes')) !!}
         <!-- Send form group -->
         <div class="form-group">
           <button id="send-email" type="submit" class="btn btn-raised btn-primary" aria-label="send">Send</button>
@@ -37,7 +37,7 @@
       </form>
       <!-- End contact form -->
       <!-- Google reCAPTCHA script -->
-      {!! Captcha::script() !!}
+      {!! NoCaptcha::renderJs() !!}
     </div>
     <!-- End column for contact page -->
   </div>
