@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.8.1 March 11, 2018
+
+- [[3a6c19e](https://github.com/brandon14/brandonclothier.me/commit/3a6c19e4e1847b586400df0a0fb866b9b3e94ec2)] hotfix/1.8.1: Remove old logging configs [Brandon Clothier] on Sun, 11 Mar 2018 22:57:00 -0400
+
 ### 1.8.0 March 11, 2018
 
+- [[3984bf7](https://github.com/brandon14/brandonclothier.me/commit/3984bf764e342315adac28abee7d988ba0ffa797)] release/1.8.0 [Brandon Clothier] on Sun, 11 Mar 2018 20:54:29 -0400
 - [[f051e86](https://github.com/brandon14/brandonclothier.me/commit/f051e86c5daaeb64f8f27305c6c31a1c80b97be2)] feature/laravel5.6: Update to Laravel 5.6 [Brandon Clothier] on Sun, 11 Mar 2018 20:36:35 -0400
 
 ### 1.7.0 February 3rd, 2018
@@ -12,7 +17,6 @@
 - [[42fde98](https://github.com/brandon14/brandonclothier.me/commit/42fde98b488ed99271728b7bffe95d6d6fcea05a)] Apply fixes from StyleCI [Brandon Clothier] on Sun, 4 Feb 2018 02:40:29 +0000
 - [[af5ae4c](https://github.com/brandon14/brandonclothier.me/commit/af5ae4cc8672d276c8366c640bfb4af77e9de09b)] feature/update-asset-build: Add sass-lint [Brandon Clothier] on Sat, 3 Feb 2018 21:37:20 -0500
 - [[e869146](https://github.com/brandon14/brandonclothier.me/commit/e869146b2fef731cbce6a2e9df1c136347b8990f)] feature/update-asset-build: Allow assets to be built to a separate dir [Brandon Clothier] on Sat, 3 Feb 2018 21:03:22 -0500
-
 
 ### 1.6.0 October 21st, 2017
 
