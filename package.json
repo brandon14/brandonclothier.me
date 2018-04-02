@@ -38,7 +38,7 @@
     "clean:all": "npm run analyze:clean && npm run build:clean",
     "dev": "npm run development",
     "development": "npm run build:clean && cross-env NODE_ENV=development webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && gulp build",
-    "watch": "cross-env NODE_ENV=development webpack --watch --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
