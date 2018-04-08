@@ -2,6 +2,14 @@
 
 ## brandonclothier.me
 
+### 1.9.0 April 08, 2018
+
+- [[2c65cb7](https://github.com/brandon14/brandonclothier.me/commit/2c65cb74eed40946b3fdc4a21627dc1d18818f50)] feature/fix-travis-build: Sort imports by length. [Brandon Clothier] on Sun, 8 Apr 2018 02:27:36 -0400
+- [[d266bac](https://github.com/brandon14/brandonclothier.me/commit/d266bac71e1463f91febf72db6cbee95a7ab0b00)] feature/fix-travis-build: Hopefully fix Travis build. [Brandon Clothier] on Sun, 8 Apr 2018 02:18:33 -0400
+- [[7e5c70e](https://github.com/brandon14/brandonclothier.me/commit/7e5c70e39def848e771ee879f257b347b478f14c)] feature/php-linting: Set up php-cs-fixer and phpcs [Brandon Clothier] on Sun, 8 Apr 2018 01:59:10 -0400
+- [[c4c4fee](https://github.com/brandon14/brandonclothier.me/commit/c4c4fee903d153637a6f19e807cfdd264e084b53)] feature/unit-tests: Add unit tests for LastModified service [Brandon Clothier] on Sat, 7 Apr 2018 23:08:03 -0400
+- [[380a27a](https://github.com/brandon14/brandonclothier.me/commit/380a27a10f42ff4fd67933b6570e876ab1d1520c)] feature/update-laravel: Update Laravel base to 5.6.15 [Brandon Clothier] on Sun, 1 Apr 2018 22:35:46 -0400
+
 ### 1.8.1 March 11, 2018
 
 - [[3a6c19e](https://github.com/brandon14/brandonclothier.me/commit/3a6c19e4e1847b586400df0a0fb866b9b3e94ec2)] hotfix/1.8.1: Remove old logging configs [Brandon Clothier] on Sun, 11 Mar 2018 22:57:00 -0400
