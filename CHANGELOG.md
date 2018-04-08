@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.9.2 April 08, 2018
+
+- [[148caf5](https://github.com/brandon14/brandonclothier.me/commit/148caf565ae0759a60d7ccea2efdc34ce649f020)] hotfix/1.9.2: Update composer deps [Brandon Clothier] on Sun, 8 Apr 2018 04:10:41 -0400
+
 ### 1.9.1 April 08, 2018
 
+- [[2d1b9e5](https://github.com/brandon14/brandonclothier.me/commit/2d1b9e5b95d3e26293cc01fb5fc540f0e5329bed)] finish hotfix/1.9.1 [Brandon Clothier] on Sun, 8 Apr 2018 04:06:45 -0400
 - [[696c8c5](https://github.com/brandon14/brandonclothier.me/commit/696c8c52d6e28275ec818124e2a2533dd7b00091)] hotfix/sensio-labs: Fix invalid php version in config [Brandon Clothier] on Sun, 8 Apr 2018 04:05:29 -0400
 
 ### 1.9.0 April 08, 2018
