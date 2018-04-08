@@ -1,5 +1,3 @@
-@inject('lastModified', 'lastModified')
-
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -42,7 +40,7 @@
           <!-- End email links -->
         </div>
         <div class="footer-details">
-          <br />Website last updated {{ app('lastModified')->getLastModifiedFile()->format('F jS, Y \a\t h:i:s A T') }}
+          <br />@includeIf('partials.lastmodified')
           <br />Website Version: {{ config('app.version') }}
           <br /><small id="copyright">Copyright &copy; 2017{{ intval(date('Y')) > 2017 ? '-'.date('Y') : '' }} Brandon Clothier</small>
         </div>
