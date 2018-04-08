@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.9.4 April 08, 2018
+
+- [[bc8b9e0](https://github.com/brandon14/brandonclothier.me/commit/bc8b9e040d0feb6e21929c3679c32ba360b5df52)] hotfix/1.9.4: Moar sensiolabs fixes [Brandon Clothier] on Sun, 8 Apr 2018 04:50:53 -0400
+
 ### 1.9.3 April 08, 2018
 
+- [[c320340](https://github.com/brandon14/brandonclothier.me/commit/c32034022aaf23f043f7d9c6cc417c0315c90088)] finish hotfix/1.9.3 [Brandon Clothier] on Sun, 8 Apr 2018 04:43:03 -0400
 - [[ab43af1](https://github.com/brandon14/brandonclothier.me/commit/ab43af1479e07394cdcf2b297eebe0168004011c)] hotfix/1.9.3: Fix some sensiolabs errors [Brandon Clothier] on Sun, 8 Apr 2018 04:39:57 -0400
 
 ### 1.9.2 April 08, 2018
