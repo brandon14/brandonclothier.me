@@ -1,7 +1,8 @@
 <?php
 
-return [
+use Monolog\Handler\StreamHandler;
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -25,7 +26,8 @@ return [
     | you a variety of powerful log handlers / formatters to utilize.
     |
     | Available Drivers: "single", "daily", "slack", "syslog",
-    |                    "errorlog", "custom", "stack"
+    |                    "errorlog", "monolog",
+    |                    "custom", "stack"
     |
     */
 
@@ -69,6 +71,14 @@ return [
             'level'    => env('LOG_SLACK_LEVEL', 'debug'),
         ],
 
+        'stderr' => [
+            'driver'  => 'monolog',
+            'handler' => StreamHandler::class,
+            'with'    => [
+                'stream' => 'php://stderr',
+            ],
+        ],
+
         'syslog' => [
             'driver' => 'syslog',
             'level'  => env('LOG_SYSLOG_LEVEL', 'debug'),
@@ -79,5 +89,4 @@ return [
             'level'  => env('LOG_ERRORLOG_LEVEL', 'debug'),
         ],
     ],
-
 ];

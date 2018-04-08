@@ -33,3 +33,11 @@ yarn-error.log*
 
 # Webpack stats.json file
 /resources/assets/stats.json
+
+# PHP Unit code coverage files
+coverage.xml
+coverage.text
+coverage.html
+
+# PHP Coding Standards FIxer cache file
+.php_cs.cache

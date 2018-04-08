@@ -16,8 +16,8 @@
     "email": "brandon14125@gmail.com"
   },
   "engines": {
-    "npm": ">=3.0.0",
-    "node": ">=6.11.3"
+    "npm": ">=5.6.0",
+    "node": ">=8.11.1"
   },
   "contributors": [
     {
@@ -30,7 +30,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "precommit": "npm run lint",
+    "precommit": "npm run lint && npm run php:lint && npm run php:test",
     "analyze:clean": "rimraf ./resources/assets/stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./scripts/npm/analyze.js",
@@ -38,7 +38,7 @@
     "clean:all": "npm run analyze:clean && npm run build:clean",
     "dev": "npm run development",
     "development": "npm run build:clean && cross-env NODE_ENV=development webpack --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && gulp build",
-    "watch": "cross-env NODE_ENV=development webpack --watch --progress --color -p --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
@@ -46,7 +46,11 @@
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:eslint": "eslint --ignore-path .gitignore --color --format codeframe",
     "lint:js": "npm run lint:eslint -- ./resources/assets/js ",
-    "lint:sass": "sass-lint"
+    "lint:sass": "sass-lint",
+    "php:lint": "npm run php:phpcs && npm run php:php-cs-fixer -- --dry-run --stop-on-violation",
+    "php:phpcs": "vendor/bin/phpcs .",
+    "php:php-cs-fixer": "vendor/bin/php-cs-fixer fix",
+    "php:test": "vendor/bin/phpunit --testdox --coverage-text"
   },
   "babel": {
     "presets": [
@@ -115,7 +119,6 @@
     "rimraf": "^2.6.1",
     "sass-lint": "^1.12.1",
     "shelljs": "^0.8.1",
-    "shx": "^0.2.2",
     "webpack": "^3.10.0"
   }
 }

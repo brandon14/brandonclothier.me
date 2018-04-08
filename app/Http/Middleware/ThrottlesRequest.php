@@ -11,10 +11,10 @@ class ThrottlesRequest extends ThrottleRequests
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure                  $next
-     * @param  int                       $maxAttempts
-     * @param  float|int                 $decayMinutes
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param int                      $maxAttempts
+     * @param float|int                $decayMinutes
      *
      * @return mixed
      */
@@ -36,7 +36,8 @@ class ThrottlesRequest extends ThrottleRequests
         $response = $next($request);
 
         return $this->addHeaders(
-            $response, $maxAttempts,
+            $response,
+            $maxAttempts,
             $this->calculateRemainingAttempts($key, $maxAttempts)
         );
     }
@@ -44,8 +45,8 @@ class ThrottlesRequest extends ThrottleRequests
     /**
      * Create a 'too many attempts' JSON response.
      *
-     * @param  string  $key
-     * @param  int     $maxAttempts
+     * @param string $key
+     * @param int    $maxAttempts
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -61,7 +62,8 @@ class ThrottlesRequest extends ThrottleRequests
         $retryAfter = $this->limiter->availableIn($key);
 
         return $this->addHeaders(
-            $response, $maxAttempts,
+            $response,
+            $maxAttempts,
             $this->calculateRemainingAttempts($key, $maxAttempts, $retryAfter),
             $retryAfter
         );

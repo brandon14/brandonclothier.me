@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'webpack_asset_url' => env('APP_WEBPACK_ASSET_URL', 'http://localhost'),
+    'webpack_asset_url' => env('APP_WEBPACK_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -66,7 +65,7 @@ return [
     |
     */
 
-    'webpack_asset_dir' => env('APP_WEBPACK_ASSET_DIR', 'public'),
+    'webpack_asset_dir' => env('APP_WEBPACK_ASSET_DIR', 'public/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +77,7 @@ return [
     |
     */
 
-    'cdn_asset_url' => env('APP_CDN_ASSET_URL', 'http://localhost'),
+    'cdn_asset_url' => env('APP_CDN_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +89,7 @@ return [
     |
     */
 
-    'image_asset_url' => env('APP_IMAGE_ASSET_URL', 'http://localhost'),
+    'image_asset_url' => env('APP_IMAGE_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -195,7 +194,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -232,9 +230,9 @@ return [
         // App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         // App\Providers\EventServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
         App\Providers\LastModifiedServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -249,7 +247,6 @@ return [
     */
 
     'aliases' => [
-
         'App'          => Illuminate\Support\Facades\App::class,
         'Artisan'      => Illuminate\Support\Facades\Artisan::class,
         'Auth'         => Illuminate\Support\Facades\Auth::class,
@@ -283,7 +280,5 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
-
     ],
-
 ];

@@ -26,8 +26,8 @@ class ContactEmailController extends Controller
     /**
      * ContactEmailController constructor.
      *
-     * @param  \Illuminate\Mail\Mailer  $mailer
-     * @param  \Illuminate\Contracts\Routing\ResponseFactory  $response
+     * @param \Illuminate\Mail\Mailer                       $mailer
+     * @param \Illuminate\Contracts\Routing\ResponseFactory $response
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class ContactEmailController extends Controller
     /**
      * Controller function to send a contact email to the contact email configured.
      *
-     * @param  \App\Http\Requests\SendContactEmail  $request
+     * @param \App\Http\Requests\SendContactEmail $request
      *
      * @return \Illuminate\Http\JsonResponse
      */

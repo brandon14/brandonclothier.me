@@ -26,9 +26,9 @@ class Serve extends Command
     /**
      * Execute the console command.
      *
-     * @return void
-     *
      * @throws \Exception
+     *
+     * @return void
      */
     public function handle()
     {
@@ -46,8 +46,9 @@ class Serve extends Command
      */
     protected function serverCommand()
     {
-        return sprintf('%s -S %s:%s %s/server.php',
-            ProcessUtils::escapeArgument((new PhpExecutableFinder)->find(false)),
+        return sprintf(
+            '%s -S %s:%s %s/server.php',
+            ProcessUtils::escapeArgument((new PhpExecutableFinder())->find(false)),
             $this->host(),
             $this->port(),
             ProcessUtils::escapeArgument($this->laravel->basePath())
