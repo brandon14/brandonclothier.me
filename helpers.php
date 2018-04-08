@@ -2,6 +2,7 @@
 
 namespace Helpers;
 
+use Exception;
 use Illuminate\Support\Str;
 
 if (! function_exists('\Helpers\manifest_asset')) {
