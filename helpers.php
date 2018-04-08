@@ -8,8 +8,8 @@ if (! function_exists('manifest_asset')) {
      * the mix-manifest.json. Similar to Laravel's mix() function but uses
      * a configurable base URL and and allows the manifest to be elsewhere.
      *
-     * @param  string  $path
-     * @param  string  $baseUrl
+     * @param string $path
+     * @param string $baseUrl
      *
      * @return void
      */
@@ -59,7 +59,8 @@ if (! function_exists('cdn_asset')) {
      * Convenience function to generate a CDN URL using the configured image_asset_url
      * config value.
      *
-     * @param  string  $path
+     * @param string $path
+     *
      * @return void
      */
     function cdn_asset($path)
@@ -79,7 +80,8 @@ if (! function_exists('image_asset')) {
      * Convenience function to generate an image URL using the configured cdn_asset_url
      * config value.
      *
-     * @param  string  $path
+     * @param string $path
+     *
      * @return void
      */
     function image_asset($path)

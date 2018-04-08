@@ -28,14 +28,14 @@ class LastModified implements LastModifiedInterface
     /**
      * Whether to cache the timestamp or not.
      *
-     * @var boolean
+     * @var bool
      */
     private $cacheTimestamp;
 
     /**
      * How long to cache the last modified timestamp for.
      *
-     * @var integer
+     * @var int
      */
     private $cacheTtl;
 
@@ -56,12 +56,12 @@ class LastModified implements LastModifiedInterface
     /**
      * Constructs a LastModified service object.
      *
-     * @param  \Illuminate\Contracts\Cache\Repository  $cache
-     * @param  string  $basePath
-     * @param  boolean  $cacheTimestamp
-     * @param  integer  $cacheTtl
-     * @param  string  $cacheKey
-     * @param  array  $includedDirectories
+     * @param \Illuminate\Contracts\Cache\Repository $cache
+     * @param string                                 $basePath
+     * @param bool                                   $cacheTimestamp
+     * @param int                                    $cacheTtl
+     * @param string                                 $cacheKey
+     * @param array                                  $includedDirectories
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class LastModified implements LastModifiedInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getLastModifiedTime()
     {

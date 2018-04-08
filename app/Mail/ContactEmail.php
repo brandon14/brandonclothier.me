@@ -31,7 +31,7 @@ class ContactEmail extends Mailable
     /**
      * Create a new message instance.
      *
-     * @param  array $emailVars
+     * @param array $emailVars
      *
      * @return void
      */

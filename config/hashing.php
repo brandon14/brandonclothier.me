@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Hash Driver
@@ -48,5 +47,4 @@ return [
         'memory'  => env('HASHING_ARGON_MEMORY', 1024),
         'threads' => env('HASHING_ARGON_THREADS', 2),
     ],
-
 ];

@@ -25,7 +25,7 @@ class RedirectIfAuthenticated
      * Constructs a new redirect middleware for authentication.
      *
      * @param \Illuminate\Contracts\Auth\Factory $auth
-     * @param \Illuminate\Routing\Redirector $redirect
+     * @param \Illuminate\Routing\Redirector     $redirect
      */
     public function __construct(AuthFactory $auth, Rediretor $redirect)
     {
@@ -36,9 +36,10 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param string|null              $guard
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
