@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.9.1 April 08, 2018
+
+- [[696c8c5](https://github.com/brandon14/brandonclothier.me/commit/696c8c52d6e28275ec818124e2a2533dd7b00091)] hotfix/sensio-labs: Fix invalid php version in config [Brandon Clothier] on Sun, 8 Apr 2018 04:05:29 -0400
+
 ### 1.9.0 April 08, 2018
 
+- [[d61c689](https://github.com/brandon14/brandonclothier.me/commit/d61c689d171f85a6ea76d02347b2e62efdd6a0cd)] release/1.9.0 [Brandon Clothier] on Sun, 8 Apr 2018 02:36:59 -0400
 - [[2c65cb7](https://github.com/brandon14/brandonclothier.me/commit/2c65cb74eed40946b3fdc4a21627dc1d18818f50)] feature/fix-travis-build: Sort imports by length. [Brandon Clothier] on Sun, 8 Apr 2018 02:27:36 -0400
 - [[d266bac](https://github.com/brandon14/brandonclothier.me/commit/d266bac71e1463f91febf72db6cbee95a7ab0b00)] feature/fix-travis-build: Hopefully fix Travis build. [Brandon Clothier] on Sun, 8 Apr 2018 02:18:33 -0400
 - [[7e5c70e](https://github.com/brandon14/brandonclothier.me/commit/7e5c70e39def848e771ee879f257b347b478f14c)] feature/php-linting: Set up php-cs-fixer and phpcs [Brandon Clothier] on Sun, 8 Apr 2018 01:59:10 -0400
