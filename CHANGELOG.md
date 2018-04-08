@@ -2,8 +2,13 @@
 
 ## brandonclothier.me
 
+### 1.9.3 April 08, 2018
+
+- [[ab43af1](https://github.com/brandon14/brandonclothier.me/commit/ab43af1479e07394cdcf2b297eebe0168004011c)] hotfix/1.9.3: Fix some sensiolabs errors [Brandon Clothier] on Sun, 8 Apr 2018 04:39:57 -0400
+
 ### 1.9.2 April 08, 2018
 
+- [[feace23](https://github.com/brandon14/brandonclothier.me/commit/feace2300af4780a14016f9d4b990a8c24b2d775)] finish hotfix/1.9.2 [Brandon Clothier] on Sun, 8 Apr 2018 04:15:35 -0400
 - [[148caf5](https://github.com/brandon14/brandonclothier.me/commit/148caf565ae0759a60d7ccea2efdc34ce649f020)] hotfix/1.9.2: Update composer deps [Brandon Clothier] on Sun, 8 Apr 2018 04:10:41 -0400
 
 ### 1.9.1 April 08, 2018
