@@ -11,7 +11,7 @@
         <div class="sidebar-wrapper">
           <!-- Profile container -->
           <div class="profile-container">
-            <img class="profile" src="{{ manifest_asset('images/profile-small.png') }}" alt="Profile Image" />
+            <img class="profile" src="{{ \Helpers\manifest_asset('images/profile-small.png') }}" alt="Profile Image" />
             <h1 class="name">Brandon Clothier</h1>
             <h3 class="tagline">Web Developer</h3>
           </div>

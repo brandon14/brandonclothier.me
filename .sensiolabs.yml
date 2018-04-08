@@ -4,3 +4,9 @@ global_exclude_dirs:
   - node_modules
   - vendor
   - storage
+
+rules:
+  php.duplicated_code:
+    enabled: false
+  php.interface_has_no_interface_suffix:
+    enabled: false

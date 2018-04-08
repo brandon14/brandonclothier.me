@@ -1,8 +1,10 @@
 <?php
 
+namespace Helpers;
+
 use Illuminate\Support\Str;
 
-if (! function_exists('manifest_asset')) {
+if (! function_exists('\Helpers\manifest_asset')) {
     /**
      * Will return a URL for a given versioned asset. Looks for the entry in
      * the mix-manifest.json. Similar to Laravel's mix() function but uses
@@ -54,7 +56,7 @@ if (! function_exists('manifest_asset')) {
     }
 }
 
-if (! function_exists('cdn_asset')) {
+if (! function_exists('\Helpers\cdn_asset')) {
     /**
      * Convenience function to generate a CDN URL using the configured image_asset_url
      * config value.
@@ -75,7 +77,7 @@ if (! function_exists('cdn_asset')) {
     }
 }
 
-if (! function_exists('image_asset')) {
+if (! function_exists('\Helpers\image_asset')) {
     /**
      * Convenience function to generate an image URL using the configured cdn_asset_url
      * config value.
