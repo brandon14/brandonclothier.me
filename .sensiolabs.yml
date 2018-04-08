@@ -1,4 +1,4 @@
-php_version: 7.2
+php_version: 7.1
 
 global_exclude_dirs:
   - node_modules
