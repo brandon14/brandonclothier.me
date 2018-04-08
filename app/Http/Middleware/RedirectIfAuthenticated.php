@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
      * @param \Illuminate\Contracts\Auth\Factory $auth
      * @param \Illuminate\Routing\Redirector     $redirect
      */
-    public function __construct(AuthFactory $auth, Rediretor $redirect)
+    public function __construct(AuthFactory $auth, Redirector $redirect)
     {
         $this->auth = $auth;
         $this->redirect = $redirect;

@@ -5,7 +5,7 @@
 @endsection
 
 @push('stylesheets')
-  <link href="{{ manifest_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ \Helpers\manifest_asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @section('body-id', 'page-top')

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 footer-left">
         <div class="footer-icon">
-          <img class="profile" src="{{ manifest_asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
+          <img class="profile" src="{{ \Helpers\manifest_asset('images/profile-small.png') }}" alt="Profile Image" />&nbsp;brandonclothier.me
         </div>
         @yield('share-buttons', '')
       </div>
