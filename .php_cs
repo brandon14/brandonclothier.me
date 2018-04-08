@@ -21,7 +21,9 @@ return PhpCsFixer\Config::create()
         ],
         'linebreak_after_opening_tag' => true,
         'not_operator_with_successor_space' => true,
-        'ordered_imports' => false,
+        'ordered_imports' => [
+            'sortAlgorithm' => 'length',
+        ],
         'phpdoc_no_empty_return' => false,
         'phpdoc_order' => true,
         'yoda_style' => false,

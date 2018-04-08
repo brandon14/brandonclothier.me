@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'webpack_asset_url' => env('APP_WEBPACK_ASSET_URL', 'http://localhost'),
+    'webpack_asset_url' => env('APP_WEBPACK_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'webpack_asset_dir' => env('APP_WEBPACK_ASSET_DIR', 'public'),
+    'webpack_asset_dir' => env('APP_WEBPACK_ASSET_DIR', 'public/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'cdn_asset_url' => env('APP_CDN_ASSET_URL', 'http://localhost'),
+    'cdn_asset_url' => env('APP_CDN_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'image_asset_url' => env('APP_IMAGE_ASSET_URL', 'http://localhost'),
+    'image_asset_url' => env('APP_IMAGE_ASSET_URL', 'http://localhost/assets'),
 
     /*
     |--------------------------------------------------------------------------
