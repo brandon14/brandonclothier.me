@@ -33,5 +33,4 @@ return [
         'data-type'  => env('NOCAPTCHA_TYPE', 'image'),
         'data-size'  => env('NOCAPTCHA_SIZE', 'normal'),
     ],
-
 ];

@@ -18,16 +18,16 @@ class VerifyCsrfToken extends Middleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
      *
      * @throws \Illuminate\Session\TokenMismatchException
+     *
+     * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if (
-            $this->isReading($request) ||
+        if ($this->isReading($request) ||
             $this->runningUnitTests() ||
             $this->inExceptArray($request) ||
             $this->tokensMatch($request)
@@ -37,6 +37,6 @@ class VerifyCsrfToken extends Middleware
             return $next($request);
         }
 
-        throw new TokenMismatchException;
+        throw new TokenMismatchException();
     }
 }

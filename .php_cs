@@ -1,4 +1,5 @@
 <?php
+
 $finder = PhpCsFixer\Finder::create()
     ->notPath('bootstrap/cache')
     ->notPath('storage')
@@ -12,12 +13,17 @@ $finder = PhpCsFixer\Finder::create()
 return PhpCsFixer\Config::create()
     ->setRules(array(
         '@Symfony' => true,
-        'binary_operator_spaces' => ['align_double_arrow' => false],
-        'array_syntax' => ['syntax' => 'short'],
+        'binary_operator_spaces' => [
+            'operators' => ['=>' => null],
+        ],
+        'array_syntax' => [
+            'syntax' => 'short',
+        ],
         'linebreak_after_opening_tag' => true,
         'not_operator_with_successor_space' => true,
-        'ordered_imports' => true,
+        'ordered_imports' => false,
+        'phpdoc_no_empty_return' => false,
         'phpdoc_order' => true,
+        'yoda_style' => false,
     ))
-    ->setFinder($finder)
-;
+    ->setFinder($finder);

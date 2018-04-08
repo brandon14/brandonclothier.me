@@ -17,7 +17,7 @@ class LastModifiedComposer
     /**
      * Create a last modified composer.
      *
-     * @param  \App\Contracts\Services\LastModified  $lastModified
+     * @param \App\Contracts\Services\LastModified $lastModified
      *
      * @return void
      */
@@ -31,7 +31,7 @@ class LastModifiedComposer
     /**
      * Bind data to the view.
      *
-     * @param  \Illuminate\Contracts\View\View  $view
+     * @param \Illuminate\Contracts\View\View $view
      *
      * @return void
      */

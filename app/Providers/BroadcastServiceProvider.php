@@ -10,7 +10,7 @@ class BroadcastServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @param  \Illuminate\Broadcasting\BroadcastManager  $broadcast
+     * @param \Illuminate\Broadcasting\BroadcastManager $broadcast
      *
      * @return void
      */

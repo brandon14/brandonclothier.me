@@ -2,8 +2,6 @@
 
 namespace App\Contracts\Services;
 
-use Carbon\Carbon;
-
 interface LastModified
 {
     /**

@@ -38,3 +38,6 @@ yarn-error.log*
 coverage.xml
 coverage.text
 coverage.html
+
+# PHP Coding Standards FIxer cache file
+.php_cs.cache

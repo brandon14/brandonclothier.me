@@ -6,7 +6,6 @@ use Mockery;
 use Carbon\Carbon;
 use Tests\TestCase;
 use App\Services\LastModified;
-use Illuminate\Cache\ArrayStore;
 use Illuminate\Contracts\Cache\Repository;
 use org\bovigo\vfs\vfsStream as VfsStream;
 
@@ -29,14 +28,14 @@ class LastModifiedTest extends TestCase
     /**
      * Whether to cache timestamp.
      *
-     * @var boolean
+     * @var bool
      */
     private $cacheTimestamp;
 
     /**
      * Cache time-to-live.
      *
-     * @var integer
+     * @var int
      */
     private $cacheTtl;
 

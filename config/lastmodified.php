@@ -76,5 +76,4 @@ return [
                 $app->make('path.bootstrap'),
                 $app->make('path.base').DIRECTORY_SEPARATOR.'tests',
             ],
-
 ];

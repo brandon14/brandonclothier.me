@@ -36,8 +36,8 @@ class Handler extends ExceptionHandler
     /**
      * Constructs a new application exception handler.
      *
-     * @param  Container  $container
-     * @param  ResponseFactory  $response
+     * @param Container       $container
+     * @param ResponseFactory $response
      */
     public function __construct(Container $container)
     {
@@ -47,7 +47,8 @@ class Handler extends ExceptionHandler
     /**
      * Prepare exception for rendering.
      *
-     * @param  \Exception  $exception
+     * @param \Exception $exception
+     *
      * @return \Exception
      */
     protected function prepareException(Exception $exception)
@@ -66,8 +67,8 @@ class Handler extends ExceptionHandler
     /**
      * Prepare a JSON response for the given exception.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception                $exception
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $exception
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -101,8 +102,8 @@ class Handler extends ExceptionHandler
     /**
      * Convert an authentication exception into a response.
      *
-     * @param  \Illuminate\Http\Request                  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @param \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Auth\AuthenticationException $exception
      *
      * @return \Illuminate\Http\Response
      */
@@ -131,8 +132,8 @@ class Handler extends ExceptionHandler
     /**
      * Convert a validation exception into a JSON response.
      *
-     * @param  \Illuminate\Http\Request                    $request
-     * @param  \Illuminate\Validation\ValidationException  $exception
+     * @param \Illuminate\Http\Request                   $request
+     * @param \Illuminate\Validation\ValidationException $exception
      *
      * @return \Illuminate\Http\JsonResponse
      */

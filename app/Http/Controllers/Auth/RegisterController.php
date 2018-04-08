@@ -39,7 +39,7 @@ class RegisterController extends Controller
     private $hash;
 
     /**
-     * Application validator factory;
+     * Application validator factory;.
      *
      * @var \Illuminate\Validation\Factory
      */
@@ -55,9 +55,9 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hash
-     * @param  \Illuminate\Validation\Factory  $validator
-     * @param  \App\User  $user
+     * @param \Illuminate\Contracts\Hashing\Hasher $hash
+     * @param \Illuminate\Validation\Factory       $validator
+     * @param \App\User                            $user
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      *
      * @return \Illuminate\Contracts\Validation\Validator
      */
@@ -89,7 +89,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      *
      * @return \App\User
      */
