@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\LastModified;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
 use App\Contracts\Services\LastModified as LastModifiedInterface;
 
 class LastModifiedServiceProvider extends ServiceProvider
@@ -26,7 +27,7 @@ class LastModifiedServiceProvider extends ServiceProvider
 
         // Bind the last modified interface in the IoC container as a
         // singleton.
-        $this->app->singleton(LastModifiedInterface::class, function ($app) use ($config) {
+        $this->app->singleton(LastModifiedInterface::class, function (Application $app) use ($config) {
             return new LastModified(
                 $app->make('cache.store'),
                 $app->make('path.base'),
