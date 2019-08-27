@@ -608,25 +608,25 @@
         },
         {
             "name": "htmlmin/htmlmin",
-            "version": "v5.6.0",
+            "version": "v5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HTMLMin/Laravel-HTMLMin.git",
-                "reference": "e3d5e0b1e5019eb701ac68945510518b62d3ff50"
+                "reference": "9997ea4397be172105126a11a61dab75fe7f649b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HTMLMin/Laravel-HTMLMin/zipball/e3d5e0b1e5019eb701ac68945510518b62d3ff50",
-                "reference": "e3d5e0b1e5019eb701ac68945510518b62d3ff50",
+                "url": "https://api.github.com/repos/HTMLMin/Laravel-HTMLMin/zipball/9997ea4397be172105126a11a61dab75fe7f649b",
+                "reference": "9997ea4397be172105126a11a61dab75fe7f649b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/filesystem": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/http": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/routing": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/view": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/filesystem": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/http": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/routing": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/view": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
                 "mrclay/minify": "^2.2",
                 "php": ">=5.5.9"
             },
@@ -679,7 +679,7 @@
                 "laravel",
                 "minifier"
             ],
-            "time": "2018-02-19T11:19:54+00:00"
+            "time": "2019-03-18T13:06:49+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
